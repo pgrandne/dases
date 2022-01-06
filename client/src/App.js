@@ -7,7 +7,7 @@ function App() {
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
-          DID for DASES
+          Prototype du Portail de DASES
         </p>
       </header>
     </div>
