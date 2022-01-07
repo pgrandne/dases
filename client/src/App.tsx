@@ -12,7 +12,7 @@ function App() {
         <img src={logo} className="App-logo" alt="logo" />
         <a
           className="App-link"
-          href="https://www.notion.so/7e5c7a401b364686a37f4bbc962fdb55?v=a73ab8b5708740a79a212c8fb7e8a2a4"
+          href="https://docs.google.com/presentation/d/1rp6D1EYUFA4QMPelvzw9nxdzmyhvwB3xeHfxBBjH_0w/edit#slide=id.g10b83b10b58_0_0"
           target="_blank"
           rel="noopener noreferrer"
         >
