@@ -1,4 +1,5 @@
 import "./App.css";
+import { useState } from 'react';
 import "bootstrap/dist/css/bootstrap.min.css";
 import NavbarComp from './components/NavbarComp';
 import { Routes, Route } from 'react-router-dom';
@@ -9,11 +10,14 @@ import Ressource from './pages/Ressource';
 import Service from './pages/Service';
 
 function App() {
+
+  const [nameUser, setName] = useState(null);
+
   return (
     <div className="App">
-      <NavbarComp />
+      <NavbarComp nameUser={nameUser} setName={setName}/>
       <Routes>
-        <Route path="/" element={<Accueil />} />
+        <Route path="/" element={<Accueil/>} />
         <Route path="ajout" element={<Ajout />} />
         <Route path="donnee" element={<Donnee />} />
         <Route path="ressource" element={<Ressource />} />
