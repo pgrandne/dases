@@ -11,13 +11,13 @@ import Service from './pages/Service';
 
 function App() {
 
-  const [nameUser, setName] = useState(null);
+  const [defaultAccount, setDefaultAccount] = useState(null);
 
   return (
     <div className="App">
-      <NavbarComp nameUser={nameUser} setName={setName}/>
+      <NavbarComp defaultAccount={defaultAccount} setDefaultAccount={setDefaultAccount} />
       <Routes>
-        <Route path="/" element={<Accueil/>} />
+        <Route path="/" element={<Accueil defaultAccount={defaultAccount} />} />
         <Route path="ajout" element={<Ajout />} />
         <Route path="donnee" element={<Donnee />} />
         <Route path="ressource" element={<Ressource />} />

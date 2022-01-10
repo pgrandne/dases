@@ -2,7 +2,7 @@ import { Navbar, Container, Nav, NavDropdown } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import Connexion from './Connexion';
 
-function NavbarComp({ nameUser, setName }) {
+function NavbarComp({ defaultAccount, setDefaultAccount }) {
   return (
     <Navbar bg="dark" variant="dark" expand="lg">
       <Container>
@@ -19,7 +19,7 @@ function NavbarComp({ nameUser, setName }) {
             </NavDropdown>
           </Nav>
         </Navbar.Collapse>
-        <Connexion nameUser={nameUser} setName={setName} />
+        <Connexion defaultAccount={defaultAccount} setDefaultAccount={setDefaultAccount} />
       </Container>
     </Navbar>
   );
