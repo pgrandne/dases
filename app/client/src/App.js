@@ -11,14 +11,14 @@ import Service from './pages/Service';
 function App() {
   return (
     <div className="App">
-      <NavbarComp/>
+      <NavbarComp />
       <Routes>
-   <Route path="accueil" element={<Accueil />} />
-   <Route path="ajout" element={<Ajout />} />
-   <Route path="donnee" element={<Donnee />} />
-   <Route path="ressource" element={<Ressource />} />
-   <Route path="service" element={<Service />} />
-</Routes>
+        <Route path="/" element={<Accueil />} />
+        <Route path="ajout" element={<Ajout />} />
+        <Route path="donnee" element={<Donnee />} />
+        <Route path="ressource" element={<Ressource />} />
+        <Route path="service" element={<Service />} />
+      </Routes>
     </div>
   );
 }
