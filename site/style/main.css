@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@200;300;400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@200;300;400;700&family=Source+Serif+Pro:ital,wght@0,300;0,400;0,700;1,400;1,700&display=swap');
 
 /* http://meyerweb.com/eric/tools/css/reset/ 
    v2.0 | 20110126
@@ -65,10 +65,15 @@ table {
 
 
 body {
-	font-family: Outfit, sans-serif;
+	font-family: 'Source Serif Pro', sans-serif;
 	font-weight: 400;
 	background: var(--bgColor);
 	line-height: 1.5;
+}
+
+h1, h2, h3, h4 {
+	font-family: 'Outfit';
+	letter-spacing: 4px;
 }
 
 .bgBlue {
@@ -116,6 +121,7 @@ strong {font-weight: 700;}
 }
 
 .header_navBar > * > a {
+	text-decoration: none;
 	float: left;
 }
 
@@ -138,6 +144,7 @@ strong {font-weight: 700;}
 
 .mainNav li, .secondaryNav li {
 	display: inline-block;
+	position: relative;
 }
 
 .mainNav li button {
@@ -154,11 +161,84 @@ strong {font-weight: 700;}
 	border-radius: 4px;
 }
 
+.mainNav li button:after {
+	content: '';
+	display: block;
+	width: 0;
+	border: 1em solid transparent;
+	border-bottom-color: #fff ;
+	display: none;
+	position: absolute;
+	left: 50%;
+	margin-left: -1em;
+}
+
+.mainNav li button:focus:after {
+	display: block;
+}
+
+
+.mainNav li ul {
+	background: #fff;
+   padding: 4em;
+   width: 600px;
+   position: absolute;
+   right: 0;
+   top: 4em;
+   display: none;
+   border-radius: 4px;
+	box-shadow: 0 3px 8px rgba(0,0,0,0.05);
+}
+
+.mainNav li ul li:focus {
+	display: block !important;
+}
+
+
+.mainNav li button:focus + ul {
+	display: block;
+}
+
+.mainNav li ul li {
+	width: 49%;
+	padding-bottom: 2em;
+	box-sizing: border-box;
+}
+
+.mainNav li ul li:nth-child(odd) {
+	margin-right: 1em;
+}
+
+.mainNav li ul li * {
+	display: inline-block;
+	vertical-align: top;
+	color: #111;
+}
+
+.mainNav li ul li a {
+	text-decoration: none;
+}
+
+.mainNav li ul li div {
+	padding-left: 1em;
+	width: 75%;
+}
+
+.mainNav li ul li div h4 {
+	color: var(--blue);
+	font-weight: 700;
+	letter-spacing: 2px;
+}
+
 .secondaryNav li a {
 	padding: 1em;
 	color: #fff;
 	text-decoration: none;
 	border-radius: 4px;
+	font-family: Outfit;
+	font-weight: 700;
+	letter-spacing: 1px;
+
 }
 
 .homePage section {
@@ -174,35 +254,30 @@ strong {font-weight: 700;}
 }
 
 .hero h2 {
-	font-weight: 300;
-	font-size: 2.75em;
+	font-family: 'Source Serif Pro';
+	font-weight: 400;
+	font-size: 2.5em;
+	letter-spacing: 0;
+
 }
 
 .hero h2 strong {
 	color: var(--orange);
 }
 
-.whyPeople, .whyTech {
-	padding: 5em 2em;
+.whyPeople, .whyTech{
+	box-sizing: border-box;
+	padding: 5em 5em 17em 5em;
 	margin: 5em 0 15em;
-	background: #fff;
-	box-shadow:
-	  0px 1.7px 5px -33px rgba(0, 0, 0, 0.057),
-	  0px 3.8px 11.3px -33px rgba(0, 0, 0, 0.07),
-	  0px 6.7px 19.7px -33px rgba(0, 0, 0, 0.076),
-	  0px 10.6px 31.3px -33px rgba(0, 0, 0, 0.078),
-	  0px 16.4px 48.3px -33px rgba(0, 0, 0, 0.08),
-	  0px 25.6px 75.4px -33px rgba(0, 0, 0, 0.081),
-	  0px 42.5px 125.1px -33px rgba(0, 0, 0, 0.085),
-	  0px 85px 250px -33px rgba(0, 0, 0, 0.11)
-	;
-	border-radius: 1em;
+	width: 48%;
+	margin: 1%;
+	background: #fff
 }
 
-.whyPeople > *, .whyTech > * {
-	width: 50%;
-	box-sizing: border-box;
-	padding: 3em;
+.why h1 i {
+	font-family: 'Source Serif Pro';
+	font-weight: 700;
+	font-style: italic;
 }
 
 .why h2 {
@@ -213,9 +288,8 @@ strong {font-weight: 700;}
 }
 
 .why img {
-	display: block;
-	max-width: 300%;
-	margin-left: -190%;
+	width: 100%;
+	margin-top: -14em;
 }
 
 .why p {
