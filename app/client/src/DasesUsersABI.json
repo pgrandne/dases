@@ -1,0 +1,66 @@
+[
+    {
+      "inputs": [],
+      "stateMutability": "nonpayable",
+      "type": "constructor"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "name": "listOfParticipants",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "publicKey",
+          "type": "address"
+        },
+        {
+          "internalType": "string",
+          "name": "userName",
+          "type": "string"
+        },
+        {
+          "internalType": "string",
+          "name": "entityName",
+          "type": "string"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "getParticipantsList",
+      "outputs": [
+        {
+          "components": [
+            {
+              "internalType": "address",
+              "name": "publicKey",
+              "type": "address"
+            },
+            {
+              "internalType": "string",
+              "name": "userName",
+              "type": "string"
+            },
+            {
+              "internalType": "string",
+              "name": "entityName",
+              "type": "string"
+            }
+          ],
+          "internalType": "struct DasesUsers.Participant[]",
+          "name": "",
+          "type": "tuple[]"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    }
+  ]
