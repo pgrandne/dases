@@ -12,13 +12,26 @@ import Service from './pages/Service';
 function App() {
 
   const [defaultAccount, setDefaultAccount] = useState(null);
+  const [isConnected, setConnectedState] = useState(false);
 
   return (
     <div className="App">
-      <NavbarComp defaultAccount={defaultAccount} setDefaultAccount={setDefaultAccount} />
+      <NavbarComp
+        defaultAccount={defaultAccount}
+        setDefaultAccount={setDefaultAccount}
+        isConnected={isConnected}
+        setConnectedState={setConnectedState}
+      />
       <Routes>
-        <Route path="/" element={<Accueil defaultAccount={defaultAccount} />} />
-        <Route path="ajout" element={<Ajout />} />
+        <Route path="/" element={<Accueil
+          defaultAccount={defaultAccount}
+          isConnected={isConnected}
+        />}
+        />
+        <Route path="ajout" element={<Ajout
+          defaultAccount={defaultAccount}
+          isConnected={isConnected}
+        />} />
         <Route path="donnee" element={<Donnee />} />
         <Route path="ressource" element={<Ressource />} />
         <Route path="service" element={<Service />} />
