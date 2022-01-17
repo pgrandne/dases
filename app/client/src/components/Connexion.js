@@ -2,9 +2,11 @@ import { Button } from 'react-bootstrap';
 import { useState } from 'react';
 
 
-function Connexion({ defaultAccount, setDefaultAccount }) {
-
-    const [isConnected, setConnection] = useState(false);
+function Connexion({
+    defaultAccount,
+    setDefaultAccount,
+    isConnected,
+    setConnectedState }) {
     const [connectionText, setConnectionText] = useState('Se connecter');
     const [buttonColor, setButtonColor] = useState('primary');
 
@@ -14,18 +16,22 @@ function Connexion({ defaultAccount, setDefaultAccount }) {
                 .then(result => {
                     setDefaultAccount(result[0]);
                     if (isConnected) {
-                        setConnection(false);
+                        setConnectedState(false);
                         setConnectionText('Se connecter');
                         setButtonColor('primary');
                     } else {
-                        setConnection(true);
+                        setConnectedState(true);
                         setConnectionText('Pierre FONTAINE - IMT Atlantique');
                         setButtonColor('success');
                     }
                 })
 
         } else {
-            setDefaultAccount('pas de Metamask')
+            setConnectedState(false);
+            setDefaultAccount('pas de Metamask');
+            setConnectionText('Pas de Metamask');
+            setButtonColor('danger');
+
         }
     }
 
