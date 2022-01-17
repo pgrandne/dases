@@ -5753,6 +5753,12 @@
     "version": "0.8.11+commit.d7f03943.Emscripten.clang"
   },
   "networks": {
+    "4": {
+      "events": {},
+      "links": {},
+      "address": "0x1802C3d7Dc8e26d5813452CE49Bfa6744Ae2187f",
+      "transactionHash": "0x7e98f553051e8761ea5ab13928fc7930e0d933e56205ffd06115a519ecb25ac7"
+    },
     "5777": {
       "events": {},
       "links": {},
@@ -5761,7 +5767,7 @@
     }
   },
   "schemaVersion": "3.4.4",
-  "updatedAt": "2022-01-17T16:27:24.431Z",
+  "updatedAt": "2022-01-17T17:03:19.647Z",
   "networkType": "ethereum",
   "devdoc": {
     "author": "Perrin Grandne",
