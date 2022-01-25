@@ -1,4 +1,4 @@
-function Accueil({ defaultAccount, isConnected }) {
+const Accueil = ({ defaultAccount, isConnected }) => {
     return (
         <div>
             <h2>Bienvenue sur la page d'accueil</h2>
@@ -7,6 +7,6 @@ function Accueil({ defaultAccount, isConnected }) {
             {!isConnected &&<p>Merci de vous connecter</p>}
         </div>
     );
-}
+};
 
 export default Accueil;

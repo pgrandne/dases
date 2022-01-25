@@ -8,7 +8,6 @@ import Ajout from './pages/Ajout';
 import Ressource from './pages/Ressource';
 
 const App = () => {
-
   const [defaultAccount, setDefaultAccount] = useState(null);
   const [isConnected, setConnectedState] = useState(false);
 

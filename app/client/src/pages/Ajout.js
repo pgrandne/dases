@@ -1,7 +1,7 @@
 import { Alert, Card, Container } from 'react-bootstrap';
-import FormulaireAjout from '../components/FormulaireAjout';
+import FormulaireAjout from '../components//forms/FormulaireAjout';
 
-function Ajout({ defaultAccount, isConnected }) {
+const Ajout = ({ defaultAccount, isConnected }) => {
     return (
         <div>
             <h2>Bienvenue sur la page d'ajout de ressources</h2>
