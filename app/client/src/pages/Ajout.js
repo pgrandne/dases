@@ -9,12 +9,12 @@ const Ajout = ({ defaultAccount, isConnected }) => {
                 <Card>
                     <Card.Header>Formulaire d'ajout de ressources</Card.Header>
                     <Card.Body>
-                    {!isConnected &&
-                                <Alert variant="secondary">
-                                    Vous devez vous connecter pour ajouter une ressource
-                                </Alert>
-                            }
-                    {isConnected && <FormulaireAjout defaultAccount={defaultAccount}/>}
+                        {!isConnected &&
+                            <Alert variant="secondary">
+                                Vous devez vous connecter pour ajouter une ressource
+                            </Alert>
+                        }
+                        {isConnected && <FormulaireAjout defaultAccount={defaultAccount} />}
                     </Card.Body>
                 </Card>
             </Container>

@@ -10,7 +10,6 @@ const Ressource = () => {
         <div>
             <h2>Bienvenue sur le catalogue de toutes les ressources</h2>
             <Container>
-
                 <Form variant='secondary'>
                     <Row>
                         <Col>
@@ -29,13 +28,13 @@ const Ressource = () => {
                             </Form.Select>
                         </Col>
                         <Col>
-                        <InputGroup className="mb-3">
-    <InputGroup.Text id="inputGroup-sizing-default">Rechercher</InputGroup.Text>
-    <FormControl
-      aria-label="Default"
-      aria-describedby="inputGroup-sizing-default"
-    />
-  </InputGroup>
+                            <InputGroup className="mb-3">
+                                <InputGroup.Text id="inputGroup-sizing-default">Rechercher</InputGroup.Text>
+                                <FormControl
+                                    aria-label="Default"
+                                    aria-describedby="inputGroup-sizing-default"
+                                />
+                            </InputGroup>
                         </Col>
                         <Col xs={2}>
                             <Form.Check

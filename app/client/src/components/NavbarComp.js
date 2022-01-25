@@ -6,7 +6,7 @@ const NavbarComp = ({ defaultAccount, setDefaultAccount, isConnected, setConnect
   return (
     <Navbar bg="dark" variant="dark" expand="lg">
       <Container>
-        <Navbar.Brand as={Link} to={"/"}>DASES</Navbar.Brand>
+        <Navbar.Brand as={Link} to={"/"}>PROTO</Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav" className="justify-content-center">
           <Nav >

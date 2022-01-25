@@ -29,7 +29,7 @@ const FormulaireAjout = ({ defaultAccount }) => {
                 title,
                 description,
                 content,
-                author: user[0].pseudo
+                author: user[0].entity
             };
 
             await signer.signMessage(`Signer pour publier votre ressource : ${data.title}`);
@@ -47,7 +47,7 @@ const FormulaireAjout = ({ defaultAccount }) => {
         <div>
             <Form onSubmit={(e) => handleForm(e)}>
                 <Alert variant="secondary">
-                    {defaultAccount}
+                    {user[0].name} - {user[0].entity}
                 </Alert>
                 <Form.Group className="mb-2">
                     <Form.Label>Titre de la ressource</Form.Label>

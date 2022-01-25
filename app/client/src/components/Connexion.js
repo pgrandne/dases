@@ -27,13 +27,13 @@ const Connexion = ({
                 setConnectionText('Se connecter');
                 setButtonColor('primary');
             } else {
-                await signer.signMessage("Signature pour s'authentifier sur le proto DASES");
+                await signer.signMessage("Signature pour s'authentifier sur le proto de portail");
                 if (!isEmpty(user[0]) && user[0].publicKey === account) {
-                    setConnectionText(!isEmpty(user[0]) && user[0].pseudo);
+                    setConnectionText(!isEmpty(user[0]) && user[0].name);
                     setButtonColor('success');
                     setConnectedState(true);
                 } else if (!isEmpty(user[1]) && user[1].publicKey === account) {
-                    setConnectionText(!isEmpty(user[1]) && user[1].pseudo);
+                    setConnectionText(!isEmpty(user[1]) && user[1].name);
                     setButtonColor('success');
                     setConnectedState(true);
                 }
