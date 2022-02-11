@@ -373,6 +373,9 @@ section.hero {
 
 /* ------------ CATALOGUE ------------- */
 
+/* generique */
+
+
 .flex {
 	display: flex;
 	flex-flow: row ;
@@ -385,6 +388,56 @@ section.hero {
 .flex.center {
 	align-items: center;
 }
+
+
+/* ---- Moteur de recherche ----- */
+
+.searchEngine > div {
+	flex: 1;
+	margin-right: 1em;
+}
+
+.searchEngine > div:first-child {
+	flex: 50%;
+	position: relative;
+}
+
+.searchEngine input[type=text], .searchEngine select {
+	border: none;
+	outline: 2px solid rgba(0,0,0,.1);
+	background: var(--lightGrey);
+	font-family: 'IBM Plex Sans', sans-serif;
+	position: relative;
+	display: block;
+	padding: 1em;
+	border-radius: 2em;
+	margin: 1em;
+	width: 100%;
+	box-sizing: border-box;
+}
+
+.searchEngine input[type=text] {
+	padding-left: 4em;
+}
+
+.searchEngine input[type=text]:focus, .searchEngine select:focus {
+	outline: 2px solid var(--black);
+}
+
+.searchEngine > div:before {
+	display: block;
+	content: '';
+	position: absolute;
+	background: url(img/searchIcon.svg);
+	width: 1em;
+   height: 1em;
+   left: 2em;
+   top: 1.75em;
+   z-index: 2;
+}
+
+/* ---- Contenu du catalogue ----- */
+
 
 .catalogueCell {
 	transition: all 0.150s;
