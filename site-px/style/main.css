@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,300;0,500;0,700;1,100&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,300;0,500;0,700;1,100&family=Sen:wght@400;800&display=swap');
 
 /* http://meyerweb.com/eric/tools/css/reset/ 
    v2.0 | 20110126
@@ -64,6 +64,7 @@ table {
    --pink: #BF2CE5;
  	--turquoise : #01D1D1;
  	--black: #0A102A;
+ 	--lightGrey : #F2F6F6
 }
 
 
@@ -83,6 +84,7 @@ body {
 	font-weight: 400;
 	background: var(--bgColor);
 	line-height: 1.5;
+	color: var(--black);
 }
 
 h1, h2, h3, h4 {
@@ -103,7 +105,7 @@ strong {font-weight: 700;}
 /* ------------- HEADER --------------*/
 
 header {
-	border-bottom: 2px solid #F2F6F6;
+	border-bottom: 2px solid var(--lightGrey);
 }
 
 .header_topBar {
@@ -164,6 +166,10 @@ header {
 	font-weight: 700;
 	color: var(--black);
 	border-radius: 4px;
+}
+
+.mainNav li button.current {
+	color: var(--turquoise);
 }
 
 .mainNav li button.roundPink {
@@ -308,7 +314,7 @@ header {
 	display: block;
 }
 
-.homePage section {
+section.hero {
 	padding: 3em 0;
 }
 
@@ -355,4 +361,63 @@ header {
 	color: #111;
 	max-width: 675px;
 	margin: 0 auto;
+}
+
+/* ------------ CATALOGUE ------------- */
+
+.flex {
+	display: flex;
+	flex-flow: row ;
+}
+
+.flex.wrap {
+	flex-flow: row wrap;
+}
+
+.flex.center {
+	align-items: center;
+}
+
+.catalogueCell {
+	transition: all 0.150s;
+	flex: 1 0 25%;
+	background: #fff;
+	padding: 2em;
+	box-shadow: 
+		0px 22px 81px -11px rgba(2, 32, 57, 0.16),
+		0px 2px 2px 0 rgba(2, 32, 57, 0.07);
+	border-radius: 1em;
+	margin: 1em;
+	display: flex;
+	flex-flow: column wrap;
+	max-width: 26%;
+	cursor: pointer;
+	border: 3px solid transparent;
+}
+
+.catalogueCell:hover {
+	border-color: var(--black);
+}
+
+.catalogueCell .title img {
+	width: 15%;
+	padding-right: 1em;
+}
+
+.catalogueCell .title h2 {
+	font-weight: 700;
+}
+.catalogueCell .title ul li {
+	margin-right: 0.5em
+}
+.catalogueCell .title ul li .tag{
+	font-size: 0.75em;
+	padding: 0.5em 1em;
+	background: var(--lightGrey);
+	border-radius: 1em;
+}
+
+.catalogueCell .description {
+	padding-top: 1.5em;
+	font-family: Sen, sans-serif;
 }
