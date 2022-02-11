@@ -98,6 +98,11 @@ h1, h2, h3, h4 {
 	margin: 0 auto;
 }
 
+.container768 {
+	max-width: 768px;
+	margin: 0 auto;
+}
+
 .floatLeft { float: left; }
 .floatRight { float: right; }
 strong {font-weight: 700;}
