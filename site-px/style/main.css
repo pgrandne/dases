@@ -1,0 +1,358 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,300;0,500;0,700;1,100&display=swap');
+
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+.clearfix::after {
+	content: "";
+   display: block;
+   clear: both;
+}
+
+/* ------------- GENERIC --------------*/
+
+/* Colors */
+
+:root {
+	--bgColor: #FFF;
+   --pink: #BF2CE5;
+ 	--turquoise : #01D1D1;
+ 	--black: #0A102A;
+}
+
+
+.bgBlue {
+	background: var(--black);
+}
+
+.bgOrange {
+	background: var(--orange);
+}
+
+/* Typo */
+
+
+body {
+	font-family: 'IBM Plex Sans', sans-serif;
+	font-weight: 400;
+	background: var(--bgColor);
+	line-height: 1.5;
+}
+
+h1, h2, h3, h4 {
+	font-family: 'IBM Plex Sans';
+}
+
+
+.container {
+	max-width: 1320px;
+	margin: 0 auto;
+}
+
+.floatLeft { float: left; }
+.floatRight { float: right; }
+strong {font-weight: 700;}
+
+
+/* ------------- HEADER --------------*/
+
+header {
+	border-bottom: 2px solid #F2F6F6;
+}
+
+.header_topBar {
+	background: linear-gradient(90.77deg, var(--pink) 27.77%, var(--turquoise) 64.42%);
+	padding: 1em;
+	color: #fff;
+	vertical-align: middle;
+}
+
+.header_topBar img {
+	font-weight: 2em;
+	display: inline-block;
+	vertical-align: middle;
+	margin-right: 1em;
+}
+
+.header_topBar a {
+	text-decoration: none;
+	font-weight: 700;
+	color: #fff;
+}
+
+
+.header_navBar {
+	padding: 2em 0
+}
+
+.header_navBar > * > a {
+	text-decoration: none;
+	float: left;
+}
+
+.mainNav, .secondaryNav {
+	float: right;
+	clear: both;
+}
+
+
+.secondaryNav {
+	margin-right: 2em;
+	margin-bottom: 4em;
+	font-size: 0.875em;
+}
+
+.mainNav li {
+	display: inline-block;
+	position: relative;
+}
+
+.mainNav li button {
+	font-family: IBM Plex Sans;
+	background: none;
+	padding: 1em;
+	font-size: 1em;
+	border: 2px solid transparent;
+	cursor: pointer;
+	text-transform: uppercase;
+	font-weight: 700;
+	color: var(--black);
+	border-radius: 4px;
+}
+
+.mainNav li button.roundPink {
+	background: var(--pink);
+	color: #fff;
+	border-radius: 2em;
+	padding: 1em 2em;
+	margin-right: 1em;
+	text-transform: initial;
+}
+
+.mainNav li button.roundTurquoise {
+	background: var(--turquoise);
+	color: #fff;
+	border-radius: 2em;
+	padding: 1em 2em;
+	margin: 0 1em;
+	text-transform: initial;
+}
+
+.mainNav li button:focus {
+	border-color: #fff;
+}
+
+.mainNav li button:after {
+	content: '';
+	display: block;
+	width: 0;
+	border: 0.75em solid transparent;
+	border-bottom-color: #fff ;
+	display: none;
+	position: absolute;
+	left: 50%;
+	margin-left: -0.75em;
+	bottom: -1.5em;
+}
+
+.mainNav li button:focus:after {
+	display: block;
+}
+
+
+.mainNav li > ul {
+	background: #fff;
+   padding: 3em;
+   width: 600px;
+   position: absolute;
+   right: 0;
+   top: 5em;
+   display: none;
+   border-radius: 4px;
+	box-shadow: 0 3px 8px rgba(0,0,0,0.05);
+}
+
+.mainNav > li > ul:active {
+	display: block !important;
+}
+
+.mainNav > li button:focus + ul {
+	display: block;
+}
+
+.mainNav > li > ul > li {
+	width: 49%;
+	box-sizing: border-box;
+}
+
+.mainNav > li > ul > li * {
+	display: inline-block;
+	vertical-align: top;
+	color: #111;
+}
+
+.mainNav > li > ul li a {
+	text-decoration: none;
+	padding: 1em;
+	border-radius: 4px;
+	font-family: IBM Plex Sans, sans-serif;
+}
+
+.mainNav > li > ul li a:hover {
+	background: var(--bgColor);
+}
+
+.mainNav > li > ul li div {
+	padding-left: 1em;
+	width: 75%;
+}
+
+.mainNav li > ul li div h4 {
+	color: var(--black);
+	font-weight: 700;
+	letter-spacing: 2px;
+}
+
+.mainNav .resourcesNav * {
+	display: block;
+	padding: 0.25em;
+} 
+
+.mainNav .resourcesNav {
+	width: 768px;
+} 
+
+.mainNav > li button:focus + .resourcesNav {
+	display: table-row;
+}
+
+.mainNav .resourcesNav > li {
+	display: table-cell;
+	width: 25%;
+	padding-right: 1em;
+}
+
+.mainNav .resourcesNav li div {
+	width: 100%;	
+
+}
+.mainNav li .resourcesNav h4 {
+	height: 2em;
+	margin-bottom: 1.5em;
+	width: 75%;
+}
+
+.mainNav .resourcesNav > li {
+	padding-bottom: 0
+}
+.mainNav .resourcesNav > li a {
+	margin-left:-0.5em;
+	padding: 0.75em;
+	border-top: 2px solid var(--bgColor);
+}
+
+.secondaryNav li a {
+	padding: 1em;
+	color: #fff;
+	text-decoration: none;
+	border-radius: 4px;
+	font-family: IBM Plex Sans;
+	font-weight: 700;
+	letter-spacing: 1px;
+	display: block;
+}
+
+.homePage section {
+	padding: 3em 0;
+}
+
+.hero h1 {
+	font-weight: 700;
+	font-size: 2em;
+	line-height: 1.5;
+	width: 50%;
+}
+
+.hero h2 strong {
+	color: var(--orange);
+}
+
+.whyPeople, .whyTech{
+	box-sizing: border-box;
+	padding: 5em 5em 17em 5em;
+	margin: 5em 0 15em;
+	width: 48%;
+	margin: 1%;
+	background: #fff
+}
+
+.why h1 i {
+	font-family: 'IBM Plex Sans';
+	font-weight: 700;
+	font-style: italic;
+}
+
+.why h2 {
+	font-size: 4em;
+	color: #111;
+	line-height: 1;
+	margin-bottom: 1em;
+}
+
+.why img {
+	width: 100%;
+	margin-top: -14em;
+}
+
+.why p {
+	font-size: 1.75em;
+	color: #111;
+	max-width: 675px;
+	margin: 0 auto;
+}
