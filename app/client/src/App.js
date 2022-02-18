@@ -9,6 +9,7 @@ import Ressource from './pages/Ressource';
 
 const App = () => {
   const [defaultAccount, setDefaultAccount] = useState(null);
+  const [entityName, setEntityName] = useState('');
   const [isConnected, setConnectedState] = useState(false);
 
   return (
