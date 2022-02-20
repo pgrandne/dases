@@ -1,17 +1,17 @@
 import { Button, Modal } from 'react-bootstrap';
 import { useState } from 'react';
-import { useSelector } from 'react-redux';
-import { isEmpty } from './Utils';
 import { ethers } from 'ethers';
+import { EthrDID } from 'ethr-did';
+import { Resolver } from 'did-resolver';
+import { getResolver } from 'ethr-did-resolver';
 
 const Connexion = ({
-    defaultAccount,
-    setDefaultAccount,
+    didDocument,
+    setDidDocument,
     isConnected,
     setConnectedState }) => {
     const [connectionText, setConnectionText] = useState('Se connecter');
     const [buttonColor, setButtonColor] = useState('primary');
-    const user = useSelector((state) => state.userReducer);
     const [showNoMetamask, setShowNoMetamask] = useState(false);
 
     const handleClose = () => setShowNoMetamask(false);
@@ -22,27 +22,24 @@ const Connexion = ({
             await window.ethereum.request({ method: 'eth_requestAccounts' })
             const provider = new ethers.providers.Web3Provider(window.ethereum);
             const signer = provider.getSigner();
-            const account = await signer.getAddress();
-            console.log(account);
+            const accounts = await provider.listAccounts();
+            const chainNameOrId = (await provider.getNetwork()).chainId
+            const ethrDid = new EthrDID({identifier: accounts[0], provider, chainNameOrId})
+            const rpcUrl = "https://rinkeby.infura.io/v3/d541faa3a3b74d409e82828b772fce9e";
+            const didResolver = new Resolver(getResolver({ rpcUrl, name: "rinkeby" }));
+            const didDoc = JSON.stringify((await didResolver.resolve(ethrDid.did)).didDocument);
             if (isConnected) {
                 setConnectedState(false);
                 setConnectionText('Se connecter');
                 setButtonColor('primary');
             } else {
                 await signer.signMessage("Signature pour s'authentifier sur le proto de portail");
-                if (!isEmpty(user[0]) && user[0].publicKey === account) {
-                    setConnectionText(!isEmpty(user[0]) && user[0].name);
-                    setButtonColor('success');
-                    setConnectedState(true);
-                } else if (!isEmpty(user[1]) && user[1].publicKey === account) {
-                    setConnectionText(!isEmpty(user[1]) && user[1].name);
-                    setButtonColor('success');
-                    setConnectedState(true);
-                }
-                else {
-                    setConnectionText('Adresse inconnue');
-                    setButtonColor('danger');
-                }
+                console.log(ethrDid);
+                setDidDocument(didDoc);
+                setConnectedState(true);
+                setConnectionText(ethrDid.address);
+                console.log(didDoc);
+              
             }
         }
         else {

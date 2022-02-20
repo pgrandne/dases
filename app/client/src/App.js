@@ -8,26 +8,25 @@ import Ajout from './pages/Ajout';
 import Ressource from './pages/Ressource';
 
 const App = () => {
-  const [defaultAccount, setDefaultAccount] = useState(null);
-  const [entityName, setEntityName] = useState('');
+  const [didDocument, setDidDocument] = useState({});
   const [isConnected, setConnectedState] = useState(false);
 
   return (
     <div className="App">
       <NavbarComp
-        defaultAccount={defaultAccount}
-        setDefaultAccount={setDefaultAccount}
+        didDocument={didDocument}
+        setDidDocument={setDidDocument}
         isConnected={isConnected}
         setConnectedState={setConnectedState}
       />
       <Routes>
         <Route path="/" element={<Accueil
-          defaultAccount={defaultAccount}
+          didDocument={didDocument}
           isConnected={isConnected}
         />}
         />
         <Route path="ajout" element={<Ajout
-          defaultAccount={defaultAccount}
+          didDocument={didDocument}
           isConnected={isConnected}
         />} />
         <Route path="ressource" element={<Ressource />} />
