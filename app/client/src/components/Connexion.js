@@ -35,6 +35,7 @@ const Connexion = ({
             } else {
                 await signer.signMessage("Signature pour s'authentifier sur le proto de portail");
                 console.log(ethrDid);
+                setButtonColor('success');
                 setDidDocument(didDoc);
                 setConnectedState(true);
                 setConnectionText(ethrDid.address);
