@@ -6,30 +6,32 @@ import { Routes, Route } from 'react-router-dom';
 import Accueil from './pages/Accueil';
 import Ajout from './pages/Ajout';
 import Ressource from './pages/Ressource';
+import Acces from './pages/Acces';
 
 const App = () => {
-  const [didDocument, setDidDocument] = useState({});
+  const [did, setDid] = useState({});
   const [isConnected, setConnectedState] = useState(false);
 
   return (
     <div className="App">
       <NavbarComp
-        didDocument={didDocument}
-        setDidDocument={setDidDocument}
+        did={did}
+        setDid={setDid}
         isConnected={isConnected}
         setConnectedState={setConnectedState}
       />
       <Routes>
         <Route path="/" element={<Accueil
-          didDocument={didDocument}
+          did={setDid}
           isConnected={isConnected}
         />}
         />
         <Route path="ajout" element={<Ajout
-          didDocument={didDocument}
+          did={did}
           isConnected={isConnected}
         />} />
         <Route path="ressource" element={<Ressource />} />
+        <Route path="acces" element={<Acces did={did} />} />
       </Routes>
     </div>
   );

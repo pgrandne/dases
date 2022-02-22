@@ -2,7 +2,7 @@ import { Navbar, Container, Nav } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import Connexion from './Connexion';
 
-const NavbarComp = ({ didDocument, setDidDocument, isConnected, setConnectedState }) => {
+const NavbarComp = ({ did, setDid, isConnected, setConnectedState }) => {
   return (
     <Navbar bg="dark" variant="dark" expand="lg">
       <Container>
@@ -12,13 +12,12 @@ const NavbarComp = ({ didDocument, setDidDocument, isConnected, setConnectedStat
           <Nav >
             <Nav.Link as={Link} to={"/"}>Tableau de bord</Nav.Link>
             <Nav.Link as={Link} to={"/ressource"}>Catalogue de ressources</Nav.Link>
-            <Nav.Link as={Link} to={"/ressource"}>Ressources utilisées</Nav.Link>
             <Nav.Link as={Link} to={"/ajout"}>Ajouter une ressource</Nav.Link>
           </Nav>
         </Navbar.Collapse>
         <Connexion
-          didDocument={didDocument}
-          setDidDocument={setDidDocument}
+          did={did}
+          setDid={setDid}
           isConnected={isConnected}
           setConnectedState={setConnectedState}
         />

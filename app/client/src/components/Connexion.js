@@ -4,30 +4,40 @@ import { ethers } from 'ethers';
 import { EthrDID } from 'ethr-did';
 import { Resolver } from 'did-resolver';
 import { getResolver } from 'ethr-did-resolver';
+import { Link } from 'react-router-dom';
 
 const Connexion = ({
-    didDocument,
-    setDidDocument,
+    did,
+    setDid,
     isConnected,
     setConnectedState }) => {
     const [connectionText, setConnectionText] = useState('Se connecter');
     const [buttonColor, setButtonColor] = useState('primary');
     const [showNoMetamask, setShowNoMetamask] = useState(false);
+    const [noVerifiableCredential, setVerifiableCredential] = useState(false);
 
     const handleClose = () => setShowNoMetamask(false);
     const handleShow = () => setShowNoMetamask(true);
 
+    const vcClose = () => {
+        setVerifiableCredential(false);
+
+    }
+    const vcShow = () => setVerifiableCredential(true);
+
     const connectHandler = async () => {
         if (window.ethereum) {
-            await window.ethereum.request({ method: 'eth_requestAccounts' })
             const provider = new ethers.providers.Web3Provider(window.ethereum);
+            await provider.send("eth_requestAccounts", []);
             const signer = provider.getSigner();
             const accounts = await provider.listAccounts();
             const chainNameOrId = (await provider.getNetwork()).chainId
-            const ethrDid = new EthrDID({identifier: accounts[0], provider, chainNameOrId})
+            const ethrDid = new EthrDID({ identifier: accounts[0], provider, chainNameOrId })
             const rpcUrl = "https://rinkeby.infura.io/v3/d541faa3a3b74d409e82828b772fce9e";
             const didResolver = new Resolver(getResolver({ rpcUrl, name: "rinkeby" }));
-            const didDoc = JSON.stringify((await didResolver.resolve(ethrDid.did)).didDocument);
+            console.log(didResolver);
+            //const didDoc = JSON.stringify((await didResolver.resolve(ethrDid.did)).didDocument);
+
             if (isConnected) {
                 setConnectedState(false);
                 setConnectionText('Se connecter');
@@ -36,11 +46,12 @@ const Connexion = ({
                 await signer.signMessage("Signature pour s'authentifier sur le proto de portail");
                 console.log(ethrDid);
                 setButtonColor('success');
-                setDidDocument(didDoc);
+                setDid(ethrDid);
                 setConnectedState(true);
                 setConnectionText(ethrDid.address);
-                console.log(didDoc);
-              
+                console.log(ethrDid);
+                vcShow();
+
             }
         }
         else {
@@ -63,6 +74,20 @@ const Connexion = ({
                     <Button variant="secondary" onClick={handleClose}>
                         Fermer
                     </Button>
+                </Modal.Footer>
+            </Modal>
+
+            <Modal show={noVerifiableCredential} onHide={vcClose}>
+                <Modal.Header closeButton>
+                    <Modal.Title>Création d'une référence vérifiable</Modal.Title>
+                </Modal.Header>
+                <Modal.Body>Vous n'avez pas de référence Vérifiable. Vous devez en créer une pour intéragir avec le Portail</Modal.Body>
+                <Modal.Footer>
+                    <Link to="/acces">
+                        <Button variant="primary" onClick={vcClose}>
+                            Valider
+                        </Button>
+                    </Link>
                 </Modal.Footer>
             </Modal>
         </div>
