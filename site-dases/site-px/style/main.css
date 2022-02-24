@@ -62,7 +62,7 @@ table {
 :root {
 	--bgColor: #FFF;
    --pink: #BF2CE5;
- 	--turquoise : #01D1D1;
+ 	--blue : #000094;
  	--black: #0A102A;
  	--lightGrey : #F2F6F6
 }
@@ -115,7 +115,7 @@ header {
 }
 
 .header_topBar {
-	background: linear-gradient(90.77deg, var(--pink) 27.77%, var(--turquoise) 64.42%);
+	background: linear-gradient(90.77deg, var(--pink) 27.77%, var(--blue) 64.42%);
 	padding: 1em;
 	color: #fff;
 	vertical-align: middle;
@@ -177,7 +177,7 @@ header {
 }
 
 .mainNav li button.current {
-	color: var(--turquoise);
+	color: var(--blue);
 }
 
 .mainNav li button.roundPink {
@@ -189,8 +189,8 @@ header {
 	text-transform: initial;
 }
 
-.mainNav li button.roundTurquoise {
-	background: var(--turquoise);
+.mainNav li button.roundblue {
+	background: var(--blue);
 	color: #fff;
 	border-radius: 2em;
 	padding: 0.5em 1em;
@@ -384,6 +384,10 @@ section.hero {
 	flex-flow: row ;
 }
 
+.flex.column {
+	flex-flow: column ;
+}
+
 .flex.wrap {
 	flex-flow: row wrap;
 }
@@ -520,7 +524,7 @@ footer div {
 }
 
 footer div img { margin-bottom: 3em}
-footer div ul li a{ text-decoration: none; color: var(--turquoise); display: block; padding: 0.5em 0 0; }
+footer div ul li a{ text-decoration: none; color: var(--blue); display: block; padding: 0.5em 0 0; }
 
 /** ------------------- BREADCRUMB ----------------------**/
 
@@ -570,7 +574,7 @@ footer div ul li a{ text-decoration: none; color: var(--turquoise); display: blo
 }
 
 .breadcrumb li.current a {
-	color: var(--turquoise);
+	color: var(--blue);
 }
 
 /** ------------------- PAGE SERVICE ------------------ **/
@@ -597,10 +601,29 @@ body.servicePage main {
 	padding: 1em;
 }
 
-.servicePageTitle h1 {
+.servicePageTitle > div {
+	flex: 1;
+}
+
+.servicePageTitle > div h1 {
 	font-size: 2.5em;
 	font-weight: 700;
-	flex: 1;
+}
+
+.servicePageTitle > div a {
+	text-decoration: none;
+	color: var(--pink);
+	position: relative;
+}
+
+.servicePageTitle > div a:after {
+	content: '';
+	width: 1.5em;
+	height: 1.5em;
+	display: inline-block;
+	background: url(img/link.svg) ;
+	position: absolute;
+	right: -2em;
 }
 
 .servicePageTitle .ctas a {
@@ -610,7 +633,7 @@ body.servicePage main {
 }
 
 .servicePageTitle .ctas a.useService {
-	background: var(--turquoise);
+	background: var(--blue);
 	color: #fff;
 	font-weight: 700;
 	font-size: 1.135em;
@@ -625,3 +648,113 @@ body.servicePage main {
 	font-size: 1.5em;
 	margin: 1em 0;
 }
+
+/**** -------------- DASHBOARD ------------ ****/ 
+
+body.dashboard {
+	display: flex;
+	align-items: stretch;
+	background: var(--lightGrey);
+}
+
+body.dashboard .mainNav {
+	background: #fff;
+	float: none;
+	width: 20%;
+	max-width: 380px;
+	border: none;
+	margin: 1em;
+	border-radius: 1em;
+	box-shadow: 
+		0px 22px 81px -11px rgba(2, 32, 57, 0.16),
+		0px 2px 2px 0 rgba(2, 32, 57, 0.07);
+}
+
+.contextNav {
+	margin-bottom: 1em
+}
+
+body.dashboard .mainNav li button {
+	padding: 0;
+}
+
+body.dashboard aside header {
+	padding: 2em;
+	border: none;
+}
+
+.userService {
+	button
+}
+
+.userService .userInformations {
+	flex: 1;
+}
+
+.userService button {
+	width: 3em;
+	height: 3em;
+	background: none;
+	border: none;
+	background-repeat: no-repeat;
+	cursor: pointer;
+	border-radius: 0.5em;
+}
+
+.userService button:hover {
+	background-color: var(--lightGrey) !important;
+}
+
+.userService button.ellipsis {
+	background: url(img/ellipsis.svg) center no-repeat;
+}
+
+.userService button.notifications {
+	background: url(img/notif.svg) center no-repeat;
+}
+
+.contextNav li:last-child {
+	flex: 1;
+	padding-right: 1em;
+	text-align: right;
+}
+
+.actAsButton {
+	cursor: pointer;
+	border-radius: 0.5em;
+}
+
+.appNav {
+	padding: 1em;
+}
+
+.appNav li {
+	padding: 1em 1em 1em 3em;
+	margin-bottom: 1em;
+	font-weight: 700;
+	text-transform: uppercase;
+	position: relative;
+}
+
+.appNav li.current {
+	background: var(--lightGrey);
+}
+
+.appNav li:before {
+	content: '';
+	display: block;
+	position: absolute;
+	height: 1em;
+	width: 1em;
+	left: 1em;
+	top: 1.25em
+}
+
+.appNav li.catalogue:before {
+	background: url(img/searchIcon.svg);
+}
+
+.appNav li.serviceOffering:before {
+	background: url(img/serviceOffering.svg);
+}
+
