@@ -2,7 +2,7 @@ import { Alert, Button, Form, Modal } from 'react-bootstrap';
 import FormulaireDonnee from './FormulaireDonnee';
 import FormulaireService from './FormulaireService';
 import { useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { addPost, getPosts } from '../../actions/post';
 import { ethers } from 'ethers';
 
