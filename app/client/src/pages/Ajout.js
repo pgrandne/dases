@@ -1,7 +1,7 @@
 import { Alert, Card, Container } from 'react-bootstrap';
 import FormulaireAjout from '../components//forms/FormulaireAjout';
 
-const Ajout = ({ didDocument, isConnected }) => {
+const Ajout = ({ did, isConnected }) => {
     return (
         <div>
             <h2>Bienvenue sur la page d'ajout de ressources</h2>
@@ -14,7 +14,7 @@ const Ajout = ({ didDocument, isConnected }) => {
                                 Vous devez vous connecter pour ajouter une ressource
                             </Alert>
                         }
-                        {isConnected && <FormulaireAjout didDocument={didDocument} />}
+                        {isConnected && <FormulaireAjout did={did} />}
                     </Card.Body>
                 </Card>
             </Container>

@@ -6,13 +6,13 @@ import { useDispatch, useSelector } from 'react-redux';
 import { addPost, getPosts } from '../../actions/post';
 import { ethers } from 'ethers';
 
-const FormulaireAjout = ({ defaultAccount }) => {
+const FormulaireAjout = ({ did }) => {
     const [typeRessource, setTypeRessource] = useState(null);
     const [title, setTitle] = useState('');
     const [description, setDescription] = useState('');
     const [content, setContent] = useState('');
     const [show, setShow] = useState(false);
-    const user = useSelector((state) => state.userReducer);
+    // const user = useSelector((state) => state.userReducer);
     const dispatch = useDispatch();
 
     const provider = new ethers.providers.Web3Provider(window.ethereum);
@@ -29,7 +29,8 @@ const FormulaireAjout = ({ defaultAccount }) => {
                 title,
                 description,
                 content,
-                author: user[0].entity
+                // author: user[0].entity
+                author: did
             };
 
             await signer.signMessage(`Signer pour publier votre ressource : ${data.title}`);
@@ -47,7 +48,7 @@ const FormulaireAjout = ({ defaultAccount }) => {
         <div>
             <Form onSubmit={(e) => handleForm(e)}>
                 <Alert variant="secondary">
-                    {user[0].name} - {user[0].entity}
+                    {/* {user[0].name} - {user[0].entity} */}
                 </Alert>
                 <Form.Group className="mb-2">
                     <Form.Label>Titre de la ressource</Form.Label>
