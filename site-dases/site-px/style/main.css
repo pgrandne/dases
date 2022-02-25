@@ -684,6 +684,7 @@ body.dashboard .mainNav {
 	float: none;
 	width: 20%;
 	max-width: 380px;
+	min-width: 320px;
 	border: none;
 	margin: 1em;
 	border-radius: 1em;
@@ -836,6 +837,12 @@ body.dashboard .main h1 img {
 	color: #fff;
 }
 
+.button.blackButton {
+	color: #fff;
+	background: var(--black);
+
+}
+
 .button.whiteButton {
 	background: #fff;
 	color: var(--black);
@@ -855,7 +862,26 @@ body.dashboard .main h1 img {
 	font-family: 'Sen', sans-serif;
 }
 
-/**** -------------- DASHBOARD ------------ ****/ 
+/**** -------------- ONBOARDING ------------ ****/ 
+
+.closeButton.fixed {
+	position: fixed;
+}
+
+.closeButton {
+	background: url(img/close.svg) left no-repeat;
+	padding-left: 2em;
+	line-height: 1.5em;
+	border: none;
+	cursor: pointer;
+	position: absolute;
+	top: 1em;
+	left: 1em;
+	font-family: 'IBM Plex Sans', sans-serif;
+	font-weight: 700;
+	font-size: 1em;
+	color: var(--black);
+}
 
 body.onboarding {
 	background: var(--lightGrey);
@@ -865,13 +891,21 @@ body.onboarding {
    justify-content: center;
 }
 
-.onboardingSelectWallet h1 {
+.onboardingStep {
+	height: 100vh;
+   justify-content: center;
+   display: flex;
+   align-items: center;
+   flex-direction: column;
+}
+
+.onboardingStep h1 {
 	text-transform: uppercase;
 	font-weight: 700;
 	padding-bottom: 2em;
 }
 
-.onboardingSelectWallet p {
+.onboardingStep p {
 	padding-bottom: 2em;
 	font-family: Sen, sans-serif;
 	width: 75%;
@@ -893,4 +927,83 @@ body.onboarding {
 	position: relative;
 	top: 0.5em;
 	margin-right: 1em
+}
+
+.onboardingStep {
+	width: 40%;
+}
+
+.onboardingStep .publicKey {
+	font-family: 'IBM Plex Sans', sans-serif;
+	color: var(--pink);
+	font-weight: 700;
+	background: #bf2ce51c;
+	padding: 1em;
+	border-radius: 0.5em;
+}
+
+.onboardingStep form {
+	padding-top: 2em;
+	width: 60%	;
+}
+
+.onboardingStep form .formGroup {
+	position: relative;
+	cursor: text;
+	padding-bottom: 1em
+}
+
+.onboardingStep form .formField {
+	border: none;
+	background: #fff;
+	font-family: 'IBM Plex Sans', sans-serif;
+	padding: 1.5em 2em 0.5em 2em;
+	border-radius: 3em;
+	line-height: 2.5;
+	width: 100%;
+	outline: 3px solid rgba(0, 0, 0, .15);
+}
+
+.onboardingStep form .formField:hover {
+	outline: 3px solid rgba(0,0,0,0.25)
+}
+
+
+.onboardingStep form .formField + .formLabel {
+	font-size: 0.75em;
+	top: 0.5em;	
+	left: 2.2em;
+	color: var(--pink);
+	position: absolute;
+	transition: all 0.2s;
+}
+
+.onboardingStep form .formField:placeholder-shown + .formLabel {
+	left: 1.5em;
+	top: 1.25em;
+	cursor: text;
+	font-size: 1em;
+	color: rgba(0, 0, 0, .6);
+	font-weight: 700
+}
+
+.onboardingStep form .formField::placeholder {
+	color: transparent;
+}
+
+.onboardingStep form .formField:focus {
+	outline-color: var(--black);
+}
+
+
+.onboardingStep form .formField:focus + .formLabel{
+	outline: none;
+	font-size: 0.75em;
+	top: 0.5em;	
+	left: 2.2em;
+	color: var(--pink);
+}
+
+.onboardingStep form input[type=submit] {
+	width: 100%;
 }
