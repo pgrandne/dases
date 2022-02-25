@@ -1,0 +1,113 @@
+<html>
+	<head>
+		<link rel="stylesheet" href="style/main.css">
+		<meta charset="utf-8">
+		<link rel="icon" type="image/svg" href="faviconpx.svg" />
+		<title>Mon offre</title>
+	</head>
+	<body class="dashboard serviceOffering">
+
+
+		<aside class="mainNav">	
+
+			<header>	
+
+				<ul class="contextNav flex row wrap center">
+					<li>
+						<button class="mainLogo">
+							<img src="faviconpx.svg" alt="">
+						</button>
+					</li>
+					<li>
+						<button class="userLogo alert">
+							<img src="assets/entityUnKnown.svg" alt="">
+						</button>
+					</li>
+					<li>
+						Dashboard
+					</li>
+				</ul>
+
+				<ul class="actAsButton userService flex row center">
+					<li class="userInformations">
+						<strong>Jean-Marie Gilliot </strong><br>
+						<span class="didNumber">DIDdg8f7754d4g</span>
+					</li>
+					<li>
+						<button class="ellipsis"></button>
+						<ul>
+							<li>Mes informations</li>
+							<li>Déconnexion</li>
+						</ul>
+					</li>
+					<li>
+						<button class="notifications"></button>
+					</li>
+				</div>
+			</header>	
+
+			<nav class="appNav">
+				<ul class="flex column">
+					<li class="actAsButton serviceOffering current">
+						Mon offre
+					</li>
+					<li class="actAsButton catalogue">
+						Catalogue
+					</li>
+				</ul>
+			</nav>
+
+		</aside>
+
+		<section class="main flex column flex-1">	
+
+			<ul class="breadcrumb flex">
+				<li class="back"><a href="index.html">retour</a></li>
+				<li><a href="index.html">dashboard</a></li>
+				<li><a href="index.html">mon offre</a></li>
+				<li class="current"><a href="index.html">ajout de ressource</a></li>
+			</ul>
+
+			<div class="sectionContent empty flex column center">
+				
+				<ul class="addProgression">
+					<li></li>
+					<li class="sep"></li>
+					<li></li>
+					<li class="sep"></li>
+					<li></li>
+				</ul>
+				
+				<form class="form flex column" action="">
+
+					<div class="formGroup field">
+						<input type="input" class="formField" placeholder="Titre de votre ressource" name="name" id='resourceName' required />
+						<label for="resourceName" class="formLabel">Titre de votre ressource</label>
+					</div>
+
+					<fieldset class="formGroup radio flex">
+
+						<legend>Quel type de ressource souhaitez-vous partager ?</legend>
+
+						<div>
+							<input type="radio" class="formField" placeholder="Type de ressource" name="name" id='resourceType' value="isDataset" required />
+							<label for="resourceType" class="button actAsButton radioLabel">Données</label>
+						</div>
+						
+						<div>
+							<input type="radio" class="formField" placeholder="Type de ressource" name="name" id='resourceType' value="isService" required />
+							<label for="resourceType" class="button actAsButton radioLabel">Service</label>
+						</div>
+
+					</fieldset>
+
+
+				</form>
+
+			</div>
+
+		</section>	
+
+		
+	</body>
+</html>

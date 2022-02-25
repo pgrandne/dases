@@ -942,18 +942,18 @@ body.onboarding {
 	border-radius: 0.5em;
 }
 
-.onboardingStep form {
+.form {
 	padding-top: 2em;
 	width: 60%	;
 }
 
-.onboardingStep form .formGroup {
+.form .formGroup {
 	position: relative;
 	cursor: text;
 	padding-bottom: 1em
 }
 
-.onboardingStep form .formField {
+.form .formField {
 	border: none;
 	background: #fff;
 	font-family: 'IBM Plex Sans', sans-serif;
@@ -964,12 +964,12 @@ body.onboarding {
 	outline: 3px solid rgba(0, 0, 0, .15);
 }
 
-.onboardingStep form .formField:hover {
+.form .formField:hover {
 	outline: 3px solid rgba(0,0,0,0.25)
 }
 
 
-.onboardingStep form .formField + .formLabel {
+.form .formField + .formLabel {
 	font-size: 0.75em;
 	top: 0.5em;	
 	left: 2.2em;
@@ -978,7 +978,7 @@ body.onboarding {
 	transition: all 0.2s;
 }
 
-.onboardingStep form .formField:placeholder-shown + .formLabel {
+.form .formField:placeholder-shown + .formLabel {
 	left: 1.5em;
 	top: 1.25em;
 	cursor: text;
@@ -987,16 +987,16 @@ body.onboarding {
 	font-weight: 700
 }
 
-.onboardingStep form .formField::placeholder {
+.form .formField::placeholder {
 	color: transparent;
 }
 
-.onboardingStep form .formField:focus {
+.form .formField:focus {
 	outline-color: var(--black);
 }
 
 
-.onboardingStep form .formField:focus + .formLabel{
+.form .formField:focus + .formLabel{
 	outline: none;
 	font-size: 0.75em;
 	top: 0.5em;	
@@ -1004,6 +1004,25 @@ body.onboarding {
 	color: var(--pink);
 }
 
-.onboardingStep form input[type=submit] {
+.form input[type=submit] {
 	width: 100%;
+}
+
+.form .formGroup.radio input[type=radio] {
+	visibility: hidden;
+}
+
+.form .formGroup.radio .radioLabel {
+	background: #fff;
+}
+
+.form .formGroup.radio input[type=radio]:focus + .radioLabel {
+	background: ;
+}
+
+fieldset legend {
+	text-align: left;
+	text-transform: uppercase;
+	font-weight: 700;
+	color: var(--black);
 }
