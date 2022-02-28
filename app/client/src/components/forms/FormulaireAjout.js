@@ -3,7 +3,7 @@ import FormulaireDonnee from './FormulaireDonnee';
 import FormulaireService from './FormulaireService';
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { addPost, getPosts } from '../../actions/post';
+import { addSd, getSds } from '../../actions/sd';
 import { ethers } from 'ethers';
 
 const FormulaireAjout = ({ did }) => {
@@ -34,11 +34,11 @@ const FormulaireAjout = ({ did }) => {
             };
 
             await signer.signMessage(`Signer pour publier votre ressource : ${data.title}`);
-            await dispatch(addPost(data));
+            await dispatch(addSd(data));
             setTitle('');
             setContent('');
             setDescription('');
-            dispatch(getPosts());
+            dispatch(getSds());
             handleShow();
 
         }

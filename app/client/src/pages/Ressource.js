@@ -4,7 +4,7 @@ import Post from '../components/Post';
 import { isEmpty } from '../components/Utils';
 
 const Ressource = () => {
-    const posts = useSelector((state) => state.postReducer);
+    const posts = useSelector((state) => state.sdReducer);
 
     return (
         <div>

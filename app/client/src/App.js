@@ -11,6 +11,7 @@ import Acces from './pages/Acces';
 const App = () => {
   const [did, setDid] = useState({});
   const [isConnected, setConnectedState] = useState(false);
+  const [vc, setVc] = useState({});
 
   return (
     <div className="App">
@@ -19,11 +20,14 @@ const App = () => {
         setDid={setDid}
         isConnected={isConnected}
         setConnectedState={setConnectedState}
+        vc={vc}
+        setVc={setVc}
       />
       <Routes>
         <Route path="/" element={<Accueil
-          did={setDid}
+          did={did}
           isConnected={isConnected}
+          vc={vc}
         />}
         />
         <Route path="ajout" element={<Ajout

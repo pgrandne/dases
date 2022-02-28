@@ -1,7 +1,7 @@
 import { Alert, Button, Card, Container, Form, Modal } from 'react-bootstrap';
 import { useState } from 'react';
 import { ethers } from 'ethers';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { addUser } from '../actions/user';
 // import { ethers } from 'ethers';
 
@@ -13,12 +13,28 @@ const Acces = ({ did, isConnected }) => {
     const [show, setShow] = useState(false);
     const [noMissingField, setNomissingField] = useState(true);
 
-    const handleClose = () => setShow(false);
+    const handleClose = () => {
+        setShow(false);
+        window.location.href = '/';
+    }
     const handleShow = () => setShow(true);
     const dispatch = useDispatch();
 
     const provider = new ethers.providers.Web3Provider(window.ethereum);
     const signer = provider.getSigner();
+
+    const usersList = useSelector((state) => state.userReducer);
+
+
+    const testUser = async (e) => {
+        console.log(did.did);
+
+
+        let currentUser = usersList.filter(test => (test.did === did.did))
+        console.log(currentUser);
+
+
+    };
 
 
     const handleForm = async (e) => {
@@ -35,17 +51,18 @@ const Acces = ({ did, isConnected }) => {
             await signer.signMessage(`Signer pour faire votre demande d'accès:\n${data.did}\nNom : ${data.name}\nOrganisme : ${data.entity}\nEmail : ${data.email}`);
             await dispatch(addUser(data));
             handleShow();
-        }
-        else {
+        } else {
             setNomissingField(false);
         }
-
     }
 
 
     return (
         <div>
             <h2>Bienvenue sur la page de demande d'accès</h2>
+            <Button variant="primary" onClick={testUser}>
+                Voir l'utilisateur
+            </Button>
             <Container>
                 <Card>
                     {noMissingField && <Card.Header>Veuillez remplir le formulaire</Card.Header>}
@@ -92,7 +109,7 @@ const Acces = ({ did, isConnected }) => {
                 <Modal.Header closeButton>
                     <Modal.Title>Votre demande a bien été transmise</Modal.Title>
                 </Modal.Header>
-                <Modal.Body>Vous recevrez un email de confirmation lorsque votre identité aura été vérifiée et confirmée</Modal.Body>
+                <Modal.Body>Votre identité a bien été créée</Modal.Body>
                 <Modal.Footer>
                     <Button variant="primary" onClick={handleClose}>
                         Close

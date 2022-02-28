@@ -5,12 +5,16 @@ import { EthrDID } from 'ethr-did';
 import { Resolver } from 'did-resolver';
 import { getResolver } from 'ethr-did-resolver';
 import { Link } from 'react-router-dom';
+import { useSelector } from 'react-redux';
+import { verifyCredential } from 'did-jwt-vc';
 
 const Connexion = ({
     did,
     setDid,
     isConnected,
-    setConnectedState }) => {
+    setConnectedState,
+    vc,
+    setVc }) => {
     const [connectionText, setConnectionText] = useState('Se connecter');
     const [buttonColor, setButtonColor] = useState('primary');
     const [showNoMetamask, setShowNoMetamask] = useState(false);
@@ -19,6 +23,8 @@ const Connexion = ({
     const handleClose = () => setShowNoMetamask(false);
     const handleShow = () => setShowNoMetamask(true);
 
+    const usersList = useSelector((state) => state.userReducer);
+
     const vcClose = () => {
         setVerifiableCredential(false);
 
@@ -26,35 +32,38 @@ const Connexion = ({
     const vcShow = () => setVerifiableCredential(true);
 
     const connectHandler = async () => {
-        if (window.ethereum) {
+        if (isConnected) {
+            setConnectedState(false);
+            setConnectionText('Se connecter');
+            setButtonColor('primary');
+        } else if (window.ethereum) {
             const provider = new ethers.providers.Web3Provider(window.ethereum);
             await provider.send("eth_requestAccounts", []);
             const signer = provider.getSigner();
             const accounts = await provider.listAccounts();
-            const chainNameOrId = (await provider.getNetwork()).chainId
-            const ethrDid = new EthrDID({ identifier: accounts[0], provider, chainNameOrId })
-            const rpcUrl = "https://rinkeby.infura.io/v3/d541faa3a3b74d409e82828b772fce9e";
-            const didResolver = new Resolver(getResolver({ rpcUrl, name: "rinkeby" }));
-            console.log(didResolver);
-            //const didDoc = JSON.stringify((await didResolver.resolve(ethrDid.did)).didDocument);
-
-            if (isConnected) {
-                setConnectedState(false);
-                setConnectionText('Se connecter');
-                setButtonColor('primary');
-            } else {
-                await signer.signMessage("Signature pour s'authentifier sur le proto de portail");
-                console.log(ethrDid);
-                setButtonColor('success');
-                setDid(ethrDid);
-                setConnectedState(true);
-                setConnectionText(ethrDid.address);
-                console.log(ethrDid);
-                vcShow();
-
+            // const chainNameOrId = (await provider.getNetwork()).chainId;
+            const ethrDid = new EthrDID({ identifier: accounts[0], provider, chainNameOrId: 'rinkeby' });
+            const providerConfig = {
+                rpcUrl: 'https://rinkeby.infura.io/v3/d541faa3a3b74d409e82828b772fce9e',
+                registry: '0xdca7ef03e98e0dc2b855be647c39abe984fcf21b',
+                name: 'rinkeby'
             }
-        }
-        else {
+
+            const didResolver = new Resolver(getResolver(providerConfig));
+
+            await signer.signMessage(`Signature pour s'authentifier sur le proto de portail\navec la ${ethrDid.did}`);
+            setDid(ethrDid);
+            const currentUser = await usersList.filter(users => (users.did === ethrDid.did))
+            if (currentUser[0] != null) {
+                setConnectionText(ethrDid.address);
+                const verifiedVC = await verifyCredential(currentUser[0].vcJwt, didResolver);
+                setVc(verifiedVC.verifiableCredential);
+                setButtonColor('success');
+                setConnectedState(true);
+            } else {
+                vcShow();
+            }
+        } else {
             console.log('Pas de Metamask');
             handleShow();
             setConnectedState(false);
@@ -95,3 +104,6 @@ const Connexion = ({
 };
 
 export default Connexion;
+
+
+

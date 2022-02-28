@@ -2,7 +2,7 @@ import { Navbar, Container, Nav } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import Connexion from './Connexion';
 
-const NavbarComp = ({ did, setDid, isConnected, setConnectedState }) => {
+const NavbarComp = ({ did, setDid, isConnected, setConnectedState, vc, setVc }) => {
   return (
     <Navbar bg="dark" variant="dark" expand="lg">
       <Container>
@@ -20,6 +20,8 @@ const NavbarComp = ({ did, setDid, isConnected, setConnectedState }) => {
           setDid={setDid}
           isConnected={isConnected}
           setConnectedState={setConnectedState}
+          vc={vc}
+          setVc={setVc}
         />
       </Container>
     </Navbar>
