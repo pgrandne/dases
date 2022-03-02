@@ -1,9 +1,8 @@
 import { Alert, Button, Card, Container, Form, Modal } from 'react-bootstrap';
 import { useState } from 'react';
 import { ethers } from 'ethers';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { addUser } from '../actions/user';
-// import { ethers } from 'ethers';
 
 
 const Acces = ({ did, isConnected }) => {
@@ -22,20 +21,6 @@ const Acces = ({ did, isConnected }) => {
 
     const provider = new ethers.providers.Web3Provider(window.ethereum);
     const signer = provider.getSigner();
-
-    const usersList = useSelector((state) => state.userReducer);
-
-
-    const testUser = async (e) => {
-        console.log(did.did);
-
-
-        let currentUser = usersList.filter(test => (test.did === did.did))
-        console.log(currentUser);
-
-
-    };
-
 
     const handleForm = async (e) => {
         e.preventDefault();
@@ -60,9 +45,6 @@ const Acces = ({ did, isConnected }) => {
     return (
         <div>
             <h2>Bienvenue sur la page de demande d'accès</h2>
-            <Button variant="primary" onClick={testUser}>
-                Voir l'utilisateur
-            </Button>
             <Container>
                 <Card>
                     {noMissingField && <Card.Header>Veuillez remplir le formulaire</Card.Header>}
@@ -119,7 +101,5 @@ const Acces = ({ did, isConnected }) => {
         </div >
     );
 }
-
-
 
 export default Acces;

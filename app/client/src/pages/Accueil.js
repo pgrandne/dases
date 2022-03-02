@@ -22,9 +22,9 @@ const downloadVc = () => {
             {isConnected && <p>Votre DID : {vc.credentialSubject.id} </p>}
             {isConnected && <p>L'émetteur du certificat : {vc.issuer.id} </p>}
             {isConnected && <p>Les informations du certificat :</p>}
-            {isConnected && <p>Nom : {vc.credentialSubject.degree.name} </p>}
-            {isConnected && <p>Organisme : {vc.credentialSubject.degree.entity} </p>}
-            {isConnected && <p>Courriel : {vc.credentialSubject.degree.email} </p>}
+            {isConnected && <p>Nom : {vc.credentialSubject.name} </p>}
+            {isConnected && <p>Organisme : {vc.credentialSubject.entity} </p>}
+            {isConnected && <p>Courriel : {vc.credentialSubject.email} </p>}
             {!isConnected && <p>Merci de vous connecter</p>}
             {isConnected && <Button variant='primary' onClick={downloadVc}>Télécharger son certificat</Button>}
         </div>
