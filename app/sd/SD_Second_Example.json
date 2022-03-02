@@ -1,0 +1,28 @@
+{
+  "credentialSubject": {
+    "type": "service",
+    "title": "Deuxième ressource",
+    "author": "Perrin GRANDNE",
+    "authorDid": "did:ethr:rinkeby:0xC8439b4a2a6ca01853a8e0597177b599AF2fF3Bf",
+    "entity": "MENJS",
+    "description": "Description de la deuxième ressource pour le MENJS",
+    "licence": "gpl",
+    "documentation": "https://github.com/pgrandne",
+    "api": "https://github.com/pgrandne/dases",
+    "id": "did:ethr:rinkeby:0xC8439b4a2a6ca01853a8e0597177b599AF2fF3Bf"
+  },
+  "issuer": {
+    "id": "did:ethr:rinkeby:0xc5A75ba87876b237265b05F848160f54d36Ca065"
+  },
+  "type": [
+    "VerifiableCredential",
+    "Self-Description"
+  ],
+  "@context": [
+    "https://www.w3.org/2018/credentials/v1"
+  ],
+  "proof": {
+    "type": "JwtProof2020",
+    "jwt": "eyJhbGciOiJFUzI1NkstUiIsInR5cCI6IkpXVCJ9.eyJ2YyI6eyJAY29udGV4dCI6WyJodHRwczovL3d3dy53My5vcmcvMjAxOC9jcmVkZW50aWFscy92MSJdLCJ0eXBlIjpbIlZlcmlmaWFibGVDcmVkZW50aWFsIiwiU2VsZi1EZXNjcmlwdGlvbiJdLCJjcmVkZW50aWFsU3ViamVjdCI6eyJ0eXBlIjoic2VydmljZSIsInRpdGxlIjoiRGV1eGnDqG1lIHJlc3NvdXJjZSIsImF1dGhvciI6IlBlcnJpbiBHUkFORE5FIiwiYXV0aG9yRGlkIjoiZGlkOmV0aHI6cmlua2VieToweEM4NDM5YjRhMmE2Y2EwMTg1M2E4ZTA1OTcxNzdiNTk5QUYyZkYzQmYiLCJlbnRpdHkiOiJNRU5KUyIsImRlc2NyaXB0aW9uIjoiRGVzY3JpcHRpb24gZGUgbGEgZGV1eGnDqG1lIHJlc3NvdXJjZSBwb3VyIGxlIE1FTkpTIiwibGljZW5jZSI6ImdwbCIsImRvY3VtZW50YXRpb24iOiJodHRwczovL2dpdGh1Yi5jb20vcGdyYW5kbmUiLCJhcGkiOiJodHRwczovL2dpdGh1Yi5jb20vcGdyYW5kbmUvZGFzZXMifX0sInN1YiI6ImRpZDpldGhyOnJpbmtlYnk6MHhDODQzOWI0YTJhNmNhMDE4NTNhOGUwNTk3MTc3YjU5OUFGMmZGM0JmIiwiaXNzIjoiZGlkOmV0aHI6cmlua2VieToweGM1QTc1YmE4Nzg3NmIyMzcyNjViMDVGODQ4MTYwZjU0ZDM2Q2EwNjUifQ.AyFKPPS056YJKO30iccEvJhRPKnwv_veM8Ga5gOsUSXBLle7cfEbob3L10CJGQwOW7cFkPZIuq_cTLEpgcC5NwA"
+  }
+}
