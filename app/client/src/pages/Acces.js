@@ -109,7 +109,7 @@ const Acces = ({ did, isConnected }) => {
                 <Modal.Header closeButton>
                     <Modal.Title>Votre demande a bien été transmise</Modal.Title>
                 </Modal.Header>
-                <Modal.Body>Votre identité a bien été créée</Modal.Body>
+                <Modal.Body>Votre identité a bien été créée, vous pouvez maintenant vous connecter</Modal.Body>
                 <Modal.Footer>
                     <Button variant="primary" onClick={handleClose}>
                         Close

@@ -55,8 +55,8 @@ const Connexion = ({
             setDid(ethrDid);
             const currentUser = await usersList.filter(users => (users.did === ethrDid.did))
             if (currentUser[0] != null) {
-                setConnectionText(ethrDid.address);
                 const verifiedVC = await verifyCredential(currentUser[0].vcJwt, didResolver);
+                setConnectionText(ethrDid.address);
                 setVc(verifiedVC.verifiableCredential);
                 setButtonColor('success');
                 setConnectedState(true);

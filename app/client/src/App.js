@@ -32,6 +32,7 @@ const App = () => {
         />
         <Route path="ajout" element={<Ajout
           did={did}
+          vc={vc}
           isConnected={isConnected}
         />} />
         <Route path="ressource" element={<Ressource />} />

@@ -6,7 +6,7 @@ import { useDispatch } from 'react-redux';
 import { addSd, getSds } from '../../actions/sd';
 import { ethers } from 'ethers';
 
-const FormulaireAjout = ({ did }) => {
+const FormulaireAjout = ({ vc }) => {
     const [typeRessource, setTypeRessource] = useState(null);
     const [title, setTitle] = useState('');
     const [description, setDescription] = useState('');
@@ -21,6 +21,8 @@ const FormulaireAjout = ({ did }) => {
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
 
+    console.log(vc.credentialSubject.degree.name)
+
     const handleForm = async (e) => {
         e.preventDefault();
 
@@ -30,7 +32,7 @@ const FormulaireAjout = ({ did }) => {
                 description,
                 content,
                 // author: user[0].entity
-                author: did
+                author: vc.credentialSubject.degree.entity
             };
 
             await signer.signMessage(`Signer pour publier votre ressource : ${data.title}`);
@@ -48,7 +50,7 @@ const FormulaireAjout = ({ did }) => {
         <div>
             <Form onSubmit={(e) => handleForm(e)}>
                 <Alert variant="secondary">
-                    {/* {user[0].name} - {user[0].entity} */}
+                    {vc.credentialSubject.degree.name} - {vc.credentialSubject.degree.entity}
                 </Alert>
                 <Form.Group className="mb-2">
                     <Form.Label>Titre de la ressource</Form.Label>
@@ -96,8 +98,8 @@ const FormulaireAjout = ({ did }) => {
                         onClick={() => setTypeRessource('service')}
                     />
                 </Form.Group>
-                {typeRessource === 'donnees' && <FormulaireDonnee />}
-                {typeRessource === 'service' && <FormulaireService />}
+                {/* {typeRessource === 'donnees' && <FormulaireDonnee />}
+                {typeRessource === 'service' && <FormulaireService />} */}
                 <br />
                 <Button type="submit">Valider</Button>
                 <br /><br />
