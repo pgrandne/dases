@@ -15,6 +15,8 @@ const Post = ({ post }) => {
                         <Card.Title>{post.title}</Card.Title>
                         <Card.Text>
                             {post.description}
+                            <p></p>
+                            {post.sdJwt}
                         </Card.Text>
                     </Card.Body>
                 </Card>
@@ -23,7 +25,7 @@ const Post = ({ post }) => {
                 <Modal.Header closeButton>
                     <Modal.Title>{post.title}</Modal.Title>
                 </Modal.Header>
-                <Modal.Body>{post.content}</Modal.Body>
+                <Modal.Body>{post.content} </Modal.Body>
                 <Modal.Footer>
                     <Button variant="primary" onClick={handleClose}>
                         Demande l'usage
