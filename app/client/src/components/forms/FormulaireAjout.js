@@ -1,44 +1,51 @@
 import { Alert, Button, Form, Modal } from 'react-bootstrap';
-import FormulaireDonnee from './FormulaireDonnee';
-import FormulaireService from './FormulaireService';
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { addPost, getPosts } from '../../actions/post';
+import { addSd, getSds } from '../../actions/sd';
 import { ethers } from 'ethers';
 
-const FormulaireAjout = ({ did }) => {
+const FormulaireAjout = ({ vc }) => {
     const [typeRessource, setTypeRessource] = useState(null);
     const [title, setTitle] = useState('');
     const [description, setDescription] = useState('');
-    const [content, setContent] = useState('');
     const [show, setShow] = useState(false);
-    // const user = useSelector((state) => state.userReducer);
     const dispatch = useDispatch();
+    const [licence, setLicence] = useState('apache');
+    const [urldoc, setUrldoc] = useState('');
+    const [urlapi, setUrlapi] = useState('');
 
     const provider = new ethers.providers.Web3Provider(window.ethereum);
     const signer = provider.getSigner();
 
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
+    const handleLicence = (e) => setLicence(e.target.value)
+
+    console.log(vc.credentialSubject.name)
+    console.log(vc)
 
     const handleForm = async (e) => {
         e.preventDefault();
 
-        if (title && content) {
+        if (title && description) {
             const data = {
+                author: vc.credentialSubject.name,
+                authorDid: vc.credentialSubject.id,
+                entity: vc.credentialSubject.entity,
                 title,
                 description,
-                content,
-                // author: user[0].entity
-                author: did
+                typeRessource,
+                licence,
+                urldoc,
+                urlapi
             };
 
             await signer.signMessage(`Signer pour publier votre ressource : ${data.title}`);
-            await dispatch(addPost(data));
+            await dispatch(addSd(data));
             setTitle('');
-            setContent('');
             setDescription('');
-            dispatch(getPosts());
+
+            dispatch(getSds());
             handleShow();
 
         }
@@ -48,7 +55,7 @@ const FormulaireAjout = ({ did }) => {
         <div>
             <Form onSubmit={(e) => handleForm(e)}>
                 <Alert variant="secondary">
-                    {/* {user[0].name} - {user[0].entity} */}
+                    {vc.credentialSubject.name} - {vc.credentialSubject.entity}
                 </Alert>
                 <Form.Group className="mb-2">
                     <Form.Label>Titre de la ressource</Form.Label>
@@ -60,7 +67,7 @@ const FormulaireAjout = ({ did }) => {
                     />
                 </Form.Group>
                 <Form.Group className="mb-2">
-                    <Form.Label>Description de la ressource (self-description)</Form.Label>
+                    <Form.Label>Description de la ressource</Form.Label>
                     <Form.Control
                         type="string"
                         placeholder="Décrivez votre ressource"
@@ -69,16 +76,7 @@ const FormulaireAjout = ({ did }) => {
                     />
                 </Form.Group>
                 <Form.Group className="mb-2">
-                    <Form.Label>Informations sur la ressource</Form.Label>
-                    <Form.Control
-                        type="string"
-                        placeholder="Indiquez les informations liées à votre ressource"
-                        value={content}
-                        onChange={(e) => setContent(e.target.value)}
-                    />
-                </Form.Group>
-                <Form.Group className="mb-2">
-                    <p>Quelle ressource voulez-vous ajouter ?</p>
+                    <p>Quelle ressource voulez-vous partager ?</p>
                     <Form.Check
                         inline
                         type="radio"
@@ -96,8 +94,32 @@ const FormulaireAjout = ({ did }) => {
                         onClick={() => setTypeRessource('service')}
                     />
                 </Form.Group>
-                {typeRessource === 'donnees' && <FormulaireDonnee />}
-                {typeRessource === 'service' && <FormulaireService />}
+                <Form.Group className="mb-2">
+                    <Form.Label>Choisir la licence</Form.Label>
+                    <Form.Select onChange={handleLicence}>
+                        <option value="apache">Apache 2.0</option>
+                        <option value="gpl">GPL 3.0</option>
+                        <option value="mit">MIT</option>
+                    </Form.Select>
+                </Form.Group>
+                <Form.Group className="mb-2">
+                    <Form.Label>URL de la documentation</Form.Label>
+                    <Form.Control
+                        type="string"
+                        placeholder="https://"
+                        value={urldoc}
+                        onChange={(e) => setUrldoc(e.target.value)}
+                    />
+                </Form.Group>
+                <Form.Group className="mb-2">
+                    <Form.Label>URL de l'API</Form.Label>
+                    <Form.Control
+                        type="string"
+                        placeholder="https://"
+                        value={urlapi}
+                        onChange={(e) => setUrlapi(e.target.value)}
+                    />
+                </Form.Group>
                 <br />
                 <Button type="submit">Valider</Button>
                 <br /><br />
@@ -114,7 +136,7 @@ const FormulaireAjout = ({ did }) => {
                     </Button>
                 </Modal.Footer>
             </Modal>
-        </div>
+        </div >
 
     );
 }

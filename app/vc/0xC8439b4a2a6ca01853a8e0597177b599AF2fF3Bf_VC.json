@@ -1,0 +1,23 @@
+{
+  "credentialSubject": {
+    "type": "Certificat Participant DASES",
+    "id": "did:ethr:rinkeby:0xC8439b4a2a6ca01853a8e0597177b599AF2fF3Bf",
+    "name": "Perrin GRANDNE",
+    "entity": "MENJS",
+    "email": "perrin.grandne@education.gouv.fr"
+  },
+  "issuer": {
+    "id": "did:ethr:rinkeby:0xc5A75ba87876b237265b05F848160f54d36Ca065"
+  },
+  "type": [
+    "VerifiableCredential",
+    "Participant"
+  ],
+  "@context": [
+    "https://www.w3.org/2018/credentials/v1"
+  ],
+  "proof": {
+    "type": "JwtProof2020",
+    "jwt": "eyJhbGciOiJFUzI1NkstUiIsInR5cCI6IkpXVCJ9.eyJ2YyI6eyJAY29udGV4dCI6WyJodHRwczovL3d3dy53My5vcmcvMjAxOC9jcmVkZW50aWFscy92MSJdLCJ0eXBlIjpbIlZlcmlmaWFibGVDcmVkZW50aWFsIiwiUGFydGljaXBhbnQiXSwiY3JlZGVudGlhbFN1YmplY3QiOnsidHlwZSI6IkNlcnRpZmljYXQgUGFydGljaXBhbnQgREFTRVMiLCJpZCI6ImRpZDpldGhyOnJpbmtlYnk6MHhDODQzOWI0YTJhNmNhMDE4NTNhOGUwNTk3MTc3YjU5OUFGMmZGM0JmIiwibmFtZSI6IlBlcnJpbiBHUkFORE5FIiwiZW50aXR5IjoiTUVOSlMiLCJlbWFpbCI6InBlcnJpbi5ncmFuZG5lQGVkdWNhdGlvbi5nb3V2LmZyIn19LCJzdWIiOiJkaWQ6ZXRocjpyaW5rZWJ5OjB4Qzg0MzliNGEyYTZjYTAxODUzYThlMDU5NzE3N2I1OTlBRjJmRjNCZiIsImlzcyI6ImRpZDpldGhyOnJpbmtlYnk6MHhjNUE3NWJhODc4NzZiMjM3MjY1YjA1Rjg0ODE2MGY1NGQzNkNhMDY1In0.0Y-m3f8g8mMeCJscVD63nXRT_BOA50vxVU3gniFQsmhFhJG0nR_Zp_Wus55jG1Ie-uWtPu8G_PqGGNa55pMvrgE"
+  }
+}

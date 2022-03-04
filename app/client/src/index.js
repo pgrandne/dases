@@ -7,17 +7,21 @@ import thunk from 'redux-thunk';
 import reducers from './reducers'
 import './index.css';
 import App from './App';
-import { getPosts } from './actions/post';
+import { getSds } from './actions/sd';
+import { getUser } from './actions/user';
 
 const store = createStore(reducers, compose(applyMiddleware(thunk)));
-store.dispatch(getPosts());
+store.dispatch(getSds());
+store.dispatch(getUser());
 
 ReactDOM.render(
-  <Provider store={store}>
-    <BrowserRouter>
-      <App />
-    </BrowserRouter>
-  </Provider>,
-  document.getElementById('root')
+  <div>
+    <Provider store={store}>
+      <BrowserRouter>
+        <App />
+      </BrowserRouter>
+    </Provider>
+  </div>,
+    document.getElementById('root')
 );
 

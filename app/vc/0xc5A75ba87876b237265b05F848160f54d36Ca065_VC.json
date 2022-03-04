@@ -1,0 +1,23 @@
+{
+  "credentialSubject": {
+    "type": "Certificat Participant DASES",
+    "id": "did:ethr:rinkeby:0xc5A75ba87876b237265b05F848160f54d36Ca065",
+    "name": "Admin DASES",
+    "entity": "DASES",
+    "email": "admin@dases.org"
+  },
+  "issuer": {
+    "id": "did:ethr:rinkeby:0xc5A75ba87876b237265b05F848160f54d36Ca065"
+  },
+  "type": [
+    "VerifiableCredential",
+    "Participant"
+  ],
+  "@context": [
+    "https://www.w3.org/2018/credentials/v1"
+  ],
+  "proof": {
+    "type": "JwtProof2020",
+    "jwt": "eyJhbGciOiJFUzI1NkstUiIsInR5cCI6IkpXVCJ9.eyJ2YyI6eyJAY29udGV4dCI6WyJodHRwczovL3d3dy53My5vcmcvMjAxOC9jcmVkZW50aWFscy92MSJdLCJ0eXBlIjpbIlZlcmlmaWFibGVDcmVkZW50aWFsIiwiUGFydGljaXBhbnQiXSwiY3JlZGVudGlhbFN1YmplY3QiOnsidHlwZSI6IkNlcnRpZmljYXQgUGFydGljaXBhbnQgREFTRVMiLCJpZCI6ImRpZDpldGhyOnJpbmtlYnk6MHhjNUE3NWJhODc4NzZiMjM3MjY1YjA1Rjg0ODE2MGY1NGQzNkNhMDY1IiwibmFtZSI6IkFkbWluIERBU0VTIiwiZW50aXR5IjoiREFTRVMiLCJlbWFpbCI6ImFkbWluQGRhc2VzLm9yZyJ9fSwic3ViIjoiZGlkOmV0aHI6cmlua2VieToweGM1QTc1YmE4Nzg3NmIyMzcyNjViMDVGODQ4MTYwZjU0ZDM2Q2EwNjUiLCJpc3MiOiJkaWQ6ZXRocjpyaW5rZWJ5OjB4YzVBNzViYTg3ODc2YjIzNzI2NWIwNUY4NDgxNjBmNTRkMzZDYTA2NSJ9.y9UolACcXhwVq27qW-qlPOiYLxYRZyLzPPZS5VHmXt-Lmh9-ULjhkZNseRJaG6ATL1SXsPcond5aV91tWw2aXAA"
+  }
+}

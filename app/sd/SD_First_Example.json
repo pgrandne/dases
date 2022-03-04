@@ -1,0 +1,28 @@
+{
+  "credentialSubject": {
+    "type": "donnees",
+    "title": "Ressource fournie par le MENJS",
+    "author": "Perrin GRANDNE",
+    "authorDid": "did:ethr:rinkeby:0xC8439b4a2a6ca01853a8e0597177b599AF2fF3Bf",
+    "entity": "MENJS",
+    "description": "Cette première ressource est un test de ressource",
+    "licence": "apache",
+    "documentation": "https://github.com/pgrandne",
+    "api": "https://github.com/pgrandne/dases",
+    "id": "did:ethr:rinkeby:0xC8439b4a2a6ca01853a8e0597177b599AF2fF3Bf"
+  },
+  "issuer": {
+    "id": "did:ethr:rinkeby:0xc5A75ba87876b237265b05F848160f54d36Ca065"
+  },
+  "type": [
+    "VerifiableCredential",
+    "Self-Description"
+  ],
+  "@context": [
+    "https://www.w3.org/2018/credentials/v1"
+  ],
+  "proof": {
+    "type": "JwtProof2020",
+    "jwt": "eyJhbGciOiJFUzI1NkstUiIsInR5cCI6IkpXVCJ9.eyJ2YyI6eyJAY29udGV4dCI6WyJodHRwczovL3d3dy53My5vcmcvMjAxOC9jcmVkZW50aWFscy92MSJdLCJ0eXBlIjpbIlZlcmlmaWFibGVDcmVkZW50aWFsIiwiU2VsZi1EZXNjcmlwdGlvbiJdLCJjcmVkZW50aWFsU3ViamVjdCI6eyJ0eXBlIjoiZG9ubmVlcyIsInRpdGxlIjoiUmVzc291cmNlIGZvdXJuaWUgcGFyIGxlIE1FTkpTIiwiYXV0aG9yIjoiUGVycmluIEdSQU5ETkUiLCJhdXRob3JEaWQiOiJkaWQ6ZXRocjpyaW5rZWJ5OjB4Qzg0MzliNGEyYTZjYTAxODUzYThlMDU5NzE3N2I1OTlBRjJmRjNCZiIsImVudGl0eSI6Ik1FTkpTIiwiZGVzY3JpcHRpb24iOiJDZXR0ZSBwcmVtacOocmUgcmVzc291cmNlIGVzdCB1biB0ZXN0IGRlIHJlc3NvdXJjZSIsImxpY2VuY2UiOiJhcGFjaGUiLCJkb2N1bWVudGF0aW9uIjoiaHR0cHM6Ly9naXRodWIuY29tL3BncmFuZG5lIiwiYXBpIjoiaHR0cHM6Ly9naXRodWIuY29tL3BncmFuZG5lL2Rhc2VzIn19LCJzdWIiOiJkaWQ6ZXRocjpyaW5rZWJ5OjB4Qzg0MzliNGEyYTZjYTAxODUzYThlMDU5NzE3N2I1OTlBRjJmRjNCZiIsImlzcyI6ImRpZDpldGhyOnJpbmtlYnk6MHhjNUE3NWJhODc4NzZiMjM3MjY1YjA1Rjg0ODE2MGY1NGQzNkNhMDY1In0.h0BVCeBAu3a2LZI6kUEYpXHG7_zsMOcXhDp8CpxwCI5r9jZV5VHNxtQ-f-2T6Zt2P8bim8hgRnZY32B6y7w0HAA"
+  }
+}

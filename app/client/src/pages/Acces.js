@@ -3,7 +3,6 @@ import { useState } from 'react';
 import { ethers } from 'ethers';
 import { useDispatch } from 'react-redux';
 import { addUser } from '../actions/user';
-// import { ethers } from 'ethers';
 
 
 const Acces = ({ did, isConnected }) => {
@@ -13,13 +12,15 @@ const Acces = ({ did, isConnected }) => {
     const [show, setShow] = useState(false);
     const [noMissingField, setNomissingField] = useState(true);
 
-    const handleClose = () => setShow(false);
+    const handleClose = () => {
+        setShow(false);
+        window.location.href = '/';
+    }
     const handleShow = () => setShow(true);
     const dispatch = useDispatch();
 
     const provider = new ethers.providers.Web3Provider(window.ethereum);
     const signer = provider.getSigner();
-
 
     const handleForm = async (e) => {
         e.preventDefault();
@@ -35,11 +36,9 @@ const Acces = ({ did, isConnected }) => {
             await signer.signMessage(`Signer pour faire votre demande d'accès:\n${data.did}\nNom : ${data.name}\nOrganisme : ${data.entity}\nEmail : ${data.email}`);
             await dispatch(addUser(data));
             handleShow();
-        }
-        else {
+        } else {
             setNomissingField(false);
         }
-
     }
 
 
@@ -92,7 +91,7 @@ const Acces = ({ did, isConnected }) => {
                 <Modal.Header closeButton>
                     <Modal.Title>Votre demande a bien été transmise</Modal.Title>
                 </Modal.Header>
-                <Modal.Body>Vous recevrez un email de confirmation lorsque votre identité aura été vérifiée et confirmée</Modal.Body>
+                <Modal.Body>Votre identité a bien été créée, vous pouvez maintenant vous connecter</Modal.Body>
                 <Modal.Footer>
                     <Button variant="primary" onClick={handleClose}>
                         Close
@@ -102,7 +101,5 @@ const Acces = ({ did, isConnected }) => {
         </div >
     );
 }
-
-
 
 export default Acces;
