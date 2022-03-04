@@ -61,11 +61,11 @@ table {
 
 :root {
 	--bgColor: #FFF;
-   --pink: #BF2CE5;
+   --pink: #8A90AD;
  	--blue : #000094;
  	--black: #0A102A;
  	--lightGrey : #F2F6F6;
- 	--turquoise: #01D1D1;
+ 	--turquoise: #8A90AD;
 }
 
 
@@ -95,7 +95,7 @@ h1, h2, h3, h4 {
 
 
 .container {
-	max-width: 1320px;
+	max-width: 1240px;
 	margin: 0 auto;
 }
 
@@ -229,7 +229,7 @@ body.homePage .mainNav li button:focus:after {
    right: 0;
    top: 5em;
    display: none;
-   border-radius: 1em;
+   border-radius: 0.5em;
 	box-shadow: 
 	0px 22px 81px -11px rgba(2, 32, 57, 0.16),
 	0px 2px 2px 0 rgba(2, 32, 57, 0.07);;
@@ -431,6 +431,10 @@ section.hero {
 	box-sizing: border-box;
 }
 
+.searchEngine input[type=text]:hover, .searchEngine select:hover {
+	outline-color: rgba(0,0,0,.15);
+}
+
 .searchEngine input[type=text]:focus, .searchEngine select:focus {
 	background: #fff;
 }
@@ -440,7 +444,7 @@ section.hero {
 }
 
 .searchEngine input[type=text]:focus, .searchEngine select:focus {
-	outline: 2px solid var(--black);
+	outline-color: var(--black);
 }
 
 .searchEngine > div:first-child:before {
@@ -460,17 +464,17 @@ section.hero {
 
 .catalogueCell {
 	transition: all 0.150s;
-	flex: 1 0 25%;
+	flex: 1 0 20%;
 	background: #fff;
-	padding: 2em;
+	padding: 1.25em;
 	box-shadow: 
 		0px 22px 81px -11px rgba(2, 32, 57, 0.16),
 		0px 2px 2px 0 rgba(2, 32, 57, 0.07);
-	border-radius: 1em;
+	border-radius: 0.5em;
 	margin: 1em;
 	display: flex;
 	flex-flow: column wrap;
-	max-width: 26%;
+	max-width: 27.5%;
 	cursor: pointer;
 	border: 3px solid transparent;
 }
@@ -494,7 +498,7 @@ section.hero {
 	font-size: 0.75em;
 	padding: 0.5em 1em;
 	background: var(--lightGrey);
-	border-radius: 1em;
+	border-radius: 0.5em;
 }
 
 .catalogueCell .description {
@@ -541,7 +545,7 @@ footer div ul li a{ text-decoration: none; color: var(--blue); display: block; p
 /** ------------------- BREADCRUMB ----------------------**/
 
 .breadcrumb {
-	padding: 3em 0;
+	padding: 1.5em 0;
 	width: 100%;
 }
 
@@ -593,7 +597,7 @@ footer div ul li a{ text-decoration: none; color: var(--blue); display: block; p
 /** ------------------- PAGE SERVICE ------------------ **/
 
 body.servicePage main {
-	border-radius: 1em;
+	border-radius: 0.5em;
 	box-shadow: 
 		0px 22px 81px -11px rgba(2, 32, 57, 0.16),
 		0px 2px 2px 0 rgba(2, 32, 57, 0.07);
@@ -604,7 +608,7 @@ body.servicePage main {
 	align-items: center;
 	border-bottom: 2px solid var(--lightGrey);
 	padding-bottom: 1em;
-	padding: 3em;
+	padding: 2em;
 }
 
 .servicePageTitle img {
@@ -654,7 +658,7 @@ body.servicePage main {
 }
 
 .servicePageContent {
-	padding: 3em;
+	padding: 2em;
 	font-family: Sen, sans-serif;
 }
 
@@ -698,7 +702,7 @@ body.dashboard .mainNav {
 	min-width: 320px;
 	border: none;
 	margin: 1em;
-	border-radius: 1em;
+	border-radius: 0.5em;
 	box-shadow: 
 		0px 22px 81px -11px rgba(2, 32, 57, 0.16),
 		0px 2px 2px 0 rgba(2, 32, 57, 0.07);
@@ -807,16 +811,17 @@ body.dashboard aside header {
 }
 
 body.dashboard .main {
-	padding: 3em;
+	padding: 1em;
 }
 
 body.dashboard .main header {
 	padding-bottom: 2em;
 }
 
-body.dashboard .main h1 {
+body.dashboard .main header h1 {
 	font-size: 2em;
 	font-weight: 700;
+	padding: 1em;
 }
 
 body.dashboard .main h1 img {

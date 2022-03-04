@@ -83,6 +83,34 @@
 				<section class="container servicePageContent">
 					<h1>Description</h1>
 					<p>The Competency API enables you to explore and connect skills, occupations or domains of knowledge from various taxonomies and frameworks such as Wikipedia, ESCO classification, ROME codes from Pôle Emploi, Formacode®, etc.</p>
+
+					<div class="filesExamples">
+						
+						<ul class="flex">
+							<li>Fichier d'exemple n°1</li>
+							<li>Télécharger ce fichier d'exemple</li>
+						</ul>
+						<pre class="prettyprint">
+							{
+							    "statusCode": 200,
+							    "request": {
+							        "keywords": "weld",
+							        "lang": "en"
+							    },
+							    "response": [
+							        {
+							            "label": "welder",
+							            "score": 1.0,
+							            "source": "Inokufu DomComp index"
+							        },
+							        {
+							            "label": "welding",
+							            "source": "Inokufu DomComp synonym"
+							        }
+							    ]
+							}
+						</pre>		
+					</div>	
 				</section>
 
 			</main>
