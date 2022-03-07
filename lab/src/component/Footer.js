@@ -3,14 +3,16 @@ import logoDasesLab from '../style/img/logoDL.svg'
 const Footer = () => {
     return (
 		<footer className="container">
+			<div>
 			<a href='/'><img src={logoDasesLab} alt=""/></a>
 			<p>
-				Dases Lab est le portail de catalogage des services et donnees du data space education & competences
+				Dases Lab est le portail de catalogage des services et données du data space éducation & compétences
+				</p>
 			<ul>
-				<li>Mentions legales</li>
-				<li>Contactez-nous</li>
+				<li><a href="/">Mentions légales</a></li>
+				<li><a href="/">Contactez-nous</a></li>
 			</ul>
-			</p>
+			</div>
 		</footer>
     )
 }

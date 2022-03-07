@@ -5,7 +5,12 @@ import people from '../style/img/people.svg'
 import gaiaxOrange from '../style/img/gaiaxOrange.svg'
 import joinImg from '../style/img/join.svg'
 
-const Header = () => {
+const Header = ({setConnectedState}) => {
+
+    const connectHandler = async () => {
+        setConnectedState(true)
+    }
+
     return (
         <header>
             <div className="header_topBar">
@@ -54,7 +59,7 @@ const Header = () => {
                             <button className="roundTurquoise">Participer</button>
                         </li>
                         <li>
-                            <button className="roundPink">Connexion</button>
+                            <button className="roundPink" onClick={connectHandler}>Connexion</button>
                         </li>
                     </ul>
                 </div>

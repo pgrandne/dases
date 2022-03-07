@@ -1,17 +1,20 @@
 import './App.css';
-import './style/main.css'
-import './style/dashboard.css'
-import Header from './component/Header';
+import './style/main.css';
+import './style/dashboard.css';
+
+import { useState } from 'react';
 import Catalog from './page/Catalog';
-import Footer from './component/Footer';
+import Dashboard from './page/Dashboard';
+
 
 
 const App = () => {
+  const [isConnected, setConnectedState] = useState(false)
+
   return (
     <div className="App">
-      <Header />
-      <Catalog />
-      <Footer />
+      {!isConnected && <Catalog setConnectedState={setConnectedState}/>}
+      {isConnected && <Dashboard setConnectedState={setConnectedState}/>}
     </div>
   );
 }
