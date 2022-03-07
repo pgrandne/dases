@@ -1,5 +1,5 @@
 import gaiaxSimplified from '../style/img/gaiaxSimplified.svg'
-import logoDL from '../style/img/logoDL.svg'
+import logoDasesLab from '../style/img/logoDL.svg'
 import coreValues from '../style/img/coreValues.svg'
 import people from '../style/img/people.svg'
 import gaiaxOrange from '../style/img/gaiaxOrange.svg'
@@ -7,13 +7,13 @@ import joinImg from '../style/img/join.svg'
 
 const Header = () => {
     return (
-        <div>
+        <header>
             <div className="header_topBar">
                 <img src={gaiaxSimplified} alt="gaiax_logo" /> inspired by <a href="https://www.gaia-x.eu/">gaia-x</a>
             </div>
             <div className="header_navBar container clearfix">
                 <div className="floatLeft">
-                    <img src={logoDL} alt="daseslab_logo" />
+                    <img src={logoDasesLab} alt="daseslab_logo" />
                 </div>
                 <div className="floatRight">
                     <ul className="mainNav">
@@ -27,7 +27,7 @@ const Header = () => {
                                     </div>
                                 </li>
                                 <li>
-                                    <img src={people.svg} alt="" />
+                                    <img src={people} alt="" />
                                     <div><h4>Gouvernance</h4><br />
                                         Découvrez comment l'association est gouvernée, et par qui
                                     </div>
@@ -59,7 +59,7 @@ const Header = () => {
                     </ul>
                 </div>
             </div>
-        </div>
+        </header>
     )
 }
 
