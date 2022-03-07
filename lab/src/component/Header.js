@@ -10,7 +10,7 @@ const Header = () => {
                 </div>
                 <div className="header_navBar container clearfix">
                     <div className="floatLeft">
-                        <img src="../style/img/logoMVPX.svg" alt="daseslab_logo" />
+                        <img src="../style/img/logoDL.svg" alt="daseslab_logo" />
                     </div>
                     <div className="floatRight">
                         <ul className="mainNav">
