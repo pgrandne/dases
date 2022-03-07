@@ -1,16 +1,22 @@
 import '../style/main.css'
 import '../style/dashboard.css'
+import gaiaxSimplified from '../style/img/gaiaxSimplified.svg'
+import logoDL from '../style/img/logoDL.svg'
+import coreValues from '../style/img/coreValues.svg'
+import people from '../style/img/people.svg'
+import gaiaxOrange from '../style/img/gaiaxOrange.svg'
+import joinImg from '../style/img/join.svg'
 
 const Header = () => {
     return (
         <div>
             <header>
                 <div className="header_topBar">
-                    <img src="../style/img/gaiaxSimplified.svg" alt="gaiax_logo" /> inspired by <a href="https://www.gaia-x.eu/">gaia-x</a>
+                    <img src={gaiaxSimplified} alt="gaiax_logo" /> inspired by <a href="https://www.gaia-x.eu/">gaia-x</a>
                 </div>
                 <div className="header_navBar container clearfix">
                     <div className="floatLeft">
-                        <img src="../style/img/logoDL.svg" alt="daseslab_logo" />
+                        <img src={logoDL} alt="daseslab_logo" />
                     </div>
                     <div className="floatRight">
                         <ul className="mainNav">
@@ -18,25 +24,25 @@ const Header = () => {
                                 <button>Association</button>
                                 <ul className="consortiumNav">
                                     <li>
-                                        <img src="../style/img/coreValues.svg" alt="" />
+                                        <img src={coreValues} alt="" />
                                         <div><h4>Valeurs</h4><br />
                                             Apprenez-en davantage sur les valeurs de l'association
                                         </div>
                                     </li>
                                     <li>
-                                        <img src="../style/img/people.svg" alt="" />
+                                        <img src={people.svg} alt="" />
                                         <div><h4>Gouvernance</h4><br />
                                             Découvrez comment l'association est gouvernée, et par qui
                                         </div>
                                     </li>
                                     <li>
-                                        <img src="../style/img/gaiaxOrange.svg" alt="" />
+                                        <img src={gaiaxOrange} alt="" />
                                         <div><h4>Origines</h4><br />
                                             A la base, il y a Gaia-X. Apprenez-en davantage sur cette association d'envergure internationale
                                         </div>
                                     </li>
                                     <li>
-                                        <img src="../style/img/join.svg" alt="" />
+                                        <img src={joinImg} alt="" />
                                         <div><h4>Rejoignez-nous !</h4><br />
                                             Vous voulez intégrer Dases Lab ? Découvrez comment !
                                         </div>
