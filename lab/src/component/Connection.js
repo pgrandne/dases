@@ -22,6 +22,7 @@ const Connection = ({ setConnectedState }) => {
             chainId: '1',
             nonce: await res.text()
         });
+        console.log(message.nonce);
         return message.prepareMessage();
     }
     
@@ -40,6 +41,7 @@ const Connection = ({ setConnectedState }) => {
         const res = await fetch(URL_VERIFY, {
             method: "POST",
             headers: {
+                'Access-Control-Allow-Origin': '*',
                 'Content-Type': 'application/json',
             },
             body: JSON.stringify({ message, signature }),
