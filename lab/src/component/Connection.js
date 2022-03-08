@@ -1,6 +1,6 @@
 import { ethers } from 'ethers';
 import { SiweMessage } from 'siwe';
-import { URL_NONCE, URL_VERIFY, URL_PERSONNAL_INFORMATION } from '../api'
+import { URL_NONCE, URL_VERIFY } from '../api'
 
 const domain = window.location.host;
 const origin = window.location.origin;
@@ -22,7 +22,6 @@ const Connection = ({ setConnectedState }) => {
             chainId: '1',
             nonce: await res.text()
         });
-        console.log(message.nonce);
         return message.prepareMessage();
     }
     
@@ -30,38 +29,35 @@ const Connection = ({ setConnectedState }) => {
         await provider.send('eth_requestAccounts', [])
             .catch(() => console.log('user rejected request'));
     }
+
+    let message = null;
+    let signature = null;
     
     const signInWithEthereum = async () => {
-        const message = await createSiweMessage(
+        message = await createSiweMessage(
             await signer.getAddress(),
             'Sign in with Ethereum to the app.'
         );
-        const signature = await signer.signMessage(message);
-    
+        console.log(message);
+        signature = await signer.signMessage(message);
+        console.log(signature);
+    }
+
+    const sendForVerification= async () => {
         const res = await fetch(URL_VERIFY, {
             method: "POST",
             headers: {
-                'Access-Control-Allow-Origin': '*',
                 'Content-Type': 'application/json',
             },
             body: JSON.stringify({ message, signature }),
-            credentials: 'include'
         });
         console.log(await res.text());
     }
-
-    const getInformation = async () => {
-        const res = await fetch(URL_PERSONNAL_INFORMATION, {
-            credentials: 'include',
-        });
-        console.log(await res.text());
-    }
-
 
     const connectHandler = async () => {
         await connectWallet();
         await signInWithEthereum();
-        await getInformation();
+        await sendForVerification();
         
         setConnectedState(true)
 
