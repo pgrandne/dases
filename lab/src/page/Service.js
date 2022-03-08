@@ -2,10 +2,7 @@ import inokufuLogo from '../assets/logos/inokufu.png'
 
 
 const Service = ({ setServiceSelected }) => {
-    const serviceHandler = () => {
-		setServiceSelected(true)
-	}
-    
+     
     return (
         <div>
         <ul className="container breadcrumb flex row">

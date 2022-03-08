@@ -4,12 +4,14 @@ import coreValues from '../style/img/coreValues.svg'
 import people from '../style/img/people.svg'
 import gaiaxOrange from '../style/img/gaiaxOrange.svg'
 import joinImg from '../style/img/join.svg'
+import Connection from './Connection'
 
 const Header = ({setConnectedState}) => {
 
-    const connectHandler = async () => {
-        setConnectedState(true)
-    }
+    // const connectHandler = async () => {
+    //     Connection()
+    //     setConnectedState(true)
+    // }
 
     return (
         <header>
@@ -59,7 +61,7 @@ const Header = ({setConnectedState}) => {
                             <button className="roundTurquoise">Participer</button>
                         </li>
                         <li>
-                            <button className="roundPink" onClick={connectHandler}>Connexion</button>
+                            <Connection setConnectedState={setConnectedState}/>
                         </li>
                     </ul>
                 </div>
