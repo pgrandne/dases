@@ -1,7 +1,11 @@
 import inokufuLogo from '../assets/logos/inokufu.png'
 import searchIcon from '../style/img/searchIcon.svg'
 
-const DashboardCatalog = () => {
+const DashboardCatalog = ( {setServiceSelected}) => {
+    const serviceHandler = () => {
+		setServiceSelected(true)
+	}
+
     return (
         <section className="main sectionContent flex column flex-1">
             <header>
@@ -23,7 +27,7 @@ const DashboardCatalog = () => {
                 </div>
             </section>
             <section className="container flex wrap catalogueList">
-                <div className="catalogueCell">
+                <div className="catalogueCell" onClick={serviceHandler}>
                     <div className="title flex center">
                         <img src={inokufuLogo} alt="" />
                         <div>

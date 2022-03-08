@@ -3,10 +3,12 @@ import entityUnkown from '../assets/entityUnKnown.svg'
 import { useState } from 'react';
 import DashboardCatalog from '../component/DashboardCatalog'
 import DashboardMyOffer from '../component/DashboardMyOffer'
+import DashboardService from '../component/DashboardService';
 
 
 const Dashboard = ({ setConnectedState }) => {
     const [myOffer, setMyOffer] = useState(true)
+    const [serviceSelected, setServiceSelected] = useState(false)
 
     const connectHandler = async () => {
         setConnectedState(false)
@@ -69,8 +71,9 @@ const Dashboard = ({ setConnectedState }) => {
                     </ul>
                 </nav>
             </aside>
-            {myOffer && <DashboardMyOffer />}
-            {!myOffer && <DashboardCatalog />}
+            {myOffer && <DashboardMyOffer/>}
+            {!myOffer && !serviceSelected && <DashboardCatalog setServiceSelected={setServiceSelected}/>}
+            {!myOffer && serviceSelected && <DashboardService setServiceSelected={setServiceSelected}/>}
         </div>
     )
 }

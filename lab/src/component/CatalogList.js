@@ -1,9 +1,13 @@
 import inokufuLogo from '../assets/logos/inokufu.png'
 
-const CatalogList = () => {
-    return (
+const CatalogList = ({ setServiceSelected }) => {
+    const serviceHandler = () => {
+		setServiceSelected(true)
+	}
+	
+	return (
         <section className="container flex wrap catalogueList">
-		<div className="catalogueCell">
+		<div className="catalogueCell" onClick={serviceHandler}>
 			<div className="title flex center">
 				<img src={inokufuLogo} alt=""/>
 				<div>
