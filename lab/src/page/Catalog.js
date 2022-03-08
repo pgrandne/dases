@@ -7,12 +7,12 @@ import Header from '../component/Header'
 import Footer from '../component/Footer'
 import Service from './Service';
 
-const Catalog = ({setConnectedState}) => {
+const Catalog = ({ setConnectedState, setNoMetamaskState }) => {
 	const [serviceSelected, setServiceSelected] = useState(false)
 
 	return (
 		<div>
-			<Header setConnectedState={setConnectedState} />
+			<Header setConnectedState={setConnectedState} setNoMetamaskState={setNoMetamaskState} />
 			{!serviceSelected && <section className="container hero">
 				<h1>Catalogue des données et services du<br />Data Space Education & Competences</h1>
 			</section>}

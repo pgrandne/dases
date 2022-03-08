@@ -6,12 +6,7 @@ import gaiaxOrange from '../style/img/gaiaxOrange.svg'
 import joinImg from '../style/img/join.svg'
 import Connection from './Connection'
 
-const Header = ({setConnectedState}) => {
-
-    // const connectHandler = async () => {
-    //     Connection()
-    //     setConnectedState(true)
-    // }
+const Header = ({ setConnectedState, setNoMetamaskState, noMetamask }) => {
 
     return (
         <header>
@@ -61,7 +56,7 @@ const Header = ({setConnectedState}) => {
                             <button className="roundTurquoise">Participer</button>
                         </li>
                         <li>
-                            <Connection setConnectedState={setConnectedState}/>
+                            <Connection setConnectedState={setConnectedState} setNoMetamaskState={setNoMetamaskState} noMetamask={noMetamask} />
                         </li>
                     </ul>
                 </div>
