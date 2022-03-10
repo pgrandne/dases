@@ -1,8 +1,15 @@
-import { ethers } from 'ethers';
-import { SiweMessage } from 'siwe';
 import { URL_NONCE, URL_VERIFY } from '../api'
 
-const Connection = ({ setConnectedState, setNoMetamaskState }) => {
+import { useSelector } from 'react-redux';
+import { ethers } from 'ethers';
+import { SiweMessage } from 'siwe';
+import { EthrDID } from 'ethr-did';
+
+
+
+const Connection = ({ setConnectedState, setNoMetamaskState, setOnboardedState }) => {
+    const usersList = useSelector((state) => state.userReducer);
+
     const connectHandler = async () => {
         if (window.ethereum) {
             const domain = window.location.host;
@@ -20,7 +27,7 @@ const Connection = ({ setConnectedState, setNoMetamaskState }) => {
                     statement,
                     uri: origin,
                     version: '1',
-                    chainId: '1',
+                    chainId: '4',
                     nonce: await res.text()
                 });
                 return message.prepareMessage();
@@ -33,15 +40,18 @@ const Connection = ({ setConnectedState, setNoMetamaskState }) => {
 
             let message = null;
             let signature = null;
+            let identifier = null;
 
             const signInWithEthereum = async () => {
+                identifier = await signer.getAddress()
                 message = await createSiweMessage(
-                    await signer.getAddress(),
+                    identifier,
                     `Signer pour s'authentifier sur Dases Lab`
                 );
+
                 console.log(message);
                 signature = await signer.signMessage(message);
-                console.log(signature);
+                console.log("signature: ", signature);
             }
 
             const sendForVerification = async () => {
@@ -52,12 +62,39 @@ const Connection = ({ setConnectedState, setNoMetamaskState }) => {
                     },
                     body: JSON.stringify({ message, signature }),
                 });
-                console.log(await res.text());
+                console.log("resultat:", await res.text());
             }
+
+            const verifyVC = async () => {
+                const ethrDid = new EthrDID({ identifier, provider, chainNameOrId: 'rinkeby' });
+                // const providerConfig = {
+                //     rpcUrl: 'https://rinkeby.infura.io/v3/d541faa3a3b74d409e82828b772fce9e',
+                //     registry: '0xdca7ef03e98e0dc2b855be647c39abe984fcf21b',
+                //     name: 'rinkeby'
+                // }
+                console.log(ethrDid);
+                const currentUser = await usersList.filter(users => (users.did === ethrDid.did));
+                console.log(currentUser);
+                if (currentUser[0] != null) {
+                    setOnboardedState(true);
+                } else {
+                    setOnboardedState(false);
+                }
+            }
+
+
 
             await connectWallet();
             await signInWithEthereum();
             await sendForVerification();
+            await verifyVC();
+
+
+
+
+
+
+
             setConnectedState(true)
         }
         else {
