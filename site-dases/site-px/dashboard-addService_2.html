@@ -84,24 +84,23 @@
 					
 					<form class="form flex column" action="">
 
-
 						<fieldset class="formGroup radio">
 
 							<legend>Quel type de ressource souhaitez-vous partager ?</legend>
 
 							<div class="flex row">
 
-								<div>
+								<div class="flex-1">
 									<input type="radio" class="formField" placeholder="Type de ressource" name="resourceType" id='resourceTypeDataSet' value="isDataset" required />
 									<label for="resourceTypeDataSet" class="button actAsButton radioLabel forresourceTypeDataSet">Données</label>
 								</div>
 								
-								<div>
+								<div class="flex-1">
 									<input type="radio" class="formField" placeholder="Type de ressource" name="resourceType" id='resourceTypeService' value="isService" required />
 									<label for="resourceTypeService" class="button actAsButton radioLabel forresourceTypeService">Service</label>
 								</div>
 
-								<div>
+								<div class="flex-1">
 									<input type="radio" class="formField" placeholder="Type de ressource" name="resourceType" id='resourceTypeCode' value="isCode" required />
 									<label for="resourceTypeCode" class="button actAsButton radioLabel forresourceTypeCode">Code</label>
 								</div>
@@ -109,6 +108,58 @@
 							</div>
 
 						</fieldset>
+
+						<div class="formGroup select">
+							<select class="formField select" placeholder="Titre de votre ressource" name="dataType" id='dataType' required>
+								<option value="">Type de données proposées</option>
+								<option value="">Données démographiques</option>
+								<option value="">Données sociétales</option>
+								<option value="">Traces d'apprentissage</option>
+								<option value="">Données sur les diplômes</option>
+								<option value="">Données sur les formations</option>
+								<option value="">Données issues de la recherche</option>
+							</select>
+							<label for="dataType" class="formLabel">Type de données proposées</label>
+						</div>
+
+						<div class="formGroup select">
+							<select class="formField select" placeholder="Titre de votre ressource" name="dataType" id='dataType' required>
+								<option value="">Niveau concerné par les données</option>
+								<option value="">Données démographiques</option>
+								<option value="">Données sociétales</option>
+								<option value="">Traces d'apprentissage</option>
+								<option value="">Données sur les diplômes</option>
+								<option value="">Données sur les formations</option>
+								<option value="">Données issues de la recherche</option>
+							</select>
+							<label for="dataType" class="formLabel">Niveau concerné par les données</label>
+						</div>
+
+						<div class="formGroup select">
+							<select class="formField select" placeholder="Titre de votre ressource" name="dataType" id='dataType' required>
+								<option value="">Format des données</option>
+								<option value="">Données démographiques</option>
+								<option value="">Données sociétales</option>
+								<option value="">Traces d'apprentissage</option>
+								<option value="">Données sur les diplômes</option>
+								<option value="">Données sur les formations</option>
+								<option value="">Données issues de la recherche</option>
+							</select>
+							<label for="dataType" class="formLabel">Format des données</label>
+						</div>
+
+						<div class="formGroup select">
+							<select class="formField select" placeholder="Titre de votre ressource" name="dataType" id='dataType' required>
+								<option value="">Standard de description des données</option>
+								<option value="">Données démographiques</option>
+								<option value="">Données sociétales</option>
+								<option value="">Traces d'apprentissage</option>
+								<option value="">Données sur les diplômes</option>
+								<option value="">Données sur les formations</option>
+								<option value="">Données issues de la recherche</option>
+							</select>
+							<label for="dataType" class="formLabel">Standard de description des données</label>
+						</div>
 
 
 					</form>

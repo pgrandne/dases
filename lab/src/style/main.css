@@ -118,7 +118,7 @@ header {
 
 .header_topBar {
 	text-align: left;
-	background: linear-gradient(90.77deg, var(--pink) 27.77%, var(--blue) 64.42%);
+	background: linear-gradient(90.77deg, var(--blue) 27.77%, var(--black) 64.42%);
 	padding: 1em;
 	color: #fff;
 	vertical-align: middle;
@@ -181,7 +181,7 @@ header {
 }
 
 .mainNav li button.current {
-	color: var(--blue);
+	color: var(--pink);
 }
 
 .mainNav li button.roundPink {
@@ -400,7 +400,7 @@ section.hero {
 	align-items: center;
 }
 
-.flex.flex-1 {
+.flex-1 {
 	flex: 1;
 }
 
@@ -1025,6 +1025,12 @@ body.servicePage main {
 	line-height: 2.5;
 	width: 100%;
 	outline: 3px solid rgba(0, 0, 0, .15);
+	font-weight: 700
+}
+
+.form .formField.select {
+	padding: 1.5em;
+	cursor: pointer;
 }
 
 .form .formField:hover {
@@ -1073,6 +1079,7 @@ body.servicePage main {
 
 .form .formGroup.radio input[type=radio] {
 	visibility: hidden;
+	height: 0;
 }
 
 .form .formGroup.radio .radioLabel {
@@ -1114,4 +1121,12 @@ fieldset legend {
 	font-weight: 700;
 	color: var(--black);
 	padding: 2em 0 1em;
+}
+
+.form .formGroup.select {
+	margin-bottom: 1em;
+}
+
+.form .formGroup.select label {
+	visibility: hidden;
 }
