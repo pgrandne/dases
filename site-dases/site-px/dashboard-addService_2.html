@@ -110,56 +110,74 @@
 						</fieldset>
 
 						<div class="formGroup select">
-							<select class="formField select" placeholder="Titre de votre ressource" name="dataType" id='dataType' required>
+							<select class="formField select" placeholder="Type de données proposées" name="dataType" id='dataType' required>
 								<option value="">Type de données proposées</option>
 								<option value="">Données démographiques</option>
 								<option value="">Données sociétales</option>
-								<option value="">Traces d'apprentissage</option>
+								<option value="">Données sur les traces d'apprentissage</option>
 								<option value="">Données sur les diplômes</option>
 								<option value="">Données sur les formations</option>
 								<option value="">Données issues de la recherche</option>
+								<option value="">Données périscolaires</option>
+								<option value="">Données parascolaires</option>
+								<option value="">Données extrascolaires</option>
 							</select>
 							<label for="dataType" class="formLabel">Type de données proposées</label>
 						</div>
 
 						<div class="formGroup select">
-							<select class="formField select" placeholder="Titre de votre ressource" name="dataType" id='dataType' required>
+							<select class="formField select" placeholder="Niveau concerné par les données" name="dataLevel" id='dataLevel' required>
 								<option value="">Niveau concerné par les données</option>
-								<option value="">Données démographiques</option>
-								<option value="">Données sociétales</option>
-								<option value="">Traces d'apprentissage</option>
-								<option value="">Données sur les diplômes</option>
-								<option value="">Données sur les formations</option>
-								<option value="">Données issues de la recherche</option>
+								<option value="">Primaire</option>
+								<option value="">Secondaire</option>
+								<option value="">Supérieur</option>
+								<option value="">Formation tout au long de la vie</option>
 							</select>
-							<label for="dataType" class="formLabel">Niveau concerné par les données</label>
+							<label for="dataLevel" class="formLabel">Niveau concerné par les données</label>
 						</div>
 
 						<div class="formGroup select">
-							<select class="formField select" placeholder="Titre de votre ressource" name="dataType" id='dataType' required>
+							<select class="formField select" placeholder="Titre de votre ressource" name="dataFormat" id='dataFormat' required>
 								<option value="">Format des données</option>
-								<option value="">Données démographiques</option>
-								<option value="">Données sociétales</option>
-								<option value="">Traces d'apprentissage</option>
-								<option value="">Données sur les diplômes</option>
-								<option value="">Données sur les formations</option>
-								<option value="">Données issues de la recherche</option>
+								<option value="">Json</option>
+								<option value="">XML</option>
 							</select>
-							<label for="dataType" class="formLabel">Format des données</label>
+							<label for="dataFormat" class="formLabel">Format des données</label>
 						</div>
 
 						<div class="formGroup select">
-							<select class="formField select" placeholder="Titre de votre ressource" name="dataType" id='dataType' required>
-								<option value="">Standard de description des données</option>
-								<option value="">Données démographiques</option>
-								<option value="">Données sociétales</option>
+							<select class="formField select" placeholder="Titre de votre ressource" name="dataStandard" id='dataStandard' required>
+								<option value="">JSON-LD</option>
+								<option value="">Microdonnées</option>
+								<option value="">RDFA</option>
 								<option value="">Traces d'apprentissage</option>
 								<option value="">Données sur les diplômes</option>
 								<option value="">Données sur les formations</option>
 								<option value="">Données issues de la recherche</option>
 							</select>
-							<label for="dataType" class="formLabel">Standard de description des données</label>
+							<label for="dataStandard" class="formLabel">Standard de description des données</label>
 						</div>
+
+						<fieldset class="formGroup radio">
+
+							<legend>La ressource que vous mettez à disposition donne-t-elle accès des données à caractère personnel ?</legend>
+
+							<div class="flex row">
+
+								<div class="flex-1">
+									<input type="radio" class="formField" placeholder="Ma ressource ne donne pas accès à des données personnelles" name="isPersonalData" id='isPersonalDataNo' value="false" required />
+									<label for="isPersonalDataNo" class="button actAsButton radioLabel">Non</label>
+								</div>
+								
+								<div class="flex-1">
+									<input type="radio" class="formField" placeholder="Ma ressource donne accès à des données personnelles" name="isPersonalData" id='isPersonalDataYes' value="true" required />
+									<label for="isPersonalDataYes" class="button actAsButton radioLabel">Oui</label>
+								</div>
+
+
+							</div>
+
+						</fieldset>
 
 
 					</form>
