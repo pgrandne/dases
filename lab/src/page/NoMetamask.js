@@ -1,12 +1,17 @@
+import { useDispatch } from 'react-redux';
+import { walletReducer } from '../features/reducers/slices';
+
 import logoDasesLab from '../style/img/logoDL.svg'
 
-const NoMetamask = ({ setNoMetamaskState }) => {
+const NoMetamask = () => {
+	const dispatch = useDispatch();
+	
     const handleClose = () => {
-        setNoMetamaskState(false)
+		dispatch(walletReducer(true))
     }
 
     return (
-        <body className="onboarding flex column">
+        <div className="onboarding flex column">
 		<section className="main onboardingStep onboardingSelectWallet">	
 			<button className="closeButton fixed" onClick={handleClose}>Fermer</button>
 			<h1>
@@ -17,7 +22,7 @@ const NoMetamask = ({ setNoMetamaskState }) => {
             <p>Pour le moment seul le portefeuille Metamask peut être utilisé</p>
 			<button className="button whiteButton connectMetamask"><a href="https://www.google.com/search?q=metamask">Installer Metamask</a></button> <br/><br/>
 		</section>
-	</body>
+	</div>
     )
 }
 
