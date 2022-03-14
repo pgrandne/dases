@@ -4,23 +4,29 @@ import { useState } from 'react';
 import DashboardCatalog from '../component/DashboardCatalog'
 import DashboardMyOffer from '../component/DashboardMyOffer'
 import DashboardService from '../component/DashboardService';
+import { useDispatch, useSelector } from 'react-redux';
+import { connectReducer } from '../features/reducers/slices';
 
 
-const Dashboard = ({ setConnectedState }) => {
+const Dashboard = () => {
+    const account = useSelector((state) => state.connection.account);
+    const dispatch = useDispatch();
     const [myOffer, setMyOffer] = useState(true)
     const [serviceSelected, setServiceSelected] = useState(false)
+    const shortDID = (account.did.substring(1,22)+ '...'+account.did.substring(54))
 
-    const connectHandler = async () => {
-        setConnectedState(false)
+    const handleDisconnect = async () => {
+        dispatch(connectReducer(false))
     }
 
-    const myOfferHandler = async () => {
+    const handleMyOffer = async () => {
         setMyOffer(true)
     }
 
-    const catalogHandler = async () => {
+    const handleCatalog = async () => {
         setMyOffer(false)
     }
+
 
 
     return (
@@ -44,8 +50,8 @@ const Dashboard = ({ setConnectedState }) => {
                     </ul>
                     <ul className="actAsButton userService flex row center">
                         <li className="userInformations">
-                            <strong>Jean-Marie Gilliot </strong><br />
-                            <span className="didNumber">DIDdg8f7754d4g</span>
+                            <strong>{account.givenName} {account.familyName}</strong><br />
+                            <span className="didNumber">{shortDID}</span>
                         </li>
                         <li>
                             <button className="ellipsis"></button>
@@ -61,11 +67,11 @@ const Dashboard = ({ setConnectedState }) => {
                 </header>
                 <nav className="appNav">
                     <ul className="flex column">
-                        {myOffer && <li className="actAsButton serviceOffering current"  onClick={myOfferHandler}>Mon offre</li>}
-                        {!myOffer && <li className="actAsButton serviceOffering" onClick={myOfferHandler}>Mon offre</li>}
-                        {myOffer && <li className="actAsButton catalogue" onClick={catalogHandler}>Catalogue</li>}
-                        {!myOffer && <li className="actAsButton catalogue current" onClick={catalogHandler}>Catalogue</li>}
-                        <li className="actAsButton" onClick={connectHandler}>
+                        {myOffer && <li className="actAsButton serviceOffering current"  onClick={handleMyOffer}>Mon offre</li>}
+                        {!myOffer && <li className="actAsButton serviceOffering" onClick={handleMyOffer}>Mon offre</li>}
+                        {myOffer && <li className="actAsButton catalogue" onClick={handleCatalog}>Catalogue</li>}
+                        {!myOffer && <li className="actAsButton catalogue current" onClick={handleCatalog}>Catalogue</li>}
+                        <li className="actAsButton" onClick={handleDisconnect}>
                             Déconnexion
                         </li>
                     </ul>

@@ -1,27 +1,37 @@
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+
+
 import './App.css';
 import './style/main.css';
 import './style/dashboard.css';
 
-import { useState } from 'react';
 import NoMetamask from './page/NoMetamask'
 import Catalog from './page/Catalog';
 import Dashboard from './page/Dashboard';
 import VerifiableCredential from './page/VerifiableCredential';
+import PageNotFound from './page/PageNotFound';
+import { useSelector } from 'react-redux';
+
 
 
 
 const App = () => {
-  const [isConnected, setConnectedState] = useState(false)
-  const [isOnboarded, setOnboardedState] = useState(false)
-  const [noMetamask, setNoMetamaskState] = useState(false)
+  const auth = useSelector((state) => state.connection);
 
   return (
     <div className="App">
-      {!isConnected && noMetamask && <NoMetamask setNoMetamaskState={setNoMetamaskState} />}
-      {!isConnected && !noMetamask && <Catalog setConnectedState={setConnectedState} setNoMetamaskState={setNoMetamaskState} setOnboardedState={setOnboardedState}/>}
-      {isConnected && !isOnboarded && <VerifiableCredential setConnectedState={setConnectedState} setOnboardedState={setOnboardedState}/>}
-      {isConnected && isOnboarded && <Dashboard setConnectedState={setConnectedState} />}
 
+      {/* <Router>
+          <Routes>
+          <Route path="/" element={<Catalog />} />
+          <Route element={<PageNotFound />} /> */}
+
+      {!auth.connected && !auth.wallet && <NoMetamask />}
+        {!auth.connected && auth.wallet && <Catalog />}
+        {auth.connected && !auth.onboarded && <VerifiableCredential />}
+        {auth.connected && auth.onboarded && <Dashboard />}
+      {/* </Routes>
+        </Router> */}
     </div>
   );
 }

@@ -1,16 +1,16 @@
-import { URL_NONCE, URL_VERIFY } from '../api'
+import { URL_NONCE, URL_VERIFY } from '../features/api'
 
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { ethers } from 'ethers';
 import { SiweMessage } from 'siwe';
 import { EthrDID } from 'ethr-did';
+import { connectReducer, walletReducer, onboardedReducer, accountReducer, didReducer } from '../features/reducers/slices';
 
+const Connection = () => {
+    const dispatch = useDispatch();
+    const usersList = useSelector((state) => state.usersList.user);
 
-
-const Connection = ({ setConnectedState, setNoMetamaskState, setOnboardedState }) => {
-    const usersList = useSelector((state) => state.userReducer);
-
-    const connectHandler = async () => {
+    const handleConnect = async () => {
         if (window.ethereum) {
             const domain = window.location.host;
             const origin = window.location.origin;
@@ -62,49 +62,45 @@ const Connection = ({ setConnectedState, setNoMetamaskState, setOnboardedState }
                     },
                     body: JSON.stringify({ message, signature }),
                 });
-                console.log("resultat:", await res.text());
+                console.log("outcome:", await res.text());
             }
 
             const verifyVC = async () => {
                 const ethrDid = new EthrDID({ identifier, provider, chainNameOrId: 'rinkeby' });
-                // const providerConfig = {
-                //     rpcUrl: 'https://rinkeby.infura.io/v3/d541faa3a3b74d409e82828b772fce9e',
-                //     registry: '0xdca7ef03e98e0dc2b855be647c39abe984fcf21b',
-                //     name: 'rinkeby'
-                // }
-                console.log(ethrDid);
+                const providerConfig = {
+                    rpcUrl: 'https://rinkeby.infura.io/v3/d541faa3a3b74d409e82828b772fce9e',
+                    registry: '0xdca7ef03e98e0dc2b855be647c39abe984fcf21b',
+                    name: 'rinkeby'
+                }
                 const currentUser = await usersList.filter(users => (users.did === ethrDid.did));
-                console.log(currentUser);
+
                 if (currentUser[0] != null) {
-                    setOnboardedState(true);
+
+                    dispatch(accountReducer(currentUser[0]));
+                    dispatch(onboardedReducer(true));
+
                 } else {
-                    setOnboardedState(false);
+                    dispatch(accountReducer({}));
+                    dispatch(didReducer(ethrDid.did));
+                    dispatch(onboardedReducer(false));
                 }
             }
 
-
-
             await connectWallet();
             await signInWithEthereum();
-            await sendForVerification();
+            dispatch(connectReducer(true));
+            await sendForVerification();            
             await verifyVC();
-
-
-
-
-
-
-
-            setConnectedState(true)
+            
         }
         else {
             console.log('Pas de Metamask');
-            setNoMetamaskState(true);
+            dispatch(walletReducer(false));
         }
     }
 
     return (
-        <button className="roundPink" onClick={connectHandler}>Connexion</button>
+        <button className="roundPink" onClick={handleConnect} >Connexion</button>
 
     )
 }
