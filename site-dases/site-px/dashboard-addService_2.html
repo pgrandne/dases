@@ -84,23 +84,23 @@
 					
 					<form class="form flex column" action="">
 
-						<fieldset class="formGroup radio">
+						<fieldset class="formGroup radio"><!---- BLOCK RADIOS ----->
 
 							<legend>Quel type de ressource souhaitez-vous partager ?</legend>
 
-							<div class="flex row">
+							<div class="flex row selectServiceType">
 
-								<div class="flex-1">
+								<div class="flex-1"><!---- BLOCK RADIO ----->
 									<input type="radio" class="formField" placeholder="Type de ressource" name="resourceType" id='resourceTypeDataSet' value="isDataset" required />
 									<label for="resourceTypeDataSet" class="button actAsButton radioLabel forresourceTypeDataSet">Données</label>
 								</div>
 								
-								<div class="flex-1">
+								<div class="flex-1"><!---- BLOCK RADIO ----->
 									<input type="radio" class="formField" placeholder="Type de ressource" name="resourceType" id='resourceTypeService' value="isService" required />
 									<label for="resourceTypeService" class="button actAsButton radioLabel forresourceTypeService">Service</label>
 								</div>
 
-								<div class="flex-1">
+								<div class="flex-1"><!---- BLOCK RADIO ----->
 									<input type="radio" class="formField" placeholder="Type de ressource" name="resourceType" id='resourceTypeCode' value="isCode" required />
 									<label for="resourceTypeCode" class="button actAsButton radioLabel forresourceTypeCode">Code</label>
 								</div>
@@ -109,7 +109,7 @@
 
 						</fieldset>
 
-						<div class="formGroup select">
+						<div class="formGroup select"><!---- BLOCK SELECT ----->
 							<select class="formField select" placeholder="Type de données proposées" name="dataType" id='dataType' required>
 								<option value="">Type de données proposées</option>
 								<option value="">Données démographiques</option>
@@ -125,7 +125,7 @@
 							<label for="dataType" class="formLabel">Type de données proposées</label>
 						</div>
 
-						<div class="formGroup select">
+						<div class="formGroup select"><!---- BLOCK SELECT ----->
 							<select class="formField select" placeholder="Niveau concerné par les données" name="dataLevel" id='dataLevel' required>
 								<option value="">Niveau concerné par les données</option>
 								<option value="">Primaire</option>
@@ -136,7 +136,7 @@
 							<label for="dataLevel" class="formLabel">Niveau concerné par les données</label>
 						</div>
 
-						<div class="formGroup select">
+						<div class="formGroup select"><!---- BLOCK SELECT ----->
 							<select class="formField select" placeholder="Titre de votre ressource" name="dataFormat" id='dataFormat' required>
 								<option value="">Format des données</option>
 								<option value="">Json</option>
@@ -145,7 +145,7 @@
 							<label for="dataFormat" class="formLabel">Format des données</label>
 						</div>
 
-						<div class="formGroup select">
+						<div class="formGroup select"><!---- BLOCK SELECT ----->
 							<select class="formField select" placeholder="Titre de votre ressource" name="dataStandard" id='dataStandard' required>
 								<option value="">JSON-LD</option>
 								<option value="">Microdonnées</option>
@@ -156,29 +156,31 @@
 								<option value="">Données issues de la recherche</option>
 							</select>
 							<label for="dataStandard" class="formLabel">Standard de description des données</label>
-						</div>
+						</div> 
 
-						<fieldset class="formGroup radio">
+						<fieldset class="formGroup radio"><!---- BLOCK RADIOS ----->
 
 							<legend>La ressource que vous mettez à disposition donne-t-elle accès des données à caractère personnel ?</legend>
 
 							<div class="flex row">
 
-								<div class="flex-1">
+								<div class="flex-1"><!---- BLOCK RADIO ----->
 									<input type="radio" class="formField" placeholder="Ma ressource ne donne pas accès à des données personnelles" name="isPersonalData" id='isPersonalDataNo' value="false" required />
 									<label for="isPersonalDataNo" class="button actAsButton radioLabel">Non</label>
 								</div>
 								
-								<div class="flex-1">
+								<div class="flex-1"><!---- BLOCK RADIO ----->
 									<input type="radio" class="formField" placeholder="Ma ressource donne accès à des données personnelles" name="isPersonalData" id='isPersonalDataYes' value="true" required />
 									<label for="isPersonalDataYes" class="button actAsButton radioLabel">Oui</label>
 								</div>
 
-
 							</div>
+
+							<p>Une information personnelle est une information relative à une personne physique susceptible d'être identifiée, directement ou indirectement. Par exemple : un nom, une photo, une empreinte, une adresse postale, une adresse mail, un numéro de téléphone, un numéro de sécurité sociale, un matricule interne, une adresse IP, un identifiant de connexion informatique, un enregistrement vocal, etc. </p>
 
 						</fieldset>
 
+						<input type="submit" value="Continuer" class="button blackButton"><!-- SUBMIT VALIDER -->
 
 					</form>
 
