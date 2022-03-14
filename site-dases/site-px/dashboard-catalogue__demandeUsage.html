@@ -7,12 +7,12 @@
 	</head>
 	<body>
 
-		<div class="dashboard">
+		<div class="dashboard servicePage">
 
 			<aside class="mainNav">	
 
 				<header>	
-
+					
 					<ul class="contextNav flex row wrap center">
 						<li>
 							<button class="mainLogo">
@@ -49,10 +49,10 @@
 
 				<nav class="appNav">
 					<ul class="flex column">
-						<li class="actAsButton serviceOffering current" onclick="location.href='dashboard-serviceOffering.html';">
+						<li class="actAsButton serviceOffering">
 							Mon offre
 						</li>
-						<li class="actAsButton catalogue" onclick="location.href='dashboard-catalogue.html';">
+						<li class="actAsButton catalogue current">
 							Catalogue
 						</li>
 					</ul>
@@ -62,24 +62,33 @@
 
 			<section class="main flex column flex-1">	
 
-				<header>
-					<h1><img src="style/img/serviceOffering.svg" alt="">Mon offre</h1>
-				</header>
+				<ul class="container breadcrumb flex row">
+					<li class="back"><a href="dashboard-catalogue.html">retour</a></li>
+					<li><a href="dashboard-catalogue.html">Catalogue</a></li>
+					<li class="current"><a href="">Inokufu Competency V2</a></li>
+				</ul>
 
-				<div class="sectionContent empty flex column center">
-					
-					<p>
-						<img src="assets/img/serviceOfferingEmpty.svg" alt=""> <br/><br/>
-						Vous n'avez encore rien partagé à la communauté
-					</p>
-					<button class="button blackButton" onclick="location.href='dashboard-addService_1.html';">Partager une ressource sur le portail</button>
-					
+				<main class="container sectionContent container768">
 
-				</div>
+					<section class="container servicePageTitle flex row">
+						<img src="assets/logos/inokufu.png" alt="">
+						<div>
+							<h1>Inokufu Competency V2</h1>
+						</div>
+					</section>
 
+					<section class="container servicePageContent">
+						<p>Vous allez maintenant être redirigé vers le site de Visions, qui va mettre en place un contrat entre vous et Inokufu.</p> <br />
+						<button class="button whiteButton external">
+							Continuer sur le site de Visions <img src="assets/logos/visions.png" alt="">
+						</button>
+					</section>
+
+				</main>
+				
 			</section>	
 
 		</div>
-		
+
 	</body>
 </html>

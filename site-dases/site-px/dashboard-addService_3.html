@@ -1,0 +1,144 @@
+<html>
+	<head>
+		<link rel="stylesheet" href="../../lab/src/style/main.css">
+		<meta charset="utf-8">
+		<link rel="icon" type="image/svg" href="faviconpx.svg" />
+		<title>Mon offre</title>
+	</head>
+	<body>
+
+		<div class="dashboard addService">
+
+			<aside class="mainNav">	
+
+				<header>	
+
+					<ul class="contextNav flex row wrap center">
+						<li>
+							<button class="mainLogo">
+								<img src="faviconpx.svg" alt="">
+							</button>
+						</li>
+						<li>
+							<button class="userLogo alert">
+								<img src="assets/entityUnKnown.svg" alt="">
+							</button>
+						</li>
+						<li>
+							Dashboard
+						</li>
+					</ul>
+
+					<ul class="actAsButton userService flex row center">
+						<li class="userInformations">
+							<strong>Jean-Marie Gilliot </strong><br/>
+							<span class="didNumber">DIDdg8f7754d4g</span>
+						</li>
+						<li>
+							<button class="ellipsis"></button>
+							<ul>
+								<li>Mes informations</li>
+								<li>Déconnexion</li>
+							</ul>
+						</li>
+						<li>
+							<button class="notifications"></button>
+						</li>
+					</ul>
+				</header>	
+
+				<nav class="appNav">
+					<ul class="flex column">
+						<li class="actAsButton serviceOffering current">
+							Mon offre
+						</li>
+						<li class="actAsButton catalogue">
+							Catalogue
+						</li>
+					</ul>
+				</nav>
+
+			</aside>
+
+			<section class="main flex column centerJustify flex-1">	
+
+				<ul class="breadcrumb flex">
+					<li class="back"><a href="dashboard-serviceOffering.html">annuler</a></li>
+					<li><a href="dashboard-serviceOffering.html">mon offre</a></li>
+					<li class="current"><a href=" ">ajout de ressource</a></li>
+				</ul>
+
+				<div class="sectionContent flex column center">
+					
+					<ul class="formProgression flex row center">
+						<li class="done button actAsButton greenButton">Informations sur la ressource</li>
+						<li class="sep"><img src="style/img/separator.svg" alt=""></li>
+						<li class="button actAsButton greenButton">Contenu</li>
+						<li class="sep"><img src="style/img/separator.svg" alt=""></li>
+						<li class="current button actAsButton blackButton">Accès</li>
+						<li class="sep"><img src="style/img/separator.svg" alt=""></li>
+						<li class="button actAsButton whiteButton">Conditions d'utilisation</li>
+						<li class="sep"><img src="style/img/separator.svg" alt=""></li>
+						<li class="button actAsButton whiteButton">Publication</li>
+					</ul>
+					
+					<form class="form flex column" action="">
+
+						<fieldset class="formGroup radio"><!---- BLOCK RADIOS ----->
+
+							<legend>L’accès aux données est</legend>
+
+							<div class="flex row">
+
+								<div class="flex-1 p01em"><!---- BLOCK RADIO ----->
+									<input type="radio" class="formField" placeholder="L’accès aux données est" name="isOpenOrNot" id='isClosed' value="false" required />
+									<label for="isClosed" class="button actAsButton radioLabel button whiteButton block textCenter">Fermé</label>
+								</div>
+								
+								<div class="flex-1 p01em"><!---- BLOCK RADIO ----->
+									<input type="radio" class="formField" placeholder="L’accès aux données est" name="isOpenOrNot" id='isOpen' value="true" required />
+									<label for="isOpen" class="button actAsButton radioLabel button whiteButton block textCenter">Ouvert</label>
+								</div>
+
+							</div>
+
+							<legend>L’accès se fait via</legend>
+
+							<div class="flex row">
+
+								<div class="flex-1 p01em"><!---- BLOCK RADIO ----->
+									<input type="radio" class="formField" placeholder="L’accès aux données est" name="accessType" id='accessTypeApi' value="false" required />
+									<label for="accessTypeApi" class="button actAsButton radioLabel button whiteButton block textCenter">API</label>
+								</div>
+								
+								<div class="flex-1 p01em"><!---- BLOCK RADIO ----->
+									<input type="radio" class="formField" placeholder="L’accès aux données est" name="accessType" id='accessTypeWebservice' value="true" required />
+									<label for="accessTypeWebservice" class="button actAsButton radioLabel button whiteButton block textCenter">Webservice</label>
+								</div>
+
+							</div>
+
+						</fieldset>
+
+						<div class="formGroup field"><!-- BLOCK CHAMP TEXTE INPUT TEXT -->
+							<input type="input" class="formField" placeholder="Où l’utilisateur peut-il en savoir plus sur les données ?" name="resourceName" id='webAddress' required />
+							<label for="webAddress" class="formLabel">Où l’utilisateur peut-il en savoir plus sur les données ?</label>
+						</div>
+
+						<div class="formGroup field"><!-- BLOCK CHAMP TEXTE INPUT TEXT -->
+							<input type="input" class="formField" placeholder="Documentation" name="resourceName" id='documentation' required />
+							<label for="documentation" class="formLabel">Documentation</label>
+						</div>
+
+						<input type="submit" value="Continuer" class="button blackButton"><!-- SUBMIT VALIDER -->
+
+					</form>
+
+				</div>
+
+			</section>
+
+		</div>	
+		
+	</body>
+</html>

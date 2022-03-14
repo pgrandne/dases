@@ -68,35 +68,28 @@
 					<li class="current"><a href=" ">ajout de ressource</a></li>
 				</ul>
 
-				<div class="sectionContent flex column center">
-					
+				<div class="sectionContent flex column center container">
+
 					<ul class="formProgression flex row center">
-						<li class="current button actAsButton blackButton">Informations sur la ressource</li>
+						<li class="done button actAsButton greenButton">Informations sur la ressource</li>
 						<li class="sep"><img src="style/img/separator.svg" alt=""></li>
-						<li class="button actAsButton whiteButton">Contenu</li>
+						<li class="button actAsButton greenButton">Contenu</li>
 						<li class="sep"><img src="style/img/separator.svg" alt=""></li>
-						<li class="button actAsButton whiteButton">Accès</li>
+						<li class="button actAsButton greenButton">Accès</li>
 						<li class="sep"><img src="style/img/separator.svg" alt=""></li>
-						<li class="button actAsButton whiteButton">Conditions d'utilisation</li>
+						<li class="button actAsButton greenButton">Conditions d'utilisation</li>
 						<li class="sep"><img src="style/img/separator.svg" alt=""></li>
-						<li class="button actAsButton whiteButton">Publication</li>
+						<li class="current button actAsButton blackButton">Publication</li>
 					</ul>
 					
-					<form class="form flex column" action="">
+					<p class="textCenter">
+						<strong>Prêt pour le catalogage ?</strong> <br/>
+						Votre service sera analysé par Prometheus et vous serez notifié via l’e-mail renseigné <br/>
+						lors de votre inscription sur le portail lors de sa parution. <br/>
+						<img src="assets/img/readyForCatalog.svg" alt="">
+					</p>
 
-						<div class="formGroup field"><!-- BLOCK CHAMP TEXTE INPUT TEXT -->
-							<input type="input" class="formField" placeholder="Titre de votre ressource" name="resourceName" id='resourceName' required />
-							<label for="resourceName" class="formLabel">Titre de votre ressource</label>
-						</div>
-
-						<div class="formGroup field"><!-- BLOCK TEXTAREA -->
-							<textarea class="formField" placeholder="Description de votre ressource" name="resourceDesc" id='resourceDesc' required rows="5"></textarea>
-							<label for="resourceDesc" class="formLabel">Description de votre ressource</label>
-						</div>
-
-					</form>
-
-					<input type="submit" value="Continuer" class="button blackButton"><!-- SUBMIT VALIDER -->
+					<button class="button blackButton connectMetamask">Signer l’ajout au catalogue sur Metamask</button>
 
 				</div>
 
