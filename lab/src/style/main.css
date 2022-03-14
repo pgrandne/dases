@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,300;0,500;0,700;1,100&family=Sen:wght@400;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,300;0,500;0,700;1,100&family=Inter:wght@400;500;700&display=swap');
 
 .App {
 	text-align: left !important;
@@ -81,7 +81,7 @@ table {
 
 
 body {
-	font-family: 'IBM Plex Sans', sans-serif;
+	font-family: 'Inter', sans-serif;
 	font-weight: 400;
 	background: var(--bgColor);
 	line-height: 1.5;
@@ -90,7 +90,7 @@ body {
 }
 
 h1, h2, h3, h4 {
-	font-family: 'IBM Plex Sans';
+	font-family: 'Inter';
 }
 
 
@@ -166,7 +166,7 @@ header {
 }
 
 .mainNav li button {
-	font-family: IBM Plex Sans;
+	font-family: Inter;
 	background: none;
 	padding: 1em;
 	font-size: 1em;
@@ -261,7 +261,7 @@ body.homePage .mainNav li button:focus:after {
 	text-decoration: none;
 	padding: 1em;
 	border-radius: 3px;
-	font-family: IBM Plex Sans, sans-serif;
+	font-family: Inter, sans-serif;
 }
 
 .mainNav > li > ul li a:hover {
@@ -322,7 +322,7 @@ body.homePage .mainNav li button:focus:after {
 	color: #fff;
 	text-decoration: none;
 	border-radius: 3px;
-	font-family: IBM Plex Sans;
+	font-family: Inter;
 	font-weight: 700;
 	letter-spacing: 1px;
 	display: block;
@@ -353,7 +353,7 @@ section.hero {
 }
 
 .why h1 i {
-	font-family: 'IBM Plex Sans';
+	font-family: 'Inter';
 	font-weight: 700;
 	font-style: italic;
 }
@@ -423,7 +423,7 @@ section.hero {
 	border: none;
 	outline: 3px solid rgba(0,0,0,.1);
 	background: var(--lightGrey);
-	font-family: 'IBM Plex Sans', sans-serif;
+	font-family: 'Inter', sans-serif;
 	position: relative;
 	display: block;
 	padding: 1em;
@@ -505,7 +505,7 @@ section.hero {
 
 .catalogueCell .description {
 	padding-top: 1.5em;
-	font-family: Sen, sans-serif;
+	font-family: Inter sans-serif;
 }
 
 .catalogueCell.addService {
@@ -521,7 +521,7 @@ section.hero {
 .catalogueCell.addService button {
 	border: none;
 	background: none;
-	font-family: IBM Plex Sans, sans-serif;
+	font-family: Inter, sans-serif;
 	font-weight: 700;
 	color: var(--black);
 	cursor: pointer;
@@ -549,6 +549,7 @@ footer div ul li a{ text-decoration: none; color: var(--blue); display: block; p
 .breadcrumb {
 	padding: 1.5em 0;
 	width: 100%;
+	border-bottom: 1px solid var(--pink);
 }
 
 .breadcrumb li {
@@ -593,7 +594,7 @@ footer div ul li a{ text-decoration: none; color: var(--blue); display: block; p
 }
 
 .breadcrumb li.current a {
-	color: var(--blue);
+	color: var(--pink);
 }
 
 /** ------------------- PAGE SERVICE ------------------ **/
@@ -661,7 +662,7 @@ body.servicePage main {
 
 .servicePageContent {
 	padding: 2em;
-	font-family: Sen, sans-serif;
+	font-family: Inter sans-serif;
 }
 
 .servicePageContent h1 {
@@ -683,52 +684,51 @@ body.servicePage main {
 	right: 0.25em;
 	font-weight: 700;
 	font-size: 1.25em;
-	font-family: Sen, sans-serif;
+	font-family: Inter sans-serif;
 }
 
-body.dashboard {
+.dashboard {
 	display: flex;
 	align-items: stretch;
 	background: var(--lightGrey);
+	height: 100%
 }
 
 .contextNav {
 	padding: 2em 2em 0 2em;
 }
 
-body.dashboard .mainNav {
+.dashboard .mainNav {
 	background: #fff;
 	float: none;
 	width: 20%;
 	max-width: 380px;
 	min-width: 320px;
 	border: none;
-	margin: 1em;
-	border-radius: 0.5em;
+	margin-right: 1em;
 	box-shadow: 
 		0px 22px 81px -11px rgba(2, 32, 57, 0.16),
 		0px 2px 2px 0 rgba(2, 32, 57, 0.07);
 }
 
-body.dashboard .mainNav li > ul {
+.dashboard .mainNav li > ul {
 	padding: 0;
 	top: 3em
 }
 
-body.dashboard .mainNav li > ul li {
+.dashboard .mainNav li > ul li {
 	margin: 1em
 }
 
-body.dashboard .mainNav li button {
+.dashboard .mainNav li button {
 	padding: 0;
 }
 
-body.dashboard .mainNav li button:focus + ul {
+.dashboard .mainNav li button:focus + ul {
 	width: 190px;
 }
 
-
-body.dashboard aside header {
+.dashboard aside header {
 	border: none;
 }
 
@@ -761,6 +761,7 @@ body.dashboard aside header {
 
 .userService button.notifications {
 	background: url(img/notif.svg) center no-repeat;
+	display: none;
 }
 
 .contextNav li:last-child {
@@ -812,21 +813,21 @@ body.dashboard aside header {
 	background: url(img/serviceOffering.svg);
 }
 
-body.dashboard .main {
+.dashboard .main {
 	padding: 1em;
 }
 
-body.dashboard .main header {
+.dashboard .main header {
 	padding-bottom: 2em;
 }
 
-body.dashboard .main header h1 {
+.dashboard .main header h1 {
 	font-size: 2em;
 	font-weight: 700;
 	padding: 1em;
 }
 
-body.dashboard .main h1 img {
+.dashboard .main h1 img {
 	width: 1em;
 	position: relative;
 	top: 0.125em;
@@ -835,13 +836,18 @@ body.dashboard .main h1 img {
 
 
 .button {
-	border-radius: 4em;
+	border-radius: 0.5em;
 	padding: 1em 2em;
 	cursor: pointer;
-	font-family: 'IBM Plex Sans', sans-serif;
+	font-family: 'Inter', sans-serif;
 	border: 3px solid transparent;
 	transition: all 0.2s;
+	box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.11), 0px 1px 74px -20px rgba(0, 0, 0, 0.1);
+	font-weight: 700;
+	font-family: Inter, sans-serif;
 }
+
+.button.rounded {border-radius: 4em;}
 
 .button:hover {
 	border: 3px solid rgba(0, 0, 0, 0.1);
@@ -879,7 +885,7 @@ body.dashboard .main h1 img {
 
 .sectionContent.empty > p {
 	padding: 5em 0 2em;
-	font-family: 'Sen', sans-serif;
+	font-family: Inter, sans-serif;
 }
 
 /**** -------------- ONBOARDING ------------ ****/ 
@@ -897,13 +903,13 @@ body.dashboard .main h1 img {
 	position: absolute;
 	top: 1em;
 	left: 1em;
-	font-family: 'IBM Plex Sans', sans-serif;
+	font-family: 'Inter', sans-serif;
 	font-weight: 700;
 	font-size: 1em;
 	color: var(--black);
 }
 
-body.onboarding {
+.onboarding {
 	background: var(--lightGrey);
 	text-align: center;
 	display: flex;
@@ -927,7 +933,7 @@ body.onboarding {
 
 .onboardingStep p {
 	padding-bottom: 2em;
-	font-family: Sen, sans-serif;
+	font-family: Inter sans-serif;
 	width: 75%;
 	margin: 0 auto;
 	text-align: center;
@@ -954,7 +960,7 @@ body.onboarding {
 }
 
 .onboardingStep .publicKey {
-	font-family: 'IBM Plex Sans', sans-serif;
+	font-family: 'Inter', sans-serif;
 	color: var(--pink);
 	font-weight: 700;
 	background: #bf2ce51c;
@@ -966,6 +972,11 @@ body.onboarding {
 	padding: 3em 0;
 }
 
+.formProgression li {
+	font-size: 0.875em;
+	position: relative;
+}
+
 .formProgression .button {
 	border-radius: 0.5em;
 	padding: 0.75em 1em;
@@ -973,6 +984,16 @@ body.onboarding {
 
 .formProgression .sep {
 	padding: 0 1em;
+    position: relative;
+    width: 1em;
+    overflow: hidden;
+    height: 6px;
+    margin: 0 0.5em;
+}
+
+.formProgression .sep img {
+	position: absolute;
+	right: 0;
 }
 
 .form {
@@ -989,7 +1010,7 @@ body.onboarding {
 .form .formField {
 	border: none;
 	background: #fff;
-	font-family: 'IBM Plex Sans', sans-serif;
+	font-family: 'Inter', sans-serif;
 	padding: 1.5em 2em 0.5em 1em;
 	border-radius: 0.5em;
 	line-height: 2.5;

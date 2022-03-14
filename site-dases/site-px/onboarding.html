@@ -5,59 +5,61 @@
 		<link rel="icon" type="image/svg" href="faviconpx.svg" />
 		<title>Onboarding - Step 1</title>
 	</head>
-	<body class="onboarding flex column">
+	<body>
 
+		<div class="onboarding flex column">
 
-		<section class="main onboardingStep onboardingSelectWallet">	
+			<section class="main onboardingStep onboardingSelectWallet">	
 
-			<button class="closeButton fixed">Fermer</button>
+				<button class="closeButton fixed">Fermer</button>
 
-			<h1>
-				<img src="faviconpx.svg" alt=""> <br/><br/>
-				Obtenez votre laisser passer
-			</h1>
-			<p>Pour publier et utiliser des ressources sur le portail, vous devez utiliser un portefeuille d’identité décentralisée</p>
-			<button class="button whiteButton connectMetamask">Se connecter avec Metamask</button> <br/><br/>
-			<button class="button pinkButton">Je n'ai pas Metamask</button>
+				<h1>
+					<img src="faviconpx.svg" alt=""> <br/><br/>
+					Obtenez votre laisser passer
+				</h1>
+				<p>Pour publier et utiliser des ressources sur le portail, vous devez utiliser un portefeuille d’identité décentralisée</p>
+				<button class="button whiteButton connectMetamask">Se connecter avec Metamask</button> <br/><br/>
+				<button class="button pinkButton">Je n'ai pas Metamask</button>
 
-		</section>
+			</section>
 
-		<section class="main onboardingStep onboardingUserInfos">	
+			<section class="main onboardingStep onboardingUserInfos">	
 
-			<button class="closeButton fixed">Fermer</button>
+				<button class="closeButton fixed">Fermer</button>
 
-			<h1>
-				<img src="faviconpx.svg" alt=""> <br/><br/>
-				Obtenez votre laisser passer
-			</h1>
-			<p>Prometheus met en relation des humains et des entreprises, pas des clés publiques :) Nous avons besoin de savoir qui se cache derrière cette clé publique pour vous permettre de publier et utiliser des ressources sur le portail</p>
-			<p class="publicKey">0x78164a67eFc7CB9BBc506B47e7542D0C75F47b01</p>
-			<form class="form" action="">
-				<div class="formGroup field">
-					<input type="input" class="formField" placeholder="Votre Nom" name="name" id='name' required />
-					<label for="name" class="formLabel">Votre nom</label>
-				</div>
-				<div class="formGroup field">
-					<input type="input" class="formField" placeholder="Votre prenom" name="forname" id='forname' required />
-					<label for="forname" class="formLabel">Votre prénom</label>
-				</div>
-				<div class="formGroup field">
-					<input type="input" class="formField" placeholder="Nom de votre organisation" name="forname" id='entityName' required />
-					<label for="entityName" class="formLabel">Nom de votre organisation</label>
-				</div>
-				<div class="formGroup field">
-					<input type="email" class="formField" placeholder="Votre adresse e-mail professionnel" name="forname" id='proEmail' required />
-					<label for="proEmail" class="formLabel">Votre adresse e-mail professionnel</label>
-				</div>
-				<div class="formGroup">
-					<input type="checkbox" id="consentCGV">
-					<label for="consentCGV">Je consens à rejoindre Prometheus, et m’engage à respecter sa charte</label>
-				</div>
-				<input type="submit" class="button blackButton" value="Continuer">
-			</form>
+				<h1>
+					<img src="faviconpx.svg" alt=""> <br/><br/>
+					Obtenez votre laisser passer
+				</h1>
+				<p>Prometheus met en relation des humains et des entreprises, pas des clés publiques :) Nous avons besoin de savoir qui se cache derrière cette clé publique pour vous permettre de publier et utiliser des ressources sur le portail</p>
+				<p class="publicKey">0x78164a67eFc7CB9BBc506B47e7542D0C75F47b01</p>
+				<form class="form" action="">
+					<div class="formGroup field">
+						<input type="input" class="formField" placeholder="Votre Nom" name="name" id='name' required />
+						<label for="name" class="formLabel">Votre nom</label>
+					</div>
+					<div class="formGroup field">
+						<input type="input" class="formField" placeholder="Votre prenom" name="forname" id='forname' required />
+						<label for="forname" class="formLabel">Votre prénom</label>
+					</div>
+					<div class="formGroup field">
+						<input type="input" class="formField" placeholder="Nom de votre organisation" name="forname" id='entityName' required />
+						<label for="entityName" class="formLabel">Nom de votre organisation</label>
+					</div>
+					<div class="formGroup field">
+						<input type="email" class="formField" placeholder="Votre adresse e-mail professionnel" name="forname" id='proEmail' required />
+						<label for="proEmail" class="formLabel">Votre adresse e-mail professionnel</label>
+					</div>
+					<div class="formGroup">
+						<input type="checkbox" id="consentCGV">
+						<label for="consentCGV">Je consens à rejoindre Prometheus, et m’engage à respecter sa charte</label>
+					</div>
+					<input type="submit" class="button blackButton" value="Continuer">
+				</form>
 
-		</section>	
+			</section>	
 
+		</div>
 		
 	</body>
 </html>

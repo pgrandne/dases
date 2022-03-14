@@ -5,121 +5,120 @@
 		<link rel="icon" type="image/svg" href="faviconpx.svg" />
 		<title>Mon offre</title>
 	</head>
-	<body class="servicePage">
+	<body>
 
 		<div class="dashboard">
 
-		<aside class="mainNav">	
+			<aside class="mainNav">	
 
-			<header>	
+				<header>	
 
-				<ul class="contextNav flex row wrap center">
-					<li>
-						<button class="mainLogo">
-							<img src="faviconpx.svg" alt="">
-						</button>
-					</li>
-					<li>
-						<button class="userLogo alert">
-							<img src="assets/entityUnKnown.svg" alt="">
-						</button>
-					</li>
-					<li>
-						Dashboard
-					</li>
-				</ul>
-
-				<ul class="actAsButton userService flex row center">
-					<li class="userInformations">
-						<strong>Jean-Marie Gilliot </strong><br/>
-						<span class="didNumber">DIDdg8f7754d4g</span>
-					</li>
-					<li>
-						<button class="ellipsis"></button>
-						<ul>
-							<li>Mes informations</li>
-							<li>Déconnexion</li>
-						</ul>
-					</li>
-					<li>
-						<button class="notifications"></button>
-					</li>
-				</div>
-			</header>	
-
-			<nav class="appNav">
-				<ul class="flex column">
-					<li class="actAsButton serviceOffering">
-						Mon offre
-					</li>
-					<li class="actAsButton catalogue current">
-						Catalogue
-					</li>
-				</ul>
-			</nav>
-
-		</aside>
-
-		<section class="main flex column flex-1">	
-
-			<ul class="container breadcrumb flex row">
-				<li class="back"><a href="dashboard-catalogue.html">retour</a></li>
-				<li><a href="dashboard-catalogue.html">Catalogue</a></li>
-				<li class="current"><a href="">Inokufu Competency V2</a></li>
-			</ul>
-
-			<main class="container sectionContent">
-
-				<section class="container servicePageTitle flex row">
-					<img src="assets/logos/inokufu.png" alt="">
-					<div>
-						<h1>Inokufu Competency V2</h1>
-						<a href="https://developer.inokufu.com/" target="_blank">Documentation</a>
-					</div>
-					<ul class="ctas">
-						<li><a class="useService" href="Utiliser">Utiliser</a></li>
+					<ul class="contextNav flex row wrap center">
+						<li>
+							<button class="mainLogo">
+								<img src="faviconpx.svg" alt="">
+							</button>
+						</li>
+						<li>
+							<button class="userLogo alert">
+								<img src="assets/entityUnKnown.svg" alt="">
+							</button>
+						</li>
+						<li>
+							Dashboard
+						</li>
 					</ul>
-				</section>
 
-				<section class="container servicePageContent">
-					<h1>Description</h1>
-					<p>The Competency API enables you to explore and connect skills, occupations or domains of knowledge from various taxonomies and frameworks such as Wikipedia, ESCO classification, ROME codes from Pôle Emploi, Formacode®, etc.</p>
+					<ul class="actAsButton userService flex row center">
+						<li class="userInformations">
+							<strong>Jean-Marie Gilliot </strong><br/>
+							<span class="didNumber">DIDdg8f7754d4g</span>
+						</li>
+						<li>
+							<button class="ellipsis"></button>
+							<ul>
+								<li>Mes informations</li>
+								<li>Déconnexion</li>
+							</ul>
+						</li>
+						<li>
+							<button class="notifications"></button>
+						</li>
+					</ul>
+				</header>	
 
-					<div class="filesExamples">
-						
-						<ul class="flex">
-							<li>Fichier d'exemple n°1</li>
-							<li>Télécharger ce fichier d'exemple</li>
+				<nav class="appNav">
+					<ul class="flex column">
+						<li class="actAsButton serviceOffering">
+							Mon offre
+						</li>
+						<li class="actAsButton catalogue current">
+							Catalogue
+						</li>
+					</ul>
+				</nav>
+
+			</aside>
+
+			<section class="main flex column flex-1">	
+
+				<ul class="container breadcrumb flex row">
+					<li class="back"><a href="dashboard-catalogue.html">retour</a></li>
+					<li><a href="dashboard-catalogue.html">Catalogue</a></li>
+					<li class="current"><a href="">Inokufu Competency V2</a></li>
+				</ul>
+
+				<main class="container sectionContent">
+
+					<section class="container servicePageTitle flex row">
+						<img src="assets/logos/inokufu.png" alt="">
+						<div>
+							<h1>Inokufu Competency V2</h1>
+							<a href="https://developer.inokufu.com/" target="_blank">Documentation</a>
+						</div>
+						<ul class="ctas">
+							<li><a class="useService" href="Utiliser">Utiliser</a></li>
 						</ul>
-						<pre class="prettyprint">
-							{
-							    "statusCode": 200,
-							    "request": {
-							        "keywords": "weld",
-							        "lang": "en"
-							    },
-							    "response": [
-							        {
-							            "label": "welder",
-							            "score": 1.0,
-							            "source": "Inokufu DomComp index"
-							        },
-							        {
-							            "label": "welding",
-							            "source": "Inokufu DomComp synonym"
-							        }
-							    ]
-							}
-						</pre>		
-					</div>	
-				</section>
+					</section>
 
-			</main>
-			
-		</section>	
+					<section class="container servicePageContent">
+						<h1>Description</h1>
+						<p>The Competency API enables you to explore and connect skills, occupations or domains of knowledge from various taxonomies and frameworks such as Wikipedia, ESCO classification, ROME codes from Pôle Emploi, Formacode®, etc.</p>
+
+						<div class="filesExamples">
+							
+							<ul class="flex">
+								<li>Fichier d'exemple n°1</li>
+								<li>Télécharger ce fichier d'exemple</li>
+							</ul>
+							<pre class="prettyprint">
+								{
+								    "statusCode": 200,
+								    "request": {
+								        "keywords": "weld",
+								        "lang": "en"
+								    },
+								    "response": [
+								        {
+								            "label": "welder",
+								            "score": 1.0,
+								            "source": "Inokufu DomComp index"
+								        },
+								        {
+								            "label": "welding",
+								            "source": "Inokufu DomComp synonym"
+								        }
+								    ]
+								}
+							</pre>		
+						</div>	
+					</section>
+
+				</main>
+				
+			</section>	
 
 		</div>
 
-		
 	</body>
 </html>
