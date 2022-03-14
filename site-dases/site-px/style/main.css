@@ -684,7 +684,7 @@ body.servicePage main {
 	font-family: Sen, sans-serif;
 }
 
-body.dashboard {
+.dashboard {
 	display: flex;
 	align-items: stretch;
 	background: var(--lightGrey);
@@ -694,7 +694,7 @@ body.dashboard {
 	padding: 2em 2em 0 2em;
 }
 
-body.dashboard .mainNav {
+.dashboard .mainNav {
 	background: #fff;
 	float: none;
 	width: 20%;
@@ -708,25 +708,25 @@ body.dashboard .mainNav {
 		0px 2px 2px 0 rgba(2, 32, 57, 0.07);
 }
 
-body.dashboard .mainNav li > ul {
+.dashboard .mainNav li > ul {
 	padding: 0;
 	top: 3em
 }
 
-body.dashboard .mainNav li > ul li {
+.dashboard .mainNav li > ul li {
 	margin: 1em
 }
 
-body.dashboard .mainNav li button {
+.dashboard .mainNav li button {
 	padding: 0;
 }
 
-body.dashboard .mainNav li button:focus + ul {
+.dashboard .mainNav li button:focus + ul {
 	width: 190px;
 }
 
 
-body.dashboard aside header {
+.dashboard aside header {
 	border: none;
 }
 
