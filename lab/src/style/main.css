@@ -1,5 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,300;0,500;0,700;1,100&family=Sen:wght@400;800&display=swap');
 
+.App {
+	text-align: left !important;
+
+}
+
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -831,7 +836,7 @@ body.dashboard .main h1 img {
 
 .button {
 	border-radius: 4em;
-	padding: 1em 3em;
+	padding: 1em 2em;
 	cursor: pointer;
 	font-family: 'IBM Plex Sans', sans-serif;
 	border: 3px solid transparent;
@@ -961,6 +966,11 @@ body.onboarding {
 	padding: 3em 0;
 }
 
+.formProgression .button {
+	border-radius: 0.5em;
+	padding: 0.75em 1em;
+}
+
 .formProgression .sep {
 	padding: 0 1em;
 }
@@ -980,8 +990,8 @@ body.onboarding {
 	border: none;
 	background: #fff;
 	font-family: 'IBM Plex Sans', sans-serif;
-	padding: 1.5em 2em 0.5em 2em;
-	border-radius: 3em;
+	padding: 1.5em 2em 0.5em 1em;
+	border-radius: 0.5em;
 	line-height: 2.5;
 	width: 100%;
 	outline: 3px solid rgba(0, 0, 0, .15);
@@ -995,14 +1005,14 @@ body.onboarding {
 .form .formField + .formLabel {
 	font-size: 0.75em;
 	top: 0.5em;	
-	left: 2.2em;
-	color: var(--pink);
+	left: 1em;
+	color: var(--black);
 	position: absolute;
 	transition: all 0.2s;
 }
 
 .form .formField:placeholder-shown + .formLabel {
-	left: 1.5em;
+	left: 1em;
 	top: 1.25em;
 	cursor: text;
 	font-size: 1em;
@@ -1023,8 +1033,8 @@ body.onboarding {
 	outline: none;
 	font-size: 0.75em;
 	top: 0.5em;	
-	left: 2.2em;
-	color: var(--pink);
+	left: 1em;
+	color: var(--black);
 }
 
 .form input[type=submit] {
