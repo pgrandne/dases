@@ -2,7 +2,10 @@
 
 .App {
 	text-align: left !important;
+}
 
+html, body, #root, .app {
+	height: 100%;
 }
 
 html, body, div, span, applet, object, iframe,
