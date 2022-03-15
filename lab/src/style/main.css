@@ -568,29 +568,31 @@ footer div ul li a{ text-decoration: none; color: var(--blue); display: block; p
 	position: relative;
 }
 
-.breadcrumb li.back {
-	padding-right: 1em;
-}
 
-.breadcrumb li.back a {
-	position: relative;
-}
-
-.breadcrumb li.back a:before {
-	position: absolute;
-	display: block;
-	content: '';
-	background: url(img/back.svg);
-	width: 0.5em;
-	height: 0.875em;
-	top: 1.3em;
-}
-
-.breadcrumb li a {
+.breadcrumb li button {
+	background: none;
+	border: none;
 	padding: 1em;
 	text-decoration: none;
 	color: var(--black);
 	font-weight: 700;
+	cursor: pointer;
+}
+
+.breadcrumb li.back button {
+	position: relative;
+	padding-left: 1.5em;
+}
+
+.breadcrumb li.back button:before {
+	position: absolute;
+	display: block;
+	content: '';
+	background: url(img/back.svg) center no-repeat;
+	width: 0.75em;
+	height: 1em;
+	top: 1.2em;
+	left: 0
 }
 
 .breadcrumb li:after {
@@ -598,14 +600,14 @@ footer div ul li a{ text-decoration: none; color: var(--blue); display: block; p
 	content: '/';
 	position: absolute;
 	right: -0.3em;
-	top: 0;
+	top: 0.5em;
 }
 
 .breadcrumb li:last-child:after,.breadcrumb li.back:after  {
 	display: none;
 }
 
-.breadcrumb li.current a {
+.breadcrumb li.current button {
 	color: var(--pink);
 }
 
@@ -959,11 +961,12 @@ footer div ul li a{ text-decoration: none; color: var(--blue); display: block; p
 }
 
 .onboardingStep {
-	height: 100vh;
    justify-content: center;
    display: flex;
    align-items: center;
    flex-direction: column;
+   width: 40%;
+   padding: 5em 0;
 }
 
 .onboardingStep h1 {
@@ -1000,10 +1003,6 @@ input[type=submit].connectMetamask {
 	position: relative;
 	top: 0.5em;
 	margin-right: 1em
-}
-
-.onboardingStep {
-	width: 40%;
 }
 
 .onboardingStep .publicKey {
@@ -1070,7 +1069,7 @@ input[type=submit].connectMetamask {
 }
 
 .form .formField.select {
-	padding: 1.5em;
+	padding: 2.75em 1em 1.25em 1em;
 	cursor: pointer;
 }
 
@@ -1081,8 +1080,8 @@ input[type=submit].connectMetamask {
 
 .form .formField + .formLabel {
 	font-size: 0.75em;
-	top: 0.5em;	
-	left: 1em;
+	top: 0.75em;
+    left: 1.5em;
 	color: var(--black);
 	position: absolute;
 	transition: all 0.2s;
@@ -1132,7 +1131,15 @@ input[type=submit].connectMetamask {
 	padding: 4em 3em 1.5em 3em;
 	display: block;
 	border-radius: 0.5em;
+	
+}
+
+.form .formGroup.radio .selectServiceType div {
 	margin-right: 1em;
+}
+
+.form .formGroup.radio .selectServiceType div:last-child {
+	margin-right: 0;
 }
 
 .form .formGroup.radio input[type=radio]:checked + .radioLabel {
@@ -1165,15 +1172,12 @@ fieldset legend {
 	text-transform: uppercase;
 	font-weight: 700;
 	color: var(--black);
-	padding: 2em 0 1em;
+	padding: 1em 0 0.75em;
 }
 
-.form .formGroup.select {
-	margin-bottom: 1em;
-}
 
 .form .formGroup.select label {
-	visibility: hidden;
+
 }
 
 
