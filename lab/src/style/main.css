@@ -67,6 +67,7 @@ table {
  	--lightGrey : #F2F6F6;
  	--turquoise: #8A90AD;
  	--green: #005550;
+ 	--lightGreyTransparent: #0a102a1c;
 }
 
 
@@ -88,6 +89,7 @@ body {
 	line-height: 1.5;
 	color: var(--black);
 	overflow-y: scroll;
+	font-smooth: always;
 }
 
 h1, h2, h3, h4 {
@@ -105,12 +107,16 @@ h1, h2, h3, h4 {
 	margin: 0 auto;
 }
 
+.w1240 { width: 1240px; }
+.w100p {width: 100%;}
+
 .floatLeft { float: left; }
 .floatRight { float: right; }
 strong {font-weight: 700;}
 
 .textCenter { text-align: center; }
 .p01em { padding: 0 1em 1em 0; }
+.absolute {position: absolute;}
 
 
 /* ------------- HEADER --------------*/
@@ -832,6 +838,7 @@ footer div ul li a{ text-decoration: none; color: var(--blue); display: block; p
 
 .dashboard .main header {
 	padding-bottom: 2em;
+	position: relative;
 }
 
 .dashboard .main header h1 {
@@ -865,7 +872,8 @@ footer div ul li a{ text-decoration: none; color: var(--blue); display: block; p
 	box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.11), 0px 1px 74px -20px rgba(0, 0, 0, 0.1);
 	font-weight: 700;
 	font-family: Inter, sans-serif;
-	outline: 1px solid #0a102a1c;
+	outline: 1px solid var(--lightGreyTransparent);
+	font-family: Inter, sans-serif;
 }
 
 .button.external {
@@ -1166,4 +1174,136 @@ fieldset legend {
 
 .form .formGroup.select label {
 	visibility: hidden;
+}
+
+
+/*********** ---------------- SERVICE OFFERING ----------------- ************/
+
+.addService {
+	top: 1em;
+	right: 1em;
+}
+
+.serviceOfferingList .serviceOffer {
+	flex: 1 1 24%;
+	background: #fff;
+	border-radius: 0.5em;
+	box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.11), 0px 1px 74px -20px rgba(0, 0, 0, 0.1);
+	padding: 1.5em;
+	max-width: 31%;
+	margin: 0.5em;
+	box-sizing: border-box;
+}
+
+.serviceOfferingList .serviceOffer h2 {
+	font-weight: 700;
+	font-size: 1.125em;
+}
+
+.serviceOfferingList .serviceOffer .serviceTitle {
+	position: relative;
+	padding-bottom: 1em;
+}
+
+.serviceOfferingList .serviceOffer .serviceTitle .publishedOn {
+	position: absolute;
+	top: 0;
+	right: 0;
+	font-size: 0.66em;
+	color: var(--pink);
+}
+
+.serviceOfferingList .serviceOffer .serviceTitle .tags span {
+	display: inline-block;
+	padding: 0.33em 0.5em;
+	font-size: 0.75em;
+	color: rgba(0,0,0,0.65);
+	font-weight: 700;
+	border-radius: 0.5em;
+}
+
+.blueTag {
+	background: #D4F7F7;
+}
+
+.pinkTag {
+	background: #FBEBFF;
+}
+
+.serviceOfferingList .serviceOffer .serviceDescription {
+	font-size: 0.875em;
+}
+
+.serviceOfferingList .serviceOffer .actionButtons {
+	padding: 1.5em 0 1em;
+}
+
+.serviceOfferingList .serviceOffer .actionButtons > li {
+	margin: 0 0.5em;
+	position: relative;
+}
+
+.serviceOfferingList .serviceOffer .actionButtons > li:first-child {
+	margin-left: 0;
+}
+
+.serviceOfferingList .serviceOffer .actionButtons > li:last-child {
+	margin-right: 0;
+}
+
+
+.serviceOfferingList .serviceOffer .actionButtons > 	li button {
+	text-align: left;
+	background-position: 80% center;
+	background-repeat: no-repeat;
+	background-size: 1em;
+	display: block;
+	width: 100%;
+}
+
+.serviceOfferingList .serviceOffer .actionButtons button.edit {
+	background-image: url(img/edit.svg);
+}
+
+.serviceOfferingList .serviceOffer .actionButtons button.publishState {
+	background-image: url(img/downArrow.svg);
+}
+
+.serviceOfferingList .serviceOffer .actionButtons button.publishState + .changeState {
+	display: none;
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	background: #fff;
+	padding: 0.5em;
+	border-radius: 0.5em;
+	box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.11), 0px 1px 74px -20px rgba(0, 0, 0, 0.1);
+}
+
+
+.serviceOfferingList .serviceOffer .actionButtons button.publishState:focus + .changeState {
+	display: block;
+}
+
+.serviceOfferingList .serviceOffer .actionButtons button.publishState + .changeState li {
+	display: block;
+}
+
+.serviceOfferingList .serviceOffer .actionButtons button.publishState + .changeState li:last-child {
+	margin-top: 0.5em;
+}
+
+.serviceOfferingList .serviceOffer .serviceOfferId {
+	text-align: right;
+	border-top: 1px solid var(--lightGreyTransparent);
+	padding-top: 1em;
+}
+
+.serviceOfferingList .serviceOffer .serviceOfferId button {
+	border: none;
+	font-size: 0.66em;
+	background: transparent;
+	cursor: pointer;
+	color: var(--pink)
 }
