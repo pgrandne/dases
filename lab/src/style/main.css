@@ -127,7 +127,7 @@ header {
 
 .header_topBar {
 	text-align: left;
-	background: linear-gradient(90.77deg, var(--blue) 27.77%, var(--black) 64.42%);
+	background: linear-gradient(90.77deg, var(--blue) 0, var(--black) 24.42%);
 	padding: 1em;
 	color: #fff;
 	vertical-align: middle;
@@ -194,12 +194,20 @@ header {
 }
 
 .mainNav li button.roundPink {
-	background: var(--pink);
+	background-color: var(--pink);
 	color: #fff;
 	border-radius: 2em;
 	padding: 0.5em 1em;
 	margin-right: 1em;
 	text-transform: initial;
+}
+
+.mainNav li button.connectWallet {
+	background-image: url(img/wallet.svg);
+	background-size: 1em;
+	background-position: 85% center;
+	background-repeat: no-repeat;
+	padding: 0.5em 3em 0.5em 1em;
 }
 
 .mainNav li button.roundblue {
