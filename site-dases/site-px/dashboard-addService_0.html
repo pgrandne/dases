@@ -68,28 +68,35 @@
 					<li class="current"><a href=" ">ajout de ressource</a></li>
 				</ul>
 
-				<div class="sectionContent flex column center container">
-
-					<ul class="formProgression flex row center">
-						<li class="done button actAsButton greenButton">Informations sur la ressource</li>
-						<li class="sep"><img src="style/img/separator.svg" alt=""></li>
-						<li class="button actAsButton greenButton">Contenu</li>
-						<li class="sep"><img src="style/img/separator.svg" alt=""></li>
-						<li class="button actAsButton greenButton">Accès</li>
-						<li class="sep"><img src="style/img/separator.svg" alt=""></li>
-						<li class="button actAsButton greenButton">Conditions d'utilisation</li>
-						<li class="sep"><img src="style/img/separator.svg" alt=""></li>
-						<li class="current button actAsButton blackButton">Publication</li>
-					</ul>
+				<div class="sectionContent flex column center">
 					
-					<p class="textCenter">
-						<strong>Prêt pour le catalogage ?</strong> <br/>
-						Votre service sera analysé par Prometheus et vous serez notifié via l’e-mail renseigné <br/>
-						lors de votre inscription sur le portail lors de sa parution. <br/>
-						<img src="assets/img/readyForCatalog.svg" alt="">
-					</p>
+					<form class="form flex column" action="">
 
-					<input type="submit" class="button blackButton connectMetamask" value="Signer l’ajout au catalogue sur Metamask">
+						<fieldset class="formGroup radio"><!---- BLOCK RADIOS ----->
+
+							<legend>disposez-vous d’un fichier de self description ?</legend>
+
+							<div class="flex row">
+
+								<div class="flex-1 p01em"><!---- BLOCK RADIO ----->
+									<input type="radio" class="formField" placeholder="Ma ressource ne donne pas accès à des données personnelles" name="hadSd" id='hadSdNo' value="false" required />
+									<label for="hadSdNo" class="button actAsButton radioLabel button whiteButton block textCenter">Non</label>
+								</div>
+								
+								<div class="flex-1 p01em"><!---- BLOCK RADIO ----->
+									<input type="radio" class="formField" placeholder="Ma ressource donne accès à des données personnelles" name="hadSd" id='hadSdYes' value="true" required />
+									<label for="hadSdYes" class="button actAsButton radioLabel button whiteButton block textCenter">Oui</label>
+								</div>
+
+							</div>
+
+							<p>Un fichier de Self Description est un fichier .json décrivant votre offre de services sur lequel le moteur de génération du catalogue et le moteur de recherche associé vont se baser pour fonctionner.</p>
+
+						</fieldset>
+
+						<input type="submit" value="Continuer" class="button blackButton"><!-- SUBMIT VALIDER -->
+
+					</form>
 
 				</div>
 

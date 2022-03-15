@@ -759,15 +759,19 @@ footer div ul li a{ text-decoration: none; color: var(--blue); display: block; p
 }
 
 .userService button:hover {
-	background-color: var(--lightGrey) !important;
+	background-color: #0a102a1c ;
 }
 
 .userService button.ellipsis {
-	background: url(img/ellipsis.svg) center no-repeat;
+	background-image: url(img/ellipsis.svg) ;
+	background-repeat: no-repeat;
+	background-position: center;
 }
 
 .userService button.notifications {
-	background: url(img/notif.svg) center no-repeat;
+	background: url(img/notif.svg);
+	background-position: center ;
+	background-repeat: no-repeat;
 	display: none;
 }
 
@@ -800,6 +804,8 @@ footer div ul li a{ text-decoration: none; color: var(--blue); display: block; p
 
 .appNav li.current {
 	background: var(--lightGrey);
+	box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.11), 0px 1px 74px -20px rgba(0, 0, 0, 0.1);
+	outline: 1px solid #0a102a1c;
 }
 
 .appNav li:before {
@@ -968,6 +974,12 @@ footer div ul li a{ text-decoration: none; color: var(--blue); display: block; p
 
 .button.connectMetamask {
 	line-height: 3em;
+}
+
+input[type=submit].connectMetamask {
+	background-image: url(img/metamask.png);
+	background-position: 97% center;
+	background-repeat: no-repeat;
 }
 
 .button.connectMetamask:before {
