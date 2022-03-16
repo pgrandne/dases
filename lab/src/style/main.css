@@ -831,18 +831,22 @@ footer div ul li a{ text-decoration: none; color: var(--blue); display: block; p
 	content: '';
 	display: block;
 	position: absolute;
-	height: 1em;
-	width: 1em;
+	height: 1.25em;
+	width: 1.25em;
 	left: 1em;
 	top: 1.25em
 }
 
 .appNav li.catalogue:before {
-	background: url(img/searchIcon.svg);
+	background: url(img/searchIcon.svg) center no-repeat;
 }
 
 .appNav li.serviceOffering:before {
-	background: url(img/serviceOffering.svg);
+	background: url(img/serviceOffering.svg) center no-repeat;
+}
+
+.appNav li.feedback:before {
+	background: url(img/feedbackIcon.svg) center no-repeat;
 }
 
 .dashboard .main {
