@@ -753,6 +753,9 @@ footer div ul li a{ text-decoration: none; color: var(--blue); display: block; p
 }
 
 .dashboard .mainNav {
+	position: fixed;
+	top: 0;
+	bottom: 0;
 	font-size: 0.875em;
 	background: #fff;
 	float: none;
@@ -881,6 +884,7 @@ footer div ul li a{ text-decoration: none; color: var(--blue); display: block; p
 
 .dashboard .main {
 	padding: 1em;
+    margin-left: 320px;
 }
 
 .dashboard .main header {
