@@ -682,13 +682,42 @@ footer div ul li a{ text-decoration: none; color: var(--blue); display: block; p
 }
 
 .servicePageContent {
-	padding: 2em;
 	font-family: Inter, sans-serif;
 }
 
-.servicePageContent h1 {
+.servicePageContent > div {
+	padding: 3em;
+}
+
+.servicePageContent .serviceDetails {
+	border-right: 1px solid var(--lightGreyTransparent);
+}
+
+.servicePageContent .serviceDetails tr {
+	border-bottom: 1px solid var(--lightGreyTransparent);
+}
+
+.servicePageContent .serviceDetails tbody tr td {
+	padding: 1.5em 0;
+	font-size: 0.875em;
+	vertical-align: top;
+}
+
+.servicePageContent .serviceDetails tbody tr td:first-child {
+	text-transform: uppercase;
+	font-weight: 700;
+	color: var(--pink);
+	width: 33%;
+}
+
+.servicePageContent .serviceDetails tbody tr td:last-child {
+	padding-left: 2em;
+}
+
+.servicePageContent h2 {
 	font-size: 1.5em;
-	margin: 1em 0;
+	margin: 0 0 1em;
+	font-weight: 700;
 }
 
 /**** -------------- DASHBOARD ------------ ****/ 
@@ -724,11 +753,12 @@ footer div ul li a{ text-decoration: none; color: var(--blue); display: block; p
 }
 
 .dashboard .mainNav {
+	font-size: 0.875em;
 	background: #fff;
 	float: none;
 	width: 20%;
-	max-width: 380px;
-	min-width: 320px;
+	max-width: 320px;
+	min-width: 280px;
 	border: none;
 	margin-right: 1em;
 	box-shadow: 
