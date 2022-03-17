@@ -177,6 +177,12 @@ header {
 	clear: both;
 }
 
+.mainNav .metaLinks {
+	position: fixed;
+	bottom: 1em;
+	left: 1em;
+}
+
 
 .secondaryNav {
 	margin-right: 2em;
