@@ -708,20 +708,27 @@ footer div ul li a{ text-decoration: none; color: var(--blue); display: block; p
 	border-bottom: 1px solid var(--lightGreyTransparent);
 }
 
-.servicePageContent .serviceDetails tbody tr td {
+
+.servicePageContent .serviceDetails thead tr td {
+	padding: 0;
+	font-size: 0.875em;
+	vertical-align: top;
+}
+
+.servicePageContent .serviceDetails tr td {
 	padding: 1.5em 0;
 	font-size: 0.875em;
 	vertical-align: top;
 }
 
-.servicePageContent .serviceDetails tbody tr td:first-child {
+.servicePageContent .serviceDetails tr td:first-child {
 	text-transform: uppercase;
 	font-weight: 700;
 	color: var(--pink);
 	width: 33%;
 }
 
-.servicePageContent .serviceDetails tbody tr td:last-child {
+.servicePageContent .serviceDetails tr td:last-child {
 	padding-left: 2em;
 }
 
@@ -897,9 +904,14 @@ footer div ul li a{ text-decoration: none; color: var(--blue); display: block; p
     margin-left: 320px;
 }
 
+.sectionContent {
+	margin-bottom: 3em;
+}
+
 .dashboard .main header {
 	padding-bottom: 2em;
 	position: relative;
+	border: none;
 }
 
 .dashboard .main header h1 {
@@ -975,7 +987,7 @@ footer div ul li a{ text-decoration: none; color: var(--blue); display: block; p
 }
 
 .button.whiteButton {
-	background-color: #fff;
+	background-color: var(--lightGrey);
 	color: var(--black);
 	font-weight: 700;
 }
@@ -1391,10 +1403,23 @@ fieldset legend {
 	text-decoration: none;
 }
 
+.textBlock ul {
+	margin: 1em 0 1.5em
+}
+
+.textBlock ul li {
+	margin-left: 1em;
+	list-style: disc;
+}
+
 .textBlock h2 {
 	font-size: 1.5em;
 	font-weight: 700;
 	margin: 1em 0 0.5em;
+}
+
+.textBlock h3 {
+	font-weight: 700;
 }
 
 .textBlock p {
