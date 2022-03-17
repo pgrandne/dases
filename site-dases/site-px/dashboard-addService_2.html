@@ -158,7 +158,7 @@
 							<label for="dataStandard" class="formLabel">Standard de description des données</label>
 						</div> 
 
-						<fieldset class="formGroup radio"><!---- BLOCK RADIOS ----->
+						<fieldset class="formGroup radio personadData"><!---- BLOCK RADIOS ----->
 
 							<legend>La ressource que vous mettez à disposition donne-t-elle accès des données à caractère personnel ?</legend>
 
@@ -166,12 +166,42 @@
 
 								<div class="flex-1 p01em"><!---- BLOCK RADIO ----->
 									<input type="radio" class="formField" placeholder="Ma ressource ne donne pas accès à des données personnelles" name="isPersonalData" id='isPersonalDataNo' value="false" required />
-									<label for="isPersonalDataNo" class="button actAsButton radioLabel button whiteButton block textCenter">Non</label>
+									<label for="isPersonalDataNo" class="button radioLabel whiteButton block textCenter">Non</label>
 								</div>
 								
 								<div class="flex-1 p01em"><!---- BLOCK RADIO ----->
 									<input type="radio" class="formField" placeholder="Ma ressource donne accès à des données personnelles" name="isPersonalData" id='isPersonalDataYes' value="true" required />
-									<label for="isPersonalDataYes" class="button actAsButton radioLabel button whiteButton block textCenter">Oui</label>
+									<label for="isPersonalDataYes" class="button radioLabel whiteButton block textCenter">Oui</label>
+								</div>
+
+							</div>
+
+							<p> <br />Une information personnelle est une information relative à une personne physique susceptible d'être identifiée, directement ou indirectement. Par exemple : un nom, une photo, une empreinte, une adresse postale, une adresse mail, un numéro de téléphone, un numéro de sécurité sociale, un matricule interne, une adresse IP, un identifiant de connexion informatique, un enregistrement vocal, etc. </p>
+
+						</fieldset>
+
+						<fieldset class="formGroup radio gaiaxLabels"><!---- BLOCK RADIOS ----->
+
+							<legend>
+								Quel niveau de label Gaia-X votre ressource satisfait-elle ?
+								<a href="https://gaia-x.eu/sites/default/files/2022-02/Labelling_Criteria_Whitepaper_v07.pdf" target="_blank" class="helpIcon"></a>
+							</legend>
+
+							<div class="flex row">
+
+								<div class="flex-1 p01em"><!---- BLOCK RADIO ----->
+									<input type="radio" class="formField" placeholder="Ressource de niveau Gaia-X 1" name="gaiaxLabel" id='isgaiax1' value="gaiax1" required />
+									<label for="isgaiax1" class="button radioLabel whiteButton block textCenter">Gaia-X 1</label>
+								</div>
+								
+								<div class="flex-1 p01em"><!---- BLOCK RADIO ----->
+									<input type="radio" class="formField" placeholder="Ressource de niveau Gaia-X 2" name="gaiaxLabel" id='isgaiax2' value="gaiax2" required />
+									<label for="isgaiax2" class="button radioLabel  whiteButton block textCenter">Gaia-X 2</label>
+								</div>
+
+								<div class="flex-1 p01em"><!---- BLOCK RADIO ----->
+									<input type="radio" class="formField" placeholder="Ressource de niveau Gaia-X 3" name="gaiaxLabel" id='isgaiax3' value="gaiax3" required />
+									<label for="isgaiax3" class="button radioLabel whiteButton block textCenter">Gaia-X 2</label>
 								</div>
 
 							</div>
