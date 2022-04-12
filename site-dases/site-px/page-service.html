@@ -9,7 +9,8 @@
 
 		<header>
 			<div class="header_topBar">
-				<img src="style/img/gaiaxSimplified.svg" alt=""> inspired by <a href="https://www.gaia-x.eu/" target="_blank">gaia-x</a>
+				<img src="style/img/gaiaxSimplified.svg" alt=""> inspired by <a href="https://www.gaia-x.eu/"
+					target="_blank">gaia-x</a>
 			</div>
 			<div class="header_navBar container clearfix">
 				<div class="floatLeft">
@@ -18,51 +19,47 @@
 				<div class="floatRight">
 					<ul class="mainNav">
 						<li>
-							<button>Association</button>
+							<button>A propos</button>
 							<ul class="consortiumNav">
-								<li>
-									<a href="">
-										<img src="style/img/coreValues.svg" alt="">	
-										<div><h4>Valeurs</h4><br/>
-										Apprenez-en davantage sur les valeurs de l'association
-										</div>
-									</a>
-								</li><!--
-							 --><li>
-									<a href="">
-										<img src="style/img/people.svg" alt="">	
-										<div><h4>Gouvernance</h4><br/>
-										Découvrez comment l'association est gouvernée, et par qui
-										</div>
-									</a>
-								</li><!--
-							 --><li>
-									<a href="">
-										<img src="style/img/gaiaxOrange.svg" alt="">	
-										<div><h4>Origines</h4><br/>
-										A la base, il y a Gaia-X. Apprenez-en davantage sur cette association d'envergure internationale
-										</div>
-									</a>
-								</li><!--
-							 --><li>
-									<a href="">
-										<img src="style/img/join.svg" alt="">	
-										<div><h4>Rejoignez-nous !</h4><br/>
-										Vous voulez intégrer Dases Lab ? Découvrez comment !
-										</div>
-									</a>
-								</li><!--
-						--></ul>
+									<li>
+										<a href="">
+											<img src="style/img/coreValues.svg" alt="">	
+											<div><h4>Valeurs</h4><br/>
+											Apprenez-en davantage sur les valeurs de l'association
+											</div>
+										</a>
+									</li><!--
+								 --><li>
+										<a href="">
+											<img src="style/img/people.svg" alt="">	
+											<div><h4>Gouvernance</h4><br/>
+											Découvrez comment l'association est gouvernée, et par qui
+											</div>
+										</a>
+									</li><!--
+								 --><li>
+										<a href="">
+											<img src="style/img/gaiaxOrange.svg" alt="">	
+											<div><h4>Origines</h4><br/>
+											A la base, il y a Gaia-X. Apprenez-en davantage sur cette association d'envergure internationale
+											</div>
+										</a>
+									</li><!--
+								 --><li>
+										<a href="">
+											<img src="style/img/join.svg" alt="">	
+											<div><h4>Rejoignez-nous !</h4><br/>
+											Vous voulez intégrer Dases Lab ? Découvrez comment !
+											</div>
+										</a>
+									</li><!--
+							--></ul>
 						</li>
 						<li>
 							<button class="current">Catalogue</button>
 						</li>
-						<li><button onclick="window.open('https://prometheus-x.org')">Communauté</button></li>
 						<li>
-							<button class="roundTurquoise">Participer</button>
-						</li>
-						<li>
-							<button class="roundPink">Connexion</button>
+							<button class="button blackButton connectWallet">Connecter mon portefeuille</button>
 						</li>
 					</ul>
 				</div>
@@ -82,15 +79,44 @@
 				<img src="assets/logos/inokufu.png" alt="">
 				<div>
 					<h1>Inokufu Competency V2</h1>
-					<a href="https://developer.inokufu.com/" target="_blank">Documentation</a>
+					<ul class="resourceTags flex row center wrap">
+						<li class="resourceType dataSet"></li>
+						<li class="isResourceOpen locked"></li>
+						<li>
+							<ul class="tagList flex row">
+								<li>API</li>
+								<li>Students</li>
+								<li>Skills</li>
+							</ul>
+						</li>
+					</ul>
 				</div>
 				<ul class="ctas">
-					<li><a class="useService button blackButton" href="dashboard-catalogue__demandeUsage.html">Demander l'intégration</a></li>
+					<li>
+						<button class="useService button blackButton export" href="dashboard-catalogue__demandeUsage.html">Demander l'intégration</button> <br>
+						<span>powered by <img src="assets/logos/visions.png" alt=""></span>
+					</li>
 				</ul>
 			</section>
 
-			<section class="container servicePageContent flex wrap column">
-				<div class="serviceDetails flex-1">
+			<section class="container servicePageContent flex wrap column">	
+				<div class="serviceDescription flex-1">
+					<p class="warning">
+						⚠ Cette ressource donne accès à des données personnelles <br>
+						<a href="" class="questionLink">En apprendre plus sur les contraintes liées à cet usage</a>
+					</p>
+					<h2>Description</h2>
+					<p>The Competency API enables you to explore and connect skills, occupations or domains of knowledge from various taxonomies and frameworks such as Wikipedia, ESCO classification, ROME codes from Pôle Emploi, Formacode®, etc.</p>
+				</div>
+				<div class="serviceDetails">
+					<div class="serviceEditor">
+						<h2>Editeur</h2>
+						<button class="button whiteButton">Inokufu</button>
+					</div>
+					<div class="serviceEditor">
+						<h2>Documentation</h2>
+						<button class="button whiteButton external">Voir la documentation</button>
+					</div>
 					<table>
 						<thead>
 							<tr>
@@ -134,24 +160,22 @@
 
 					</table>
 				</div>
-				<div class="serviceDescription flex-1">
-					<h2>Description</h2>
-					<p>The Competency API enables you to explore and connect skills, occupations or domains of knowledge from various taxonomies and frameworks such as Wikipedia, ESCO classification, ROME codes from Pôle Emploi, Formacode®, etc.</p>
-				</div>
 			</section>
 
 		</main>
 
-		<footer class="container">
-			<div>
-				<a href=""><img src="style/img/logoMVPX.svg" alt=""></a>
-				<p>
-					Dases Lab est le portail de catalogage des services et données du data space éducation & compétences
+		<footer>
+			<div class="container">
+				<div>
+					<a href=""><img src="style/img/logoMVPX.svg" alt=""></a>
+					<p>
+						Dases Lab est le portail de catalogage des services et donnees du data space education & competences
 					<ul>
-						<li><a href="">Mentions légales</a></li>
+						<li><a href="">Mentions legales</a></li>
 						<li><a href="">Contactez-nous</a></li>
 					</ul>
-				</p>	
+					</p>
+				</div>
 			</div>
 		</footer>
 		
