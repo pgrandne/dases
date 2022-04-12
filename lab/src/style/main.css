@@ -63,7 +63,7 @@ table {
 /* Colors */
 
 :root {
-	--bgColor: #FFF;
+	--bgColor: #F3F4F6;
     --pink: #8A90AD;
  	--blue : #000094;
  	--black: #022039;
@@ -87,7 +87,7 @@ table {
 
 body {
 	font-family: 'Inter', sans-serif;
-	font-weight: 400;
+	font-weight: 500;
 	background: var(--bgColor);
 	line-height: 1.5;
 	color: var(--black);
@@ -122,6 +122,10 @@ strong {font-weight: 700;}
 .p01em { padding: 0 1em 1em 0; }
 .absolute {position: absolute;}
 
+.alignLeft {
+	text-align: left;
+}
+
 .helpIcon {
 	display: block;
 	width: 1.5em;
@@ -132,11 +136,20 @@ strong {font-weight: 700;}
 	position: absolute;
 }
 
+.questionLink {
+	color: var(--black);
+}
+
+.questionLink:after {
+	content: ' 🤔';
+}
+
 
 /* ------------- HEADER --------------*/
 
 header {
 	border-bottom: 2px solid var(--lightGrey);
+	background: #fff;
 }
 
 .header_topBar {
@@ -225,9 +238,10 @@ header {
 .mainNav li button.connectWallet {
 	background-image: url(img/wallet.svg);
 	background-size: 1em;
-	background-position: 85% center;
+	background-position: 92% center;
 	background-repeat: no-repeat;
 	padding: 0.5em 3em 0.5em 1em;
+	text-transform: initial;
 }
 
 .mainNav li button.roundblue {
@@ -241,23 +255,6 @@ header {
 
 .mainNav li button:active, .mainNav li button:focus  {
 	border-color: var(--lightGrey);
-}
-
-body.homePage .mainNav li button:after {
-	content: '';
-	display: block;
-	width: 0;
-	border: 0.75em solid transparent;
-	border-bottom-color: #fff ;
-	display: none;
-	position: absolute;
-	left: 50%;
-	margin-left: -0.75em;
-	bottom: -1.5em;
-}
-
-body.homePage .mainNav li button:focus:after {
-	display: block;
 }
 
 
@@ -367,7 +364,7 @@ body.homePage .mainNav li button:focus:after {
 }
 
 section.hero {
-	padding: 3em 0;
+	padding: 6em 0;
 }
 
 .hero h1 {
@@ -381,39 +378,6 @@ section.hero {
 	color: var(--orange);
 }
 
-.whyPeople, .whyTech{
-	box-sizing: border-box;
-	padding: 5em 5em 17em 5em;
-	margin: 5em 0 15em;
-	width: 48%;
-	margin: 1%;
-	background: #fff
-}
-
-.why h1 i {
-	font-family: 'Inter';
-	font-weight: 700;
-	font-style: italic;
-}
-
-.why h2 {
-	font-size: 4em;
-	color: #111;
-	line-height: 1;
-	margin-bottom: 1em;
-}
-
-.why img {
-	width: 100%;
-	margin-top: -14em;
-}
-
-.why p {
-	font-size: 1.75em;
-	color: #111;
-	max-width: 675px;
-	margin: 0 auto;
-}
 
 /* ------------ CATALOGUE ------------- */
 
@@ -571,17 +535,18 @@ section.hero {
 
 footer {
 	padding: 3em 0;
+	background: #fff;
 }
 
-footer div {
+footer .container div {
 	width: 25%;
 	font-weight: 700;
 	font-size: 1em;
 	padding: 3em 0;
 }
 
-footer div img { margin-bottom: 3em}
-footer div ul li a{ text-decoration: none; color: var(--blue); display: block; padding: 0.5em 0 0; }
+footer .container div img { margin-bottom: 3em}
+footer .container div ul li a{ text-decoration: none; color: var(--blue); display: block; padding: 0.5em 0 0; }
 
 /** ------------------- BREADCRUMB ----------------------**/
 
@@ -1440,4 +1405,91 @@ fieldset legend {
 .textBlock hr {
 	margin: 3em 0 1em;
 	border: 1px solid var(--lightGreyTransparent);
+}
+
+/* ---------------- PAGE D'ACCUEIL --------------- */
+
+.homePage {
+	background: var(--bgColor);
+}
+
+.homePage .mainNav li button:after {
+	content: '';
+	display: block;
+	width: 0;
+	border: 0.75em solid transparent;
+	border-bottom-color: #fff ;
+	display: none;
+	position: absolute;
+	left: 50%;
+	margin-left: -0.75em;
+	bottom: -1.5em;
+}
+
+.homePage .mainNav li button:focus:after {
+	display: block;
+}
+
+.homePage .hero {
+	background: #fff;
+}
+
+.homePage .hero {
+	text-align: center;
+}
+
+.homePage .hero .container h1, .homePage .hero .container h2 {
+	width: 66%;
+	margin: 0 auto;
+	line-height: 1.25;
+}
+
+.homePage .hero .container h2 {
+	margin-top: 2em;
+}
+
+.homePage .hero .container img {
+	width: 25%;
+	margin: 4em	
+}
+
+.homePage .hero .container p {
+	font-weight: 700;
+	margin-top: 2em
+}
+
+.indexBlocs {
+	padding: 0 6em 4em 0;
+	margin-right: 2em;
+	border-bottom: 2px solid var(--lightGreyTransparent);
+}
+
+.homeContent section {
+	border-bottom: 2px solid #fff;
+}
+
+.homeContent section > section {
+	padding: 6em 0;
+}
+
+.homeContent section > section h1 {
+	font-size: 2em;
+	font-weight: 700;
+
+}
+
+.homeContent section .flex-1:first-child * {
+	margin: 1em 0
+}
+
+.homeContent section .flex-1:last-child {
+	text-align: center;
+}
+
+.homeContent section img {
+	width: 33%;
+}
+
+.homeContent section .button.whiteButton {
+	background: #fff;
 }
