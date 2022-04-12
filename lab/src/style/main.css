@@ -408,7 +408,7 @@ section.hero {
 /* ---- Moteur de recherche ----- */
 
 .searchEngine {
-	width: 100%
+	width: 100%;
 }
 
 .searchEngine > div {
@@ -421,18 +421,31 @@ section.hero {
 	position: relative;
 }
 
+.searchEngine > div > div:first-child {
+	padding-left: 1em;
+}
+
 .searchEngine input[type=text], .searchEngine select {
 	border: none;
-	outline: 3px solid rgba(0,0,0,.1);
-	background: var(--lightGrey);
+	outline: 1px solid #0a102a1c;
 	font-family: 'Inter', sans-serif;
 	position: relative;
 	display: block;
 	padding: 1em;
-	border-radius: 2em;
+	border-radius: 0.5em;
 	margin: 1em;
 	width: 100%;
 	box-sizing: border-box;
+	box-shadow: 
+		0px 22px 81px -11px rgba(2, 32, 57, 0.16),
+		0px 2px 2px 0 rgba(2, 32, 57, 0.07);
+	background: #fff;
+	font-weight: 700;
+}
+
+.searchEngine select {
+	width: auto;
+	cursor: pointer;
 }
 
 .searchEngine input[type=text]:hover, .searchEngine select:hover {
@@ -457,10 +470,10 @@ section.hero {
 	position: absolute;
 	background: url(img/searchIcon.svg);
 	width: 1em;
-   height: 1em;
-   left: 2em;
-   top: 1.75em;
-   z-index: 2;
+	height: 1em;
+	left: 2em;
+	top: 1.75em;
+	z-index: 2;
 }
 
 /* ---- Contenu du catalogue ----- */
@@ -534,6 +547,7 @@ section.hero {
 }
 
 footer {
+	margin-top: 6em;
 	padding: 3em 0;
 	background: #fff;
 }
@@ -1430,9 +1444,20 @@ fieldset legend {
 	display: block;
 }
 
-.homePage .hero {
+.homePage .hero,.cataloguePublic .hero {
 	background: #fff;
 }
+
+.cataloguePublic .hero {
+	padding-bottom: 20em;
+	margin-bottom: -15em;
+}
+
+.cataloguePublic .hero .container h1 {
+	background: url(../assets/img/fedcat.png) left center no-repeat;
+	background-size: 4em;
+	padding-left: 6em;
+} 
 
 .homePage .hero {
 	text-align: center;
