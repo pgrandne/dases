@@ -1201,6 +1201,7 @@ input[type=submit].connectMetamask {
 	padding: 3em 0;
 	position: sticky;
 	top: 2em;
+	width: 280px;
 }
 
 .formProgression li {
