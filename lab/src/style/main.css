@@ -1190,6 +1190,7 @@ input[type=submit].connectMetamask {
 
 .addResourceForm {
 	padding-right: 4em;
+	width: 480px;
 }
 
 .addResourceNav {
