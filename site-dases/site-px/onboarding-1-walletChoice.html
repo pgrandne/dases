@@ -16,23 +16,28 @@
 			<button class="closeButton fixed">Fermer</button>
 
 			<h1>
-				<img src="faviconpx.svg" alt=""> <br/><br/>
 				Authentification
 			</h1>
-			<p>Pour publier et utiliser des ressources sur le portail, vous devez utiliser un portefeuille d’identité décentralisée</p>
-			<button class="button whiteButton connectMetamask">Se connecter avec Metamask</button> <br/>
-			<button class="button whiteButton connectWalltId disabled">Se connecter avec Wallt.id <span>bientôt disponible</span></button> <br/>
-			<button class="button whiteButton connectBCD disabled">Se connecter avec MyWallet <span>bientôt disponible</span></button> <br/>
+			<p>Vous devez avoir créé un compte pour publier et utiliser des ressources sur le portail</p>
+			<h2>Se connecter avec un portefeuille</h2>
+			<button class="button whiteButton connectMetamask">Se connecter avec Metamask</button>
+			<button class="button whiteButton connectWalltId disabled">Se connecter avec Wallt.id <span>bientôt disponible</span></button>
+			<button class="button whiteButton connectBCD disabled">Se connecter avec MyWallet <span>bientôt disponible</span></button>
 
 			<hr />
 
-			<h2>Le futur de l’identité sur le web est décentralisé !</h2>
+			<h2>Se connecter avec un e-mail</h2>
+			<form action="" class="form w100p">
+				<div class="formGroup field"><!-- BLOCK CHAMP TEXTE INPUT TEXT -->
+					<input type="email" class="formField" placeholder="Votre e-mail" name="userMail" id='userMail' required />
+					<label for="userMail" class="formLabel">Votre e-mail</label>
+					<input type="submit" class="button blackButton" value="Continuer">
+				</div>
+				<legend>Si vous avez déjà un compte associé à cet e-mail, vous allez être directement connecté, sinon nous allons vous envoyer un lien vous permettant de vous connecter au portail</legend>
+			</form>
 
-			<ul class="flex wrap">
-				<li class="flex-1">Un portefeuille vous permet d’être pleinement propriétaire de votre identité</li>
-				<li class="flex-1">Nous ne stockons absolument rien vous concernant : tout est sur la blockchain !</li>
-				<li class="flex-1">Metamask est la solution la plus utilisée en 2022, d’autres portefeuilles viendront s’ajouter dans le futur</li>
-			</ul>
+
+			
 
 		</section>
 
