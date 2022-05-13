@@ -71,7 +71,7 @@ table {
  	--turquoise: #8A90AD;
  	--green: #2F9898;
  	--lightGreyTransparent: #0a102a1c;
- 	--lightYellow : #FFF6EF
+ 	--lightYellow : #FFF6EF;
 }
 
 
@@ -1360,6 +1360,7 @@ input[type=submit].connectMetamask {
 	outline: 3px solid var(--pink);
 	font-weight: 700;
 	line-height: 2.25;
+	box-sizing: border-box;
 }
 
 .form .formField.select {
