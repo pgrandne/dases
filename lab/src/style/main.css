@@ -1360,6 +1360,7 @@ input[type=submit].connectMetamask {
 	outline: 3px solid var(--pink);
 	font-weight: 700;
 	line-height: 2.25;
+	box-sizing: border-box;
 }
 
 .form .formField.select {
